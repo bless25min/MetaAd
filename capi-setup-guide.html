@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>廣告投手必學：3分鐘學會CAPI串接 | 廣告投手養成中心</title>
+    <meta name="description" content="廣告投手快速掌握Meta轉換API(CAPI)設定，解決iOS追蹤限制，提升轉換追蹤準確度50%以上。">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "@id": "https://yoursite.github.io/capi-setup-guide.html",
+        "name": "廣告投手如何設定Meta轉換API",
+        "description": "快速設定CAPI的步驟指南",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "TWD",
+            "value": "0"
+        },
+        "totalTime": "PT30M",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "@id": "step1",
+                "name": "確認技術需求",
+                "text": "確認網站後端支援API串接",
+                "url": "https://yoursite.github.io/capi-setup-guide.html#step1"
+            },
+            {
+                "@type": "HowToStep",
+                "@id": "step2",
+                "name": "產生存取權杖",
+                "text": "在Events Manager產生系統用戶存取權杖",
+                "url": "https://yoursite.github.io/capi-setup-guide.html#step2"
+            },
+            {
+                "@type": "HowToStep",
+                "@id": "step3",
+                "name": "設定事件參數",
+                "text": "配置必要的事件參數",
+                "url": "https://yoursite.github.io/capi-setup-guide.html#step3"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #1877f2;
+            --secondary-color: #42b883;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+            --border-color: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .quick-nav {
+            margin-top: 80px;
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .quick-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .quick-nav a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .summary {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .why-section {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .why-section h2 {
+            color: #f57c00;
+            margin-bottom: 1rem;
+        }
+
+        .steps-container {
+            margin: 2rem 0;
+        }
+
+        .step {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 1rem;
+            top: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+
+        .common-mistakes {
+            background: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .common-mistakes h2 {
+            color: #c62828;
+            margin-bottom: 1rem;
+        }
+
+        .common-mistakes ul {
+            margin-left: 1.5rem;
+        }
+
+        .common-mistakes li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini {
+            margin: 2rem 0;
+        }
+
+        .faq-mini details {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .next-steps {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .next-steps h2 {
+            margin-bottom: 1rem;
+        }
+
+        .next-steps .links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .next-steps a {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .next-steps a:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" style="color: white; text-decoration: none;">
+                <strong>🎯 廣告投手養成中心</strong>
+            </a>
+        </nav>
+    </header>
+
+    <nav class="quick-nav">
+        <ul>
+            <li><a href="index.html">回首頁</a></li>
+            <li><a href="algorithm-mastery.html">演算法掌控</a></li>
+            <li><a href="#why">為什麼需要</a></li>
+            <li><a href="#steps">設定步驟</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <article>
+            <h1>廣告投手必學：3分鐘學會CAPI串接</h1>
+            
+            <section class="summary">
+                <p><strong>【核心價值】</strong>廣告投手在iOS 14.5更新後面臨轉換追蹤不完整的挑戰，透過設定轉換API（CAPI）可以提升追蹤準確度50%以上，確保廣告優化不受影響。本指南將用最簡單的方式，教你完成CAPI基礎設定。</p>
+            </section>
+
+            <section id="why" class="why-section">
+                <h2>為什麼廣告投手需要CAPI？</h2>
+                <p>想像一下：你的廣告帶來100個購買，但Facebook只看到60個，演算法就會誤判你的廣告效果，導致：</p>
+                <ul>
+                    <li>🎯 優化方向錯誤（系統不知道誰真正購買）</li>
+                    <li>💰 成本虛高（CPA看起來比實際高）</li>
+                    <li>📉 觸及下降（系統認為廣告效果差）</li>
+                </ul>
+                <p><strong>CAPI就是解決方案！</strong>它從你的伺服器直接告訴Facebook：「這些人真的買了！」</p>
+            </section>
+
+            <section id="steps" class="steps-container">
+                <h2>廣告投手的CAPI設定步驟</h2>
+                
+                <div id="step1" class="step">
+                    <div class="step-number">1</div>
+                    <h3>確認技術需求</h3>
+                    <p>在開始前，廣告投手需要確認：</p>
+                    <ul>
+                        <li>✅ 有網站後端存取權限（或找工程師幫忙）</li>
+                        <li>✅ 已安裝Facebook Pixel</li>
+                        <li>✅ 使用PHP、Node.js、Python等後端語言</li>
+                    </ul>
+                </div>
+
+                <div id="step2" class="step">
+                    <div class="step-number">2</div>
+                    <h3>產生存取權杖</h3>
+                    <p>1. 進入 Events Manager</p>
+                    <p>2. 選擇你的Pixel</p>
+                    <p>3. 點擊「設定」→「轉換API」</p>
+                    <p>4. 產生系統用戶存取權杖</p>
+                    <div class="code-block">
+                        存取權杖範例：
+                        EAAGm6YKu8FsBANqfPZCZBHi7V...
+                    </div>
+                </div>
+
+                <div id="step3" class="step">
+                    <div class="step-number">3</div>
+                    <h3>設定事件參數</h3>
+                    <p>最基本的購買事件需要這些參數：</p>
+                    <div class="code-block">
+{
+  "event_name": "Purchase",
+  "event_time": 1234567890,
+  "user_data": {
+    "em": "hash過的email",
+    "ph": "hash過的電話"
+  },
+  "custom_data": {
+    "currency": "TWD",
+    "value": 1000
+  }
+}
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>測試與驗證</h3>
+                    <p>使用測試事件工具確認數據正確傳送：</p>
+                    <ol>
+                        <li>在Events Manager開啟「測試事件」</li>
+                        <li>記下測試代碼</li>
+                        <li>在API請求中加入test_event_code</li>
+                        <li>發送測試事件，確認接收成功</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="common-mistakes">
+                <h2>⚠️ 廣告投手常見錯誤</h2>
+                <ul>
+                    <li><strong>未做資料雜湊：</strong>個人資料必須先SHA256加密</li>
+                    <li><strong>時間格式錯誤：</strong>要用Unix時間戳記</li>
+                    <li><strong>重複事件：</strong>同一事件不要從Pixel和API重複發送</li>
+                    <li><strong>缺少事件ID：</strong>導致重複計算</li>
+                </ul>
+            </section>
+
+            <section class="faq-mini">
+                <h2>廣告投手快問快答</h2>
+                
+                <details>
+                    <summary>Q: 沒有工程師可以自己設定嗎？</summary>
+                    <p>可以使用第三方工具如Zapier、GTM伺服器版等，但效果可能不如直接串接完整。建議還是找技術人員協助。</p>
+                </details>
+
+                <details>
+                    <summary>Q: CAPI設定後多久看到效果？</summary>
+                    <p>通常24-48小時內就能看到事件配對率提升。完整效果需要7-14天的數據累積。</p>
+                </details>
+
+                <details>
+                    <summary>Q: 成本會增加嗎？</summary>
+                    <p>CAPI本身免費，但可能需要伺服器資源。長期來看，準確的數據帶來的優化效益遠大於成本。</p>
+                </details>
+            </section>
+
+            <div class="next-steps">
+                <h2>恭喜！你已經掌握CAPI基礎</h2>
+                <p>接下來，廣告投手可以：</p>
+                <div class="links">
+                    <a href="pixel-advanced.html">進階Pixel設定</a>
+                    <a href="algorithm-mastery.html">回到演算法掌控術</a>
+                    <a href="tracking-solutions.html">更多追蹤解決方案</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 廣告投手養成中心. All rights reserved.</p>
+            <p>更多技巧：<a href="index.html" style="color: white;">返回學習中心</a></p>
+        </div>
+    </footer>
+</body>
+</html>
