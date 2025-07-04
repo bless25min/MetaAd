@@ -13,10 +13,10 @@
         "@type": "WebSite",
         "name": "廣告投手養成中心",
         "description": "專業廣告投手培訓與技能提升平台",
-        "url": "https://bless25min.github.io/",
+        "url": "https://bless25min.github.io/MetaAd/",
         "potentialAction": {
             "@type": "SearchAction",
-            "@target": "https://yoursite.github.io/search?q={search_term_string}",
+            "@target": "https://bless25min.github.io/MetaAd/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -26,6 +26,7 @@
         :root {
             --primary-color: #1877f2;
             --secondary-color: #42b883;
+            --accent-color: #ff6b6b;
             --text-color: #333;
             --bg-light: #f8f9fa;
             --border-color: #e9ecef;
@@ -106,6 +107,36 @@
             border-left: 4px solid var(--primary-color);
         }
 
+        .platform-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .platform-banner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .platform-banner .btn {
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .platform-banner .btn:hover {
+            transform: scale(1.05);
+        }
+
         .skill-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -134,6 +165,86 @@
         .skill-card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        .knowledge-section {
+            background: #fff;
+            padding: 3rem 0;
+            margin: 3rem 0;
+        }
+
+        .knowledge-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .knowledge-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .knowledge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+        }
+
+        .knowledge-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .knowledge-card .badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .knowledge-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .knowledge-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .knowledge-card li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
         }
 
         .cta-section {
@@ -192,8 +303,8 @@
             <ul>
                 <li><strong>🎯 廣告投手養成中心</strong></li>
                 <li><a href="#skills">核心技能</a></li>
-                <li><a href="#path">學習路徑</a></li>
-                <li><a href="#resources">資源下載</a></li>
+                <li><a href="#knowledge">進階知識</a></li>
+                <li><a href="#platform">廣告共享平台</a></li>
                 <li><a href="#faq">常見問題</a></li>
             </ul>
         </nav>
@@ -209,6 +320,12 @@
             <h2>什麼是專業廣告投手？</h2>
             <p>廣告投手是數位行銷領域的核心角色，負責規劃、執行和優化線上廣告活動。一位優秀的廣告投手需要具備數據分析能力、創意思維、預算管理技巧，以及對各大廣告平台演算法的深入理解。在Meta廣告生態系統中，廣告投手扮演著連接品牌與目標受眾的關鍵角色，透過精準的受眾定位、素材優化和預算配置，協助企業達成行銷目標並提升投資報酬率(ROAS)。</p>
         </section>
+
+        <div id="platform" class="platform-banner">
+            <h3>🚀 探索廣告版位共享新模式</h3>
+            <p>透過品牌間的廣告版位互惠合作，擴大曝光效果，降低行銷成本</p>
+            <a href="https://bless25min.github.io/BrandShare/" class="btn" target="_blank">前往廣告共享平台</a>
+        </div>
 
         <section id="skills">
             <h2>廣告投手三大核心能力</h2>
@@ -252,6 +369,68 @@
             </div>
         </section>
 
+        <section id="knowledge" class="knowledge-section">
+            <h2>🔥 進階知識專區：廣告投手必讀</h2>
+            
+            <div class="knowledge-grid">
+                <article class="knowledge-card">
+                    <span class="badge">官方認證技巧</span>
+                    <h3>Meta廣告成效操作白帽技巧與關鍵設定</h3>
+                    <p>整理50項Meta官方建議與演算法偏好的最佳實務做法，全面優化廣告表現：</p>
+                    <ul>
+                        <li>受眾設定策略（10項技巧）</li>
+                        <li>創意與素材優化（10項技巧）</li>
+                        <li>版位與投放策略（10項技巧）</li>
+                        <li>互動優化策略（10項技巧）</li>
+                        <li>資料追蹤與效能管理（10項技巧）</li>
+                    </ul>
+                    <a href="white-hat-techniques.html" class="btn">查看完整技巧 →</a>
+                </article>
+
+                <article class="knowledge-card">
+                    <span class="badge">進階操作術</span>
+                    <h3>Meta廣告互動與素材操控術</h3>
+                    <p>揭露激發社交證明的操作邏輯與技巧，透過心理誘因提升廣告成效：</p>
+                    <ul>
+                        <li>Post ID操作機制與社交證明累積</li>
+                        <li>假留言與灰帽對話設計法</li>
+                        <li>素材切片誘導術與A/B測試</li>
+                        <li>社群互動堆疊技術</li>
+                        <li>Messenger點擊轉化模型</li>
+                    </ul>
+                    <a href="social-proof-tactics.html" class="btn">學習操控技巧 →</a>
+                </article>
+
+                <article class="knowledge-card">
+                    <span class="badge">預算黑科技</span>
+                    <h3>Meta廣告預算黑科技與出價優化</h3>
+                    <p>掌握預算擴量與出價模型的進階技巧，在控制成本下大幅提升成效：</p>
+                    <ul>
+                        <li>一美元爆量策略（1美金廣告測試法）</li>
+                        <li>加速投遞結合出價上限鎖定</li>
+                        <li>CBO與ABO的預算配置邏輯</li>
+                        <li>預算放量時機與轉換節奏</li>
+                        <li>風控策略與自動規則設定</li>
+                    </ul>
+                    <a href="budget-hacks.html" class="btn">掌握黑科技 →</a>
+                </article>
+
+                <article class="knowledge-card">
+                    <span class="badge">漏斗策略</span>
+                    <h3>封閉式再行銷與UTM逆向追蹤策略</h3>
+                    <p>建立高效的Meta廣告漏斗，透過數據追蹤優化每個轉換環節：</p>
+                    <ul>
+                        <li>白名單封閉導流策略</li>
+                        <li>跨平台UTM逆向追蹤模型</li>
+                        <li>私訊導流策略與演算法優化</li>
+                        <li>意圖分層再行銷策略</li>
+                        <li>LINE/CRM整合延伸漏斗</li>
+                    </ul>
+                    <a href="remarketing-funnel.html" class="btn">建立漏斗系統 →</a>
+                </article>
+            </div>
+        </section>
+
         <section id="path" class="cta-section">
             <h2>廣告投手成長路徑</h2>
             <p>從初學者到資深專家，每個階段都有明確的學習目標與技能要求</p>
@@ -278,13 +457,18 @@
                 <summary>Q3: 如何累積廣告投手的實戰經驗？</summary>
                 <p>建議從以下方式開始：1) 自建網站或協助朋友投放小額廣告練習；2) 參與線上課程並實作案例；3) 申請實習或junior職位；4) 追蹤產業大神分享的案例研究；5) 考取Facebook Blueprint等官方認證。最重要的是動手實作，從錯誤中學習。</p>
             </details>
+
+            <details>
+                <summary>Q4: 廣告共享平台如何幫助廣告投手？</summary>
+                <p>透過我們的<a href="https://bless25min.github.io/BrandShare/" target="_blank">廣告共享平台</a>，廣告投手可以：1) 為客戶找到互補的品牌合作夥伴；2) 透過版位交換降低廣告成本；3) 學習其他品牌的成功案例；4) 建立業界人脈網絡。這是一個創新的廣告資源共享模式，特別適合預算有限但追求高效益的品牌。</p>
+            </details>
         </section>
     </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2024 廣告投手養成中心. All rights reserved.</p>
-            <p>持續更新最新廣告投放策略與技巧</p>
+            <p>持續更新最新廣告投放策略與技巧 | <a href="https://bless25min.github.io/BrandShare/" style="color: white;" target="_blank">探索廣告共享平台</a></p>
         </div>
     </footer>
 </body>
