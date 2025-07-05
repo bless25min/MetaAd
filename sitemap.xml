@@ -1,13 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://bless25min.github.io/BrandShare/</loc>
-    <lastmod>2024-12-19</lastmod>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 主頁面 - 最高優先級 -->
   <url>
     <loc>https://bless25min.github.io/MetaAd/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- 核心技能頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/algorithm-mastery.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/creative-optimization.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/budget-hacks.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 進階策略頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/remarketing-funnel.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/white-hat-techniques.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/advanced-operations.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 工具頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/tools/audience-calculator.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/tools/budget-optimizer.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/tools/utm-builder.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 資源文件 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/MetaAdCollection.pdf</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 案例研究頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/case-studies.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 學習路徑頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/learning-path.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 常見問題頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/faq.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 聯絡頁面 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/contact.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>
