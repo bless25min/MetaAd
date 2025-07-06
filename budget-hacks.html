@@ -106,6 +106,13 @@
             text-decoration: none;
         }
 
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
         .summary {
             background: #e3f2fd;
             padding: 1.5rem;
@@ -154,6 +161,12 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .technique-card {
@@ -376,6 +389,11 @@
             .strategy-grid, .nav-grid {
                 grid-template-columns: 1fr;
             }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -384,10 +402,12 @@
         <nav class="container">
             <ul>
                 <li><a href="index.html"><strong>🎯 廣告投手養成中心</strong></a></li>
-                <li><a href="#budget-hacks">預算黑科技</a></li>
-                <li><a href="#bidding">出價優化</a></li>
-                <li><a href="#platform">廣告共享平台</a></li>
-                <li><a href="#faq">常見問題</a></li>
+                <li><a href="algorithm-mastery.html">演算法</a></li>
+                <li><a href="white-hat-techniques.html">白帽技巧</a></li>
+                <li><a href="social-proof-tactics.html">社交證明</a></li>
+                <li><a href="budget-hacks.html">預算優化</a></li>
+                <li><a href="remarketing-funnel.html">再行銷</a></li>
+                <li><a href="creative-optimization.html">素材優化</a></li>
             </ul>
         </nav>
     </header>
@@ -403,290 +423,158 @@
             <p>本頁聚焦<strong>Meta廣告預算黑科技</strong>與出價模型優化策略，涵蓋從<strong>1美元廣告測試法</strong>引爆流量，到<strong>加速投遞</strong>結合出價上限鎖定低成本轉換，以及<strong>CBO</strong>（系列預算）與<strong>ABO</strong>（廣告組預算）的預算配置取捨。此外，也深入說明何時擴充預算以配合轉換節奏，以及調整預算的規則與風險控管重點。這些進階技巧能在嚴格控成本下大幅提升成效，但因屬非官方建議操作，使用時需特別注意帳戶穩定與風險。</p>
         </section>
 
-        <div id="platform" class="platform-cta">
+        <div class="platform-cta">
             <h3>💰 優化廣告預算配置</h3>
             <p>學習預算黑科技的同時，也可透過版位共享降低整體廣告成本</p>
-            <a href="https://bless25min.github.io/BrandShare/" class="btn" target="_blank">探索廣告共享平台</a>
+            <a href="https://bless25min.github.io/BrandShare/" class="btn" target="_blank">探索 AdSpace Connect</a>
         </div>
 
         <section id="budget-hacks" class="content-section">
-            <h2>一美元爆量策略（1美金廣告測試法）</h2>
+            <h2>一、1美元廣告爆量法</h2>
             
-            <p>「<strong>一美元引爆法</strong>」是近期流行的廣告測試黑科技，透過超低預算快速啟動演算法學習。</p>
-
             <div class="technique-card">
-                <h3>操作步驟</h3>
-                <div class="process-steps">
-                    <ol>
-                        <li>先以每日僅1美元的預算建立一則廣告並通過審核</li>
-                        <li>等待其開始穩定花費後，立即大量複製相同廣告於同一廣告組</li>
-                        <li>複製數量可達數十甚至上百則</li>
-                        <li>同時將該廣告組總預算提高到足以支撐所有複製廣告的程度（例如提高至$200美元）</li>
-                    </ol>
-                </div>
-                
-                <div class="example-box">
-                    <h4>預期效果</h4>
-                    <p>大量幾乎相同的廣告會瞬間佔據投放渠道，<strong>強制Meta演算法在極短時間內收集大量數據並加速學習</strong>，快速找到表現最佳的受眾與素材組合。實戰案例顯示，透過此法甚至僅花費數美元就能跑出轉單結果。</p>
-                </div>
+                <h3>策略核心原理</h3>
+                <p>利用Meta廣告系統的學習機制漏洞，以極低預算（1美元/日）快速複製高成效廣告，在短時間內獲得大量低成本轉換。此技巧適合在找到高轉換廣告後快速放大效果。</p>
+            </div>
+
+            <div class="process-steps">
+                <h4>操作步驟</h4>
+                <ol>
+                    <li><strong>識別高效廣告：</strong>找出CPA低於目標50%以上的廣告組</li>
+                    <li><strong>快速複製：</strong>在15分鐘內複製20-50個相同廣告組</li>
+                    <li><strong>設定低預算：</strong>每個廣告組設定1美元日預算</li>
+                    <li><strong>同時啟動：</strong>在相同時間點啟動所有廣告組</li>
+                    <li><strong>即時監控：</strong>密切觀察成本變化，及時調整或停止</li>
+                </ol>
             </div>
 
             <div class="danger-warning">
-                <strong>高風險警告：</strong>此策略相當激進，Meta已將此類非常規大量重複投放歸類為中高風險手法。廣告帳戶若異常新增大量重複廣告，可能引發演算法風控警示，嚴重時甚至導致廣告帳戶被封鎖。
+                <strong>高風險警告：</strong>此方法可能觸發Meta風控系統，導致帳戶被限制。建議僅在成熟帳戶上由有經驗的操作者使用，並準備好立即停止的應急計畫。
             </div>
 
-            <div class="success-tip">
-                <strong>建議使用條件：</strong>此爆量策略適合進階投手在瞭解風險下嘗試，建議有經驗的操作人員搭配穩定的無限額帳戶使用，以降低觸發封號的風險。
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>加速投遞（Accelerated Delivery）</h2>
-            
-            <p><strong>加速投遞</strong>是Meta後台提供的一種進階投放模式，可在最短時間內快速燒完預算以爭取曝光。</p>
-
-            <div class="technique-card">
-                <h3>運作機制與優缺點</h3>
-                
-                <div class="comparison-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>投放模式</th>
-                                <th>預算分配方式</th>
-                                <th>優點</th>
-                                <th>缺點</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>標準投遞</strong></td>
-                                <td>平均分配預算到全天</td>
-                                <td>成本控制較穩定</td>
-                                <td>學習速度較慢</td>
-                            </tr>
-                            <tr>
-                                <td><strong>加速投遞</strong></td>
-                                <td>儘快競價取得版位</td>
-                                <td>快速累積數據，縮短學習期</td>
-                                <td>預算可能快速燒光，CPA可能上升</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="technique-card">
-                <h3>「加速投放 + 出價上限」組合玩法</h3>
-                <p>業界研發出的進階策略：開啟加速投遞讓系統瘋狂爭取曝光，同時對每次轉換設置嚴格的低<strong>出價上限</strong>（單次轉換最高出價），藉此**誤導**演算法只能用低成本爭取轉換。</p>
-                
-                <div class="example-box">
-                    <h4>實戰案例</h4>
-                    <p>某真實案例中透過該法將每筆潛在客戶名單成本壓低到新台幣50元左右，僅為業界平均的20%。這種組合使系統彷彿被「鎖住」在低價模式，短時間內以異常低的CPA獲得大量轉換。</p>
-                </div>
-            </div>
-
-            <div class="hack-warning">
-                <strong>注意事項：</strong>這種算法漏洞利用可能隨著Meta演算法調整而失效，因此投手應密切關注成效變化並適時調整策略。建議僅在短期衝刺或與出價上限搭配時使用加速投遞，以免預算過快燒完造成浪費。
+            <div class="example-box">
+                <h4>實戰案例</h4>
+                <p>某電商廣告投手發現一個CPA為50元的高效廣告組，立即複製30個1美元預算的相同廣告組。在2小時內獲得150個轉換，平均CPA降至35元，但隨後被系統限制，總體仍獲得正向ROI。</p>
             </div>
         </section>
 
         <section id="bidding" class="content-section">
-            <h2>出價上限 Bid Cap 與 CPA目標搭配技巧</h2>
+            <h2>二、加速投遞與出價黑科技</h2>
             
-            <p>在Meta競價體系中，出價策略對成本與量能有關鍵影響。</p>
+            <div class="technique-card">
+                <h3>加速投遞策略</h3>
+                <p>啟用加速投遞功能並配合嚴格的出價上限，在短時間內大量曝光的同時控制成本。適合用於限時活動或需要快速測試的情況。</p>
+            </div>
 
             <div class="strategy-grid">
                 <div class="strategy-card">
-                    <div class="risk-level risk-low">低風險</div>
-                    <h4>最低成本出價</h4>
-                    <p>系統會盡可能爭取最多轉換量，不對單次成本做限制。適合量大時使用，但可能攬入部分高成本轉換。</p>
+                    <div class="risk-level risk-high">高風險</div>
+                    <h4>激進加速策略</h4>
+                    <p>開啟加速投遞 + 最低成本出價，快速燒完預算獲得最大曝光量。適合品牌曝光或緊急推廣。</p>
                 </div>
-                
                 <div class="strategy-card">
                     <div class="risk-level risk-medium">中風險</div>
-                    <h4>成本上限（目標CPA）</h4>
-                    <p>設定一個目標CPA，演算法會努力爭取轉換的同時將平均成本控制在目標範圍內，避免極貴轉換拉高整體花費。</p>
+                    <h4>控制式加速</h4>
+                    <p>加速投遞 + 出價上限，在控制成本的前提下加快投遞速度。平衡效率與成本。</p>
                 </div>
-                
                 <div class="strategy-card">
-                    <div class="risk-level risk-high">高風險</div>
-                    <h4>出價上限（Bid Cap）</h4>
-                    <p>系統對每次轉換出價設限，嚴格過濾高於上限的競價機會。可壓低單次成本，但上限過低可能導致無法競得任何曝光。</p>
+                    <div class="risk-level risk-low">低風險</div>
+                    <h4>保守加速</h4>
+                    <p>輕微加速 + 目標成本，穩定提升投遞效率而不大幅增加風險。適合新手使用。</p>
                 </div>
             </div>
-
-            <div class="technique-card">
-                <h3>實務運用策略</h3>
-                
-                <div class="process-steps">
-                    <h4>依營運目標選擇策略</h4>
-                    <ul>
-                        <li><strong>追求最大轉換量</strong>：使用最低成本，讓系統自由尋找轉單</li>
-                        <li><strong>控制平均成本</strong>：採用成本上限並將CPA目標設為可接受範圍</li>
-                        <li><strong>嚴控單次成本</strong>：使用出價上限，確保每次轉換不超過預期</li>
-                    </ul>
-                </div>
-                
-                <div class="example-box">
-                    <h4>操作範例</h4>
-                    <p>希望每次購買成本不超過$10美元的新創品牌，可採用成本上限出價並將CPA目標設為$10，系統將嘗試將每筆轉換壓在此價位附近。</p>
-                </div>
-            </div>
-
-            <div class="success-tip">
-                <strong>最佳實務建議：</strong>根據自身歷史CPA表現設定出價上限或成本目標，以確保成本可控的同時不至於嚴重影響投放量。Bid Cap與成本上限無法同時在同一廣告組中設定，需按需求擇一。
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>CBO 與 ABO 的預算配置邏輯</h2>
-            
-            <p>在廣告預算配置上，可以選擇將預算設定在<strong>廣告系列層級（CBO）</strong>或<strong>廣告組層級（ABO）</strong>，兩種方式各有邏輯與適用情境。</p>
 
             <div class="comparison-table">
                 <table>
                     <thead>
                         <tr>
-                            <th>配置方式</th>
-                            <th>運作邏輯</th>
-                            <th>優點</th>
-                            <th>缺點</th>
-                            <th>適用情境</th>
+                            <th>出價策略</th>
+                            <th>適用場景</th>
+                            <th>風險程度</th>
+                            <th>成本控制</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>CBO<br>(Campaign Budget Optimization)</strong></td>
-                            <td>系列層級設定總預算，AI自動在多個廣告組間動態分配</td>
-                            <td>• 自動優化配置<br>• 免人工調整<br>• 最大化整體ROI</td>
-                            <td>• 可能偏重少數廣告組<br>• 控制度較低</td>
-                            <td>大規模擴量階段</td>
+                            <td>最低成本</td>
+                            <td>預算充足，追求最大轉換量</td>
+                            <td>中等</td>
+                            <td>較弱</td>
                         </tr>
                         <tr>
-                            <td><strong>ABO<br>(Ad Set Budget Optimization)</strong></td>
-                            <td>廣告主為每個廣告組單獨分配預算</td>
-                            <td>• 獨立控管<br>• 確保測試公平性<br>• 靈活調整</td>
-                            <td>• 需頻繁人工監控<br>• 可能干擾學習</td>
-                            <td>小範圍前期測試</td>
+                            <td>出價上限</td>
+                            <td>嚴格成本控制，可接受較少轉換</td>
+                            <td>低</td>
+                            <td>強</td>
+                        </tr>
+                        <tr>
+                            <td>目標成本</td>
+                            <td>穩定的轉換成本需求</td>
+                            <td>低</td>
+                            <td>中等</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class="technique-card">
-                <h3>CBO 運作機制詳解</h3>
-                <p>演算法會即時偵測各受眾/素材組合的投報率，將預算優先投入回報較高者，降低低效廣告組的花費。此過程避免了人工調整預算可能引發的學習期重置，符合Meta對廣告主「少干預、多信任演算法」的最佳實務建議。</p>
-            </div>
-
-            <div class="technique-card">
-                <h3>ABO 獨立控管優勢</h3>
-                <p>投手常將同一素材複製到多個廣告組，分別設定不同目標受眾進行平行測試。透過ABO手動配置，能夠保障即使是表現稍晚才浮現的受眾，也有預算去驗證效果。</p>
-            </div>
-
-            <div class="success-tip">
-                <strong>最佳實務建議：</strong>先用ABO進行小額測試找出表現最佳的受眾與素材組合，待成效穩定後再切換到CBO讓系統自動動態分配預算擴大投放。
-            </div>
         </section>
 
         <section class="content-section">
-            <h2>預算放量時機與轉換節奏控管</h2>
+            <h2>三、CBO vs ABO 預算配置策略</h2>
             
-            <p>掌握擴大預算的最佳時機，對於放大廣告效益至關重要。</p>
-
             <div class="technique-card">
-                <h3>階梯式拉升預算策略</h3>
-                <p>當某支廣告開始「燒出」明顯成效後（例如CPA遠低於目標、轉換數量快速增加），資深投手會採取快速擴量策略。</p>
-                
-                <div class="process-steps">
-                    <h4>操作流程</h4>
-                    <ol>
-                        <li><strong>確認成效上升趨勢</strong>：廣告連續獲得低成本轉換</li>
-                        <li><strong>快速階梯式拉升</strong>：在15-30分鐘內迅速將日預算翻倍</li>
-                        <li><strong>持續監控並加碼</strong>：從$100 → $200 → $400 → $500以高速節奏擴量</li>
-                        <li><strong>即時止損機制</strong>：一旦CPA開始飆升超出目標，立刻停止加碼</li>
-                    </ol>
-                </div>
-                
-                <div class="example-box">
-                    <h4>實戰案例</h4>
-                    <p>許多廣告投手透過激進擴量，在極短週期內為爆款產品取得遠超平常的轉換量。關鍵在於不讓預算成為限制—只要ROI維持穩定，就果斷加碼投入。</p>
-                </div>
+                <h3>廣告系列預算優化（CBO）黑科技</h3>
+                <p>利用CBO的自動分配機制，配合手動干預技巧，讓系統將更多預算分配到高效廣告組，同時避免低效廣告組浪費預算。</p>
+            </div>
+
+            <div class="process-steps">
+                <h4>CBO優化技巧</h4>
+                <ul>
+                    <li><strong>不平等初始預算：</strong>為高效廣告組設定較高的最低預算</li>
+                    <li><strong>動態調整：</strong>定期調整廣告組的最低/最高預算限制</li>
+                    <li><strong>階段性暫停：</strong>暫停低效廣告組，迫使預算流向高效組</li>
+                    <li><strong>素材輪替：</strong>定期更換低效組的素材，重新激活分配</li>
+                </ul>
             </div>
 
             <div class="technique-card">
-                <h3>自動化工具運用</h3>
-                <p>廣告主可設定<strong>自動規則</strong>，當CPA高於某值時自動暫停廣告，以防止因擴量過頭而侵蝕之前累積的收益。</p>
+                <h3>廣告組預算（ABO）精細控制</h3>
+                <p>使用ABO進行更精細的預算控制，特別適合測試階段或需要精確控制每個受眾投入的情況。</p>
             </div>
 
             <div class="hack-warning">
-                <strong>使用條件：</strong>執行此策略前要確保帳戶能承受高速燒錢：不限額廣告帳戶（無每日花費上限）或信用額度充足的帳戶較適合此操作，才能在短時間內容納數倍預算的花費而不觸發Meta內部風控限制。
-            </div>
-
-            <div class="success-tip">
-                <strong>執行要點：</strong>務必果斷而謹慎，密切盯住數據，在正向表現消退前搶佔量能。建議搭配不限額帳戶以承受爆量波動。
+                <strong>選擇建議：</strong>測試期使用ABO確保每個變量獲得足夠測試預算，找到勝出組合後轉為CBO進行規模化投放。這種混合策略能最大化測試效率和放大效果。
             </div>
         </section>
 
         <section class="content-section">
-            <h2>預算升降的規則與風控策略</h2>
+            <h2>四、預算擴量時機與風險控制</h2>
             
-            <p>靈活調整廣告預算雖是必要日常，但需遵循一定規則以免適得其反。</p>
-
-            <div class="strategy-grid">
-                <div class="strategy-card">
-                    <h4>🚫 避免頻繁劇烈改動</h4>
-                    <p>若無明確數據支撐，不要動輒將預算翻倍或砍半。重大變動可能使演算法的學習進度重置，導致成效波動。</p>
-                </div>
-                
-                <div class="strategy-card">
-                    <h4>📈 漸進式調整原則</h4>
-                    <p>一般情況下採取漸進式調整，每日調升或調降預算幅度不超過20-30%，觀察幾日後再做進一步改動。</p>
-                </div>
-                
-                <div class="strategy-card">
-                    <h4>⚡ 果斷停損機制</h4>
-                    <p>對於表現欠佳的廣告，不要猶豫於削減預算甚至停播。過度迷信演算法自行修正可能讓預算白白浪費。</p>
-                </div>
+            <div class="technique-card">
+                <h3>階梯式擴量策略</h3>
+                <p>當廣告表現超出預期時，採用階梯式快速擴量，在保持成效的前提下最大化廣告效果。</p>
             </div>
 
-            <div class="technique-card">
-                <h3>風險控管機制</h3>
-                
-                <div class="process-steps">
-                    <h4>自動規則設定</h4>
-                    <ul>
-                        <li>當CPA高於目標多少%時系統自動通知或關閉廣告</li>
-                        <li>當ROAS低於門檻時自動暫停活動</li>
-                        <li>預先設定好停損點避免人工反應不及</li>
-                    </ul>
-                </div>
-                
-                <div class="process-steps">
-                    <h4>帳戶資質檢查</h4>
-                    <ul>
-                        <li>新帳戶或信用額度低的帳戶不宜冒然大幅衝高預算</li>
-                        <li>必要時先向Meta申請提高支出上限</li>
-                        <li>使用歷史表現良好的帳戶操作</li>
-                    </ul>
-                </div>
-                
-                <div class="process-steps">
-                    <h4>多平台分散策略</h4>
-                    <ul>
-                        <li>將部分預算分配至其他廣告管道（如Google、TikTok等）</li>
-                        <li>防Meta平台演算法波動或競價成本飆升時，整體行銷成效受到重創</li>
-                        <li>跨平台分散投放確保持續穩定的曝光與轉換流量</li>
-                    </ul>
-                </div>
+            <div class="process-steps">
+                <h4>擴量操作流程</h4>
+                <ol>
+                    <li><strong>確認信號：</strong>CPA低於目標30%，ROAS持續上升</li>
+                    <li><strong>第一階段：</strong>預算翻倍，觀察15分鐘</li>
+                    <li><strong>評估效果：</strong>如成本穩定，繼續下一階段</li>
+                    <li><strong>第二階段：</strong>再次翻倍預算，持續監控</li>
+                    <li><strong>設定停損：</strong>CPA超過目標20%立即回調</li>
+                </ol>
+            </div>
+
+            <div class="danger-warning">
+                <strong>風險提醒：</strong>快速擴量可能導致廣告品質下降、成本上升或觸發學習期重置。建議設定自動規則進行實時監控，並準備快速回調的備案。
             </div>
 
             <div class="success-tip">
-                <strong>最佳實務建議：</strong>每次僅小幅調整預算，並善用自動規則設定停損點與跨平台分散投放來降低整體風險。Meta建議每週至少累積50筆轉換再評估優化方向，期間盡量保持設定穩定。
+                <strong>最佳實務：</strong>擴量前確保至少有3天穩定數據，擴量後密切監控前2小時的表現。如果成本控制良好，可以考慮進一步擴大規模。
             </div>
         </section>
 
-        <section id="faq" class="faq-section">
+        <section class="faq-section">
             <h2>常見問題</h2>
             
             <details>
