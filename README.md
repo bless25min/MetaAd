@@ -1,1 +1,211 @@
+# 🎯 MetaAd: 廣告投手養成中心
 
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?style=for-the-badge)
+![PDF Guide](https://img.shields.io/badge/PDF-策略指南-red?style=for-the-badge)
+![GEO Guide](https://img.shields.io/badge/AI-GEO優化-purple?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+
+> 🚀 **專業 Meta 廣告投放策略大全，88個實戰技巧助您成為頂尖廣告投手**
+
+---
+
+## 📖 專案簡介
+
+**MetaAd 廣告投手養成中心**是一個全方位的 Meta 廣告投放學習平台，提供從新手到專家的完整成長路徑。本專案整合了**88個經過實戰驗證的廣告投放策略**，幫助廣告投手掌握演算法優化、素材創意和預算管理等核心技能。
+
+---
+
+## ✨ 核心特色
+
+### 🧠 演算法掌控術
+深入 Meta 廣告演算法，掌握受眾品質控管與預算優化
+
+### 🎨 素材優化藝術  
+學習創造高轉換廣告素材，運用 UGC 與 A/B 測試策略
+
+### 💰 預算擴量黑科技
+從小額測試到大規模擴量的科學化預算管理
+
+### 🔄 封閉式再行銷
+建立完整的轉換追蹤與效果評估體系
+
+### 🤖 GEO 優化策略
+針對 AI 搜尋引擎的內容優化技巧
+
+---
+
+## 📁 專案結構
+
+```
+MetaAd/
+├── 📄 index.html                      # 🏠 主頁面 - 廣告投手養成中心
+├── 📄 algorithm-mastery.html          # 🧠 演算法掌控術詳解
+├── 📄 creative-optimization.html      # 🎨 素材優化策略
+├── 📄 budget-hacks.html              # 💰 預算擴量黑科技
+├── 📄 remarketing-funnel.html        # 🔄 封閉式再行銷策略
+├── 📄 white-hat-techniques.html      # ✅ 白帽技巧大全
+├── 📄 social-proof-tactics.html      # 👥 社交證明策略
+├── 🛠️ tools/                         # 實用工具頁面
+│   ├── audience-calculator.html      #   📊 受眾計算器
+│   ├── budget-optimizer.html         #   💡 預算優化器
+│   └── utm-builder.html             #   🔗 UTM建構器
+├── 📚 MetaAdCollection.pdf           # 完整策略文件集
+└── 🤖 AI搜尋摘要限制與對應策略.pdf    # GEO 優化指南
+```
+
+---
+
+## 🎯 核心學習內容
+
+### 🧠 演算法掌控術
+
+> 💡 深入理解 Meta 廣告演算法運作原理，掌握機器學習優化技巧
+
+- ✅ 識別假帳號與低質流量
+- ✅ 受眾品質精準控管
+- ✅ CAPI 與 Pixel 整合優化
+
+### 🎨 素材優化藝術
+
+> 🎭 創造吸引眼球的廣告素材，運用 A/B 測試找出最佳組合
+
+- ✅ 動態創意優化 (DCO)
+- ✅ UGC 素材策略運用
+- ✅ 多版位素材適配
+
+### 💰 預算擴量黑科技
+
+> 🚀 從小額測試到大規模擴量的科學化預算管理
+
+- 🔥 **1美元廣告爆量法** - 利用系統漏洞快速複製高效廣告
+- ⚡ CBO/ABO 預算配置策略
+- 📈 階梯式擴量與風險控管
+
+### 🔄 封閉式再行銷策略
+
+> 🎪 建立高效的 Meta 廣告漏斗系統
+
+- 🎯 白名單封閉導流策略
+- 📊 跨平台 UTM 逆向追蹤模型
+- 💬 私訊導流策略與演算法優化
+- 🔍 意圖分層再行銷策略
+
+### ✅ 白帽技術大全
+
+> 🛡️ 50個經過官方認證的合規投放策略，確保廣告帳戶安全
+
+### 🤖 GEO 優化策略
+
+> 🔮 針對 AI 搜尋引擎的內容優化技巧
+
+- 🎯 Answer Layer 設計
+- 🔗 語義結構優化
+- 📱 多模態內容策略
+
+---
+
+## 🛠️ 實用工具
+
+| 🎯 工具名稱 | 📝 功能說明 | 🎪 適用場景 |
+|---|---|---|
+| **📊 受眾計算器** | 計算受眾規模與預算配置 | 受眾規劃與預算分配 |
+| **💡 預算優化器** | 智能預算分配建議 | 多廣告組合優化 |
+| **🔗 UTM建構器** | 生成標準化追蹤參數 | 數據追蹤與分析 |
+
+---
+
+## 🎓 學習路徑
+
+### 🌱 初學者階段
+
+1. 📖 閱讀主頁面了解廣告投手核心能力
+2. 🧠 學習演算法基礎概念
+3. 📊 掌握基本的追蹤設定
+4. 🛠️ 使用工具頁面進行練習
+
+### 🚀 進階投手階段
+
+1. 📚 深入研讀完整策略文件 (`MetaAdCollection.pdf`)
+2. 💰 學習預算擴量黑科技
+3. 🔄 建立封閉式再行銷漏斗
+4. 🤖 掌握 GEO 優化技巧
+
+### 💎 專家級別
+
+1. 🎯 應用進階策略組合
+2. 🤖 建立自動化投放流程
+3. 👥 團隊管理與流程標準化
+4. 📈 持續關注平台政策變化
+
+---
+
+## 📊 專案資源
+
+### 📚 核心文件
+
+- **MetaAdCollection.pdf** - 300+ 頁完整策略手冊
+- **AI搜尋摘要限制與對應策略.pdf** - GEO 優化完整指南
+- **Meta 廣告成效提升策略列表（50項）.pdf** - 白帽策略清單
+
+### 🌐 相關平台
+
+- 🔗 [AdSpace Connect](https://bless25min.github.io/BrandShare/) - 廣告版位共享平台
+
+---
+
+## 👥 適用對象
+
+- **📊 廣告投手** - 提升投放技能與成效表現
+- **🏢 企業主** - 優化廣告 ROI 與行銷預算分配
+- **🎓 行銷人員** - 掌握最新廣告趨勢與策略
+- **👥 代理商** - 為客戶提供更專業的服務
+
+---
+
+## ⚠️ 重要聲明
+
+> 📢 本專案提供的策略與技巧僅供學習研究使用，實際應用時請:
+
+- ✅ 嚴格遵守 Meta 廣告政策與條款
+- ⚖️ 確保廣告內容符合當地法律法規
+- 🎯 根據自身情況選擇適合的策略
+- 🔄 定期關注平台政策更新與變化
+
+---
+
+## 👨‍💻 專案創建者
+
+**🚀 廖天佑 (Bless Liao)**
+
+📧 聯絡信箱: [bless@25min.co](mailto:bless@25min.co)
+
+### 🔗 相關專案
+
+- 🚀 [AIOGEO Knowledge](https://bless25min.github.io/AIOGEO-Knowledge/#/) - AIOGEO 知識庫
+- 📊 [BrandShare](https://bless25min.github.io/BrandShare/) - 品牌互惠合作平台
+
+---
+
+## 📄 授權許可
+
+本專案採用 **MIT 許可證**，允許自由使用、修改和分發。
+
+---
+
+## 🌟 如果這個專案對您有幫助，請給我們一個 Star！
+
+![GitHub stars](https://img.shields.io/github/stars/bless25min/metaad?style=social)
+![GitHub forks](https://img.shields.io/github/forks/bless25min/metaad?style=social)
+
+**Made with ❤️ for the Meta advertising community**
+
+### 🚀 快速開始
+
+- [📖 開始學習](https://bless25min.github.io/MetaAd/)
+- [🛠️ 使用工具](https://bless25min.github.io/MetaAd/tools/)
+- [📊 下載策略](https://bless25min.github.io/MetaAd/MetaAdCollection.pdf)
+- [🤖 GEO指南](https://bless25min.github.io/MetaAd/AI搜尋摘要限制與對應策略.pdf)
+
+---
+
+*🎯 MetaAd 廣告投手養成中心 | 專業 Meta 廣告投放策略大全*
