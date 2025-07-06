@@ -6,7 +6,7 @@
     <title>廣告投手養成中心：2025完整學習地圖 | Meta廣告投放專業指南</title>
     <meta name="description" content="從零到專業廣告投手的完整學習路徑。掌握Meta廣告演算法、素材優化、預算控制等88個實戰技巧，成為頂尖廣告投手。">
     
-    <!-- Schema.org結構化資料 -->
+    <!-- 優化的Schema.org結構化資料 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -14,6 +14,15 @@
         "name": "廣告投手養成中心",
         "description": "專業廣告投手培訓與技能提升平台",
         "url": "https://bless25min.github.io/MetaAd/",
+        "author": {
+            "@type": "Person",
+            "name": "廖天佑 Bless Liao",
+            "email": "bless@25min.co"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "廣告投手養成中心"
+        },
         "potentialAction": {
             "@type": "SearchAction",
             "target": "https://bless25min.github.io/MetaAd/search?q={search_term_string}",
@@ -22,35 +31,54 @@
     }
     </script>
 
+    <!-- 性能優化的CSS -->
     <style>
+        /* CSS自定義屬性優化 */
         :root {
             --primary-color: #1877f2;
+            --primary-dark: #166fe5;
             --secondary-color: #42b883;
             --accent-color: #ff6b6b;
-            --text-color: #333;
+            --text-color: #333333;
+            --text-light: #666666;
             --bg-light: #f8f9fa;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --border-color: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
+        /* 重置樣式優化 */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #fff;
+        /* 基礎樣式改進 */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* 容器優化 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        /* 標頭導航優化 */
         header {
             background: var(--primary-color);
             color: white;
@@ -59,7 +87,13 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(24, 119, 242, 0.95);
         }
 
         nav ul {
@@ -67,272 +101,337 @@
             display: flex;
             gap: 2rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
         }
 
-        nav a:hover {
-            opacity: 0.8;
+        nav a:hover,
+        nav a:focus {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
         }
 
+        /* 主要內容區域 */
         main {
             margin-top: 80px;
-            padding: 2rem 0;
+            min-height: calc(100vh - 80px);
         }
 
+        /* 英雄區塊優化 */
         .hero {
+            background: var(--bg-gradient);
+            color: white;
             text-align: center;
-            padding: 3rem 0;
-            background: var(--bg-light);
-            border-radius: 10px;
-            margin-bottom: 3rem;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.25rem;
             margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
+        /* 統計數據區塊 */
         .hero-stats {
             display: flex;
             justify-content: center;
             gap: 3rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
-        .stat {
+        .stat-item {
             text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            color: #666;
             font-size: 0.9rem;
+            opacity: 0.9;
         }
 
-        .learning-map {
-            margin: 4rem 0;
+        /* 課程網格優化 */
+        .courses-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
         }
 
-        .learning-map h2 {
+        .section-title {
             text-align: center;
             font-size: 2.5rem;
-            color: var(--primary-color);
             margin-bottom: 3rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .course-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin-top: 2rem;
         }
 
         .course-card {
             background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             padding: 2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            color: var(--text-color);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
         }
 
         .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            text-decoration: none;
-            color: var(--text-color);
+            box-shadow: var(--shadow-hover);
         }
 
-        .course-number {
-            background: var(--primary-color);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+        .course-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
+            display: block;
         }
 
         .course-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         .course-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
-        .course-tags {
-            display: flex;
-            flex-wrap: wrap;
+        .course-link {
+            display: inline-flex;
+            align-items: center;
             gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: var(--bg-light);
-            color: var(--text-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-
-        .features {
-            background: var(--bg-light);
-            padding: 3rem 0;
-            border-radius: 10px;
-            margin: 4rem 0;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .course-link:hover {
+            color: var(--primary-dark);
+            gap: 1rem;
         }
 
-        .feature {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .testimonials {
-            margin: 4rem 0;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
+        /* 推薦區塊改進 */
+        .testimonial-section {
+            padding: 4rem 0;
+            background: white;
         }
 
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .testimonial {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+        .testimonial-card {
+            background: var(--bg-light);
             padding: 2rem;
+            border-radius: var(--border-radius);
             position: relative;
+            border-left: 4px solid var(--secondary-color);
         }
 
-        .testimonial::before {
+        .testimonial-card::before {
             content: '"';
             font-size: 4rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             position: absolute;
             top: -10px;
             left: 20px;
+            font-family: serif;
         }
 
         .testimonial-text {
             margin-bottom: 1rem;
             font-style: italic;
+            color: var(--text-light);
         }
 
         .testimonial-author {
-            font-weight: bold;
+            font-weight: 600;
             color: var(--primary-color);
         }
 
+        /* CTA區塊優化 */
         .cta-section {
             background: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
-            border-radius: 10px;
+            padding: 4rem 2rem;
+            border-radius: var(--border-radius);
             margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .cta-section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
         }
 
         .cta-button {
             background: white;
             color: var(--primary-color);
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             margin-top: 1rem;
-            transition: transform 0.3s;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             color: var(--primary-color);
             text-decoration: none;
         }
 
+        /* 頁腳優化 */
         footer {
             background: var(--text-color);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
             margin-top: 4rem;
         }
 
         footer a {
             color: white;
             text-decoration: none;
+            transition: var(--transition);
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: var(--secondary-color);
         }
 
+        /* 載入動畫 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 響應式設計改進 */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -348,185 +447,338 @@
             }
 
             nav ul {
-                flex-wrap: wrap;
                 gap: 1rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .cta-section {
+                margin: 2rem 0;
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .course-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* 無障礙設計 */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* 深色模式支援 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #e0e0e0;
+                --text-light: #b0b0b0;
+                --bg-light: #2a2a2a;
+                --border-color: #404040;
+            }
+
+            body {
+                background-color: #1a1a1a;
+            }
+
+            .course-card {
+                background: #2a2a2a;
+                color: var(--text-color);
+            }
+
+            .testimonial-card {
+                background: #333333;
+            }
+        }
+
+        /* 列印樣式 */
+        @media print {
+            header {
+                position: static;
+                box-shadow: none;
+            }
+
+            main {
+                margin-top: 0;
+            }
+
+            .hero {
+                background: white;
+                color: black;
+            }
+
+            .cta-section {
+                background: white;
+                color: black;
+                border: 2px solid #ccc;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav class="container">
             <ul>
-                <li><a href="index.html"><strong>🎯 廣告投手養成中心</strong></a></li>
-                <li><a href="#learning-map">學習地圖</a></li>
-                <li><a href="#features">特色功能</a></li>
-                <li><a href="#testimonials">學員分享</a></li>
+                <li><a href="#home"><strong>🎯 廣告投手養成中心</strong></a></li>
+                <li><a href="#courses">課程</a></li>
+                <li><a href="#about">關於</a></li>
+                <li><a href="#testimonials">學員見證</a></li>
+                <li><a href="#contact">聯絡</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h1>🚀 廣告投手養成中心</h1>
-            <p>從零基礎到專業廣告投手的完整學習路徑</p>
-            <p>掌握Meta廣告88個實戰技巧，成為業界頂尖廣告投手</p>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">88+</div>
-                    <div class="stat-label">實戰技巧</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">專業模組</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">2025</div>
-                    <div class="stat-label">最新策略</div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>成為頂尖廣告投手</h1>
+                <p>掌握Meta廣告演算法，運用88個實戰技巧，從新手蛻變為廣告投放專家</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">88</span>
+                        <span class="stat-label">實戰策略</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">白帽技術</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">頁面指南</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="learning-map" id="learning-map">
-            <h2>🗺️ 完整學習地圖</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 3rem;">
-                按照順序學習，從基礎到進階，循序漸進掌握Meta廣告投放技能
-            </p>
-
-            <div class="course-grid">
-                <a href="algorithm-mastery.html" class="course-card">
-                    <div class="course-number">1</div>
-                    <h3>🧠 Meta廣告演算法掌控術</h3>
-                    <p>深度解析Meta廣告演算法運作機制，掌握系統思維與優化邏輯，讓演算法為你的廣告效果服務。</p>
-                    <div class="course-tags">
-                        <span class="tag">演算法邏輯</span>
-                        <span class="tag">系統優化</span>
-                        <span class="tag">基礎必修</span>
-                    </div>
-                </a>
-
-                <a href="white-hat-techniques.html" class="course-card">
-                    <div class="course-number">2</div>
-                    <h3>⚪ Meta廣告白帽技巧與關鍵設定</h3>
-                    <p>學習合規且有效的廣告操作技巧，避免帳號風險的同時最大化廣告成效。</p>
-                    <div class="course-tags">
-                        <span class="tag">合規操作</span>
-                        <span class="tag">帳號安全</span>
-                        <span class="tag">風險控制</span>
-                    </div>
-                </a>
-
-                <a href="social-proof-tactics.html" class="course-card">
-                    <div class="course-number">3</div>
-                    <h3>👥 社交證明操控術</h3>
-                    <p>透過互動與素材設計激發用戶的社交證明心理，提升廣告點擊率和轉換率。</p>
-                    <div class="course-tags">
-                        <span class="tag">心理學</span>
-                        <span class="tag">互動優化</span>
-                        <span class="tag">轉換提升</span>
-                    </div>
-                </a>
-
-                <a href="budget-hacks.html" class="course-card">
-                    <div class="course-number">4</div>
-                    <h3>💰 預算黑科技與出價模型優化</h3>
-                    <p>掌握預算分配策略和出價優化技巧，用最少的預算獲得最大的廣告效果。</p>
-                    <div class="course-tags">
-                        <span class="tag">預算控制</span>
-                        <span class="tag">出價策略</span>
-                        <span class="tag">成本優化</span>
-                    </div>
-                </a>
-
-                <a href="remarketing-funnel.html" class="course-card">
-                    <div class="course-number">5</div>
-                    <h3>🔄 封閉式再行銷與UTM追蹤策略</h3>
-                    <p>建立完整的再行銷漏斗和追蹤系統，提高客戶終身價值和廣告投資報酬率。</p>
-                    <div class="course-tags">
-                        <span class="tag">再行銷</span>
-                        <span class="tag">數據追蹤</span>
-                        <span class="tag">ROI優化</span>
-                    </div>
-                </a>
-
-                <a href="creative-optimization.html" class="course-card">
-                    <div class="course-number">6</div>
-                    <h3>🎨 創意素材優化全攻略</h3>
-                    <p>創意設計與素材優化的完整方法論，讓你的廣告在眾多競爭者中脫穎而出。</p>
-                    <div class="course-tags">
-                        <span class="tag">創意設計</span>
-                        <span class="tag">素材優化</span>
-                        <span class="tag">視覺行銷</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="features" id="features">
+        <section id="courses" class="courses-section">
             <div class="container">
-                <h2>🌟 為什麼選擇我們</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <div class="feature-icon">📚</div>
-                        <h3>系統化學習</h3>
-                        <p>完整的課程體系，從基礎到進階，確保學習效果</p>
+                <h2 class="section-title">專業課程模組</h2>
+                
+                <div class="course-grid">
+                    <div class="course-card">
+                        <span class="course-icon">🧠</span>
+                        <h3>演算法掌控術</h3>
+                        <p>深入理解Meta廣告演算法運作原理，掌握受眾品質控管、學習期優化等核心技能，讓演算法為您的廣告效果服務。</p>
+                        <a href="algorithm-mastery.html" class="course-link">
+                            開始學習 →
+                        </a>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">💡</div>
-                        <h3>實戰導向</h3>
-                        <p>所有技巧都來自真實案例，立即可應用到工作中</p>
+
+                    <div class="course-card">
+                        <span class="course-icon">🎨</span>
+                        <h3>創意素材優化</h3>
+                        <p>學習高轉換廣告素材設計原則，運用A/B測試、UGC策略，打造吸睛且有效的廣告創意內容。</p>
+                        <a href="creative-optimization.html" class="course-link">
+                            開始學習 →
+                        </a>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">🔄</div>
-                        <h3>持續更新</h3>
-                        <p>跟上Meta平台最新變化，確保策略永遠有效</p>
+
+                    <div class="course-card">
+                        <span class="course-icon">💰</span>
+                        <h3>預算擴量黑科技</h3>
+                        <p>從小額測試到大規模擴量的科學化預算管理，掌握CBO/ABO配置、出價模型等進階技巧。</p>
+                        <a href="budget-hacks.html" class="course-link">
+                            開始學習 →
+                        </a>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">🎯</div>
-                        <h3>專業指導</h3>
-                        <p>業界專家親自指導，避免常見錯誤</p>
+
+                    <div class="course-card">
+                        <span class="course-icon">🔄</span>
+                        <h3>封閉式再行銷</h3>
+                        <p>建立完整的再行銷漏斗系統，提升客戶終身價值，實現持續穩定的廣告投報率。</p>
+                        <a href="remarketing-funnel.html" class="course-link">
+                            開始學習 →
+                        </a>
+                    </div>
+
+                    <div class="course-card">
+                        <span class="course-icon">✅</span>
+                        <h3>白帽技術大全</h3>
+                        <p>50個經過官方認證的合規投放策略，確保廣告帳戶安全的同時獲得最佳成效。</p>
+                        <a href="white-hat-techniques.html" class="course-link">
+                            開始學習 →
+                        </a>
+                    </div>
+
+                    <div class="course-card">
+                        <span class="course-icon">🛠️</span>
+                        <h3>實用工具箱</h3>
+                        <p>受眾計算器、預算優化器、UTM建構器等專業工具，提升您的投放效率。</p>
+                        <a href="tools/" class="course-link">
+                            使用工具 →
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="testimonials" id="testimonials">
-            <h2>📝 學員真實分享</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        學習這套課程後，我的廣告投資報酬率提升了300%，特別是演算法掌控術的部分，讓我對Meta廣告有了全新的理解。
+        <section id="testimonials" class="testimonial-section">
+            <div class="container">
+                <h2 class="section-title">學員成功見證</h2>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">運用這套系統後，我的廣告CPA降低了40%，ROAS提升了65%。真的是廣告投手必備的完整指南！</p>
+                        <div class="testimonial-author">— 電商廣告投手 李小明</div>
                     </div>
-                    <div class="testimonial-author">- 行銷主管 張小明</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        從完全不懂廣告到現在能獨立操作大型專案，這套課程給了我完整的學習路徑，每個模組都很實用。
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">從新手到現在能獨立操作複雜廣告活動，這個學習系統給了我完整的成長路徑和實戰技巧。</p>
+                        <div class="testimonial-author">— 數位行銷專員 張美玲</div>
                     </div>
-                    <div class="testimonial-author">- 電商創業者 李小華</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        預算優化的技巧讓我們公司節省了40%的廣告成本，同時效果還更好了，真的是物超所值。
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">演算法掌控術讓我真正理解Meta廣告運作原理，現在能預測和優化廣告表現，太實用了！</p>
+                        <div class="testimonial-author">— 廣告代理商負責人 王大華</div>
                     </div>
-                    <div class="testimonial-author">- 數位行銷總監 王小美</div>
                 </div>
             </div>
         </section>
 
         <section class="cta-section">
-            <h2>🎯 開始你的廣告投手之路</h2>
-            <p>選擇任一模組開始學習，或按照學習地圖順序進行</p>
-            <a href="algorithm-mastery.html" class="cta-button">立即開始學習 →</a>
+            <div class="container">
+                <h2>開始您的廣告投手之路</h2>
+                <p>立即下載完整策略文件，掌握88個實戰技巧</p>
+                <a href="MetaAdCollection.pdf" class="cta-button" target="_blank">免費下載策略大全</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 廣告投手養成中心. All rights reserved. | 專案創建人: 廖天佑 Bless Liao</p>
-            <p>持續更新最新廣告投放策略與技巧 | <a href="https://bless25min.github.io/BrandShare/" target="_blank">探索廣告共享平台</a></p>
+            <p>&copy; 2025 廣告投手養成中心 | 專案創建：<a href="mailto:bless@25min.co">廖天佑 Bless Liao</a></p>
+            <p>
+                <a href="https://bless25min.github.io/BrandShare/" target="_blank">AdSpace Connect</a> | 
+                <a href="https://25min.co" target="_blank">25min.co</a>
+            </p>
         </div>
     </footer>
+
+    <!-- 優化的JavaScript -->
+    <script>
+        // 頁面載入性能優化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 頭部滾動效果
+            const header = document.getElementById('header');
+            let lastScrollY = window.scrollY;
+
+            function updateHeader() {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollY = currentScrollY;
+            }
+
+            // 使用 requestAnimationFrame 優化滾動性能
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        updateHeader();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // 平滑滾動到錨點
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // 延遲載入動畫
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // 觀察需要動畫的元素
+            document.querySelectorAll('.course-card, .testimonial-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                observer.observe(el);
+            });
+
+            // 鍵盤無障礙支援
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
+
+            // 錯誤處理
+            window.addEventListener('error', function(e) {
+                console.warn('網頁載入警告：', e.error);
+            });
+
+            // 性能監控
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        const perfData = performance.getEntriesByType('navigation')[0];
+                        if (perfData) {
+                            console.log('頁面載入時間：', Math.round(perfData.loadEventEnd - perfData.fetchStart), 'ms');
+                        }
+                    }, 0);
+                });
+            }
+        });
+
+        // Service Worker 註冊（PWA 支援）
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW 註冊成功：', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('SW 註冊失敗：', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
