@@ -6,6 +6,16 @@
     <title>廣告投手養成中心：2025完整學習地圖 | Meta廣告投放專業指南</title>
     <meta name="description" content="從零到專業廣告投手的完整學習路徑。掌握Meta廣告演算法、素材優化、預算控制等88個實戰技巧，成為頂尖廣告投手。">
     
+    <!-- 性能優化 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://bless25min.github.io">
+    
+    <!-- 資源提示 -->
+    <link rel="prefetch" href="algorithm-mastery.html">
+    <link rel="prefetch" href="creative-optimization.html">
+    <link rel="prefetch" href="budget-hacks.html">
+    
     <!-- 優化的Schema.org結構化資料 -->
     <script type="application/ld+json">
     {
@@ -126,25 +136,17 @@
             min-height: calc(100vh - 80px);
         }
 
-        /* 英雄區塊優化 */
+        /* 關鍵CSS內聯 - 首屏渲染優化 */
         .hero {
-            background: var(--bg-gradient);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero-content {
@@ -152,6 +154,7 @@
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .hero h1 {
@@ -159,24 +162,21 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
             opacity: 0.95;
-            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
-        /* 統計數據區塊 */
+        /* 統計數據區塊 - 簡化版 */
         .hero-stats {
             display: flex;
             justify-content: center;
             gap: 3rem;
             margin-top: 3rem;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .stat-item {
@@ -185,12 +185,11 @@
             padding: 1.5rem;
             border-radius: var(--border-radius);
             backdrop-filter: blur(10px);
-            transition: var(--transition);
+            transition: transform 0.2s ease;
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
         }
 
         .stat-number {
@@ -339,7 +338,7 @@
             color: var(--primary-color);
         }
 
-        /* CTA區塊優化 */
+        /* CTA區塊優化 - 移除複雜動畫 */
         .cta-section {
             background: var(--primary-color);
             color: white;
@@ -348,30 +347,11 @@
             border-radius: var(--border-radius);
             margin: 4rem 0;
             position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
         }
 
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
         }
 
         .cta-button {
@@ -386,15 +366,13 @@
             text-decoration: none;
             display: inline-block;
             margin-top: 1rem;
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             color: var(--primary-color);
             text-decoration: none;
         }
@@ -419,16 +397,27 @@
             color: var(--secondary-color);
         }
 
-        /* 載入動畫 */
+        /* 載入動畫優化 */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translate3d(0, 30px, 0);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translate3d(0, 0, 0);
             }
+        }
+
+        /* 性能優化 */
+        .course-card,
+        .testimonial-card {
+            will-change: transform;
+        }
+
+        .course-card:hover,
+        .testimonial-card:hover {
+            will-change: auto;
         }
 
         /* 響應式設計改進 */
@@ -670,13 +659,26 @@
         </div>
     </footer>
 
-    <!-- 優化的JavaScript -->
+    <!-- 性能優化的JavaScript -->
     <script>
+        // 使用 passive 事件監聽器提升性能
+        const passiveSupported = (() => {
+            let passive = false;
+            try {
+                const options = Object.defineProperty({}, "passive", {
+                    get: () => passive = true
+                });
+                window.addEventListener("test", null, options);
+            } catch (err) {}
+            return passive;
+        })();
+
         // 頁面載入性能優化
         document.addEventListener('DOMContentLoaded', function() {
-            // 頭部滾動效果
+            // 頭部滾動效果（優化版）
             const header = document.getElementById('header');
             let lastScrollY = window.scrollY;
+            let ticking = false;
 
             function updateHeader() {
                 const currentScrollY = window.scrollY;
@@ -688,97 +690,63 @@
                 }
                 
                 lastScrollY = currentScrollY;
+                ticking = false;
             }
 
-            // 使用 requestAnimationFrame 優化滾動性能
-            let ticking = false;
+            // 高性能滾動處理
             window.addEventListener('scroll', function() {
                 if (!ticking) {
-                    requestAnimationFrame(function() {
-                        updateHeader();
-                        ticking = false;
-                    });
+                    requestAnimationFrame(updateHeader);
                     ticking = true;
+                }
+            }, passiveSupported ? { passive: true } : false);
+
+            // 平滑滾動到錨點（簡化版）
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('a[href^="#"]')) {
+                    e.preventDefault();
+                    const target = document.querySelector(e.target.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
 
-            // 平滑滾動到錨點
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // 延遲載入動畫
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
+            // 快速動畫觀察器
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                        entry.target.style.animation = 'fadeInUp 0.4s ease-out forwards';
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1 });
 
-            // 觀察需要動畫的元素
-            document.querySelectorAll('.course-card, .testimonial-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                observer.observe(el);
+            // 批量處理動畫元素
+            requestIdleCallback(() => {
+                document.querySelectorAll('.course-card, .testimonial-card').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translate3d(0, 30px, 0)';
+                    observer.observe(el);
+                });
             });
 
-            // 鍵盤無障礙支援
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab') {
-                    document.body.classList.add('keyboard-navigation');
-                }
-            });
-
-            document.addEventListener('mousedown', function() {
-                document.body.classList.remove('keyboard-navigation');
-            });
-
-            // 錯誤處理
-            window.addEventListener('error', function(e) {
-                console.warn('網頁載入警告：', e.error);
-            });
-
-            // 性能監控
-            if ('performance' in window) {
-                window.addEventListener('load', function() {
-                    setTimeout(function() {
-                        const perfData = performance.getEntriesByType('navigation')[0];
-                        if (perfData) {
-                            console.log('頁面載入時間：', Math.round(perfData.loadEventEnd - perfData.fetchStart), 'ms');
+            // 性能監控（簡化版）
+            if ('performance' in window && performance.getEntriesByType) {
+                requestIdleCallback(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData && perfData.loadEventEnd) {
+                        const loadTime = Math.round(perfData.loadEventEnd - perfData.fetchStart);
+                        console.log('頁面載入時間：', loadTime, 'ms');
+                        
+                        // 如果載入時間超過 1.5 秒，給出優化建議
+                        if (loadTime > 1500) {
+                            console.warn('頁面載入較慢，建議：1) 壓縮圖片 2) 使用 CDN 3) 減少第三方腳本');
                         }
-                    }, 0);
+                    }
                 });
             }
         });
-
-        // Service Worker 註冊（PWA 支援）
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('SW 註冊成功：', registration.scope);
-                    })
-                    .catch(function(error) {
-                        console.log('SW 註冊失敗：', error);
-                    });
-            });
-        }
     </script>
 </body>
 </html>
