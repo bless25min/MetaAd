@@ -3,55 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>廣告投手必學：3分鐘學會CAPI串接 | 廣告投手養成中心</title>
-    <meta name="description" content="廣告投手快速掌握Meta轉換API(CAPI)設定，解決iOS追蹤限制，提升轉換追蹤準確度50%以上。">
+    <title>Meta轉換API (CAPI) 2.0完整設定指南 | 廣告投手必學技術</title>
+    <meta name="description" content="最新Meta轉換API (CAPI) 2.0設定指南，涵蓋伺服器端追蹤、事件匹配品質優化、iOS隱私政策應對，基於Meta官方2024最新技術文檔。">
+    <meta name="keywords" content="Meta CAPI,轉換API,Facebook Pixel,伺服器端追蹤,事件匹配品質,iOS追蹤,隱私政策">
     
+    <!-- Schema.org for HowTo -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "@id": "https://yoursite.github.io/capi-setup-guide.html",
-        "name": "廣告投手如何設定Meta轉換API",
-        "description": "快速設定CAPI的步驟指南",
+        "name": "Meta轉換API (CAPI) 2.0設定指南",
+        "description": "完整的Meta轉換API設定流程，提升廣告追蹤準確度50%以上",
+        "totalTime": "PT2H",
         "estimatedCost": {
             "@type": "MonetaryAmount",
             "currency": "TWD",
             "value": "0"
         },
-        "totalTime": "PT30M",
+        "supply": [
+            {
+                "@type": "HowToSupply",
+                "name": "Meta Business Manager帳戶"
+            },
+            {
+                "@type": "HowToSupply", 
+                "name": "網站後端存取權限"
+            }
+        ],
         "step": [
             {
                 "@type": "HowToStep",
-                "@id": "step1",
-                "name": "確認技術需求",
-                "text": "確認網站後端支援API串接",
-                "url": "https://bless25min.github.io/capi-setup-guide.html#step1"
+                "name": "確認技術需求與準備工作",
+                "text": "檢查伺服器環境、確認API存取權限、準備事件參數"
             },
             {
                 "@type": "HowToStep",
-                "@id": "step2",
-                "name": "產生存取權杖",
-                "text": "在Events Manager產生系統用戶存取權杖",
-                "url": "https://bless25min.github.io/capi-setup-guide.html#step2"
+                "name": "設定轉換API連接",
+                "text": "在Events Manager建立轉換API連接，產生存取權杖"
             },
             {
                 "@type": "HowToStep",
-                "@id": "step3",
-                "name": "設定事件參數",
-                "text": "配置必要的事件參數",
-                "url": "https://bless25min.github.io/capi-setup-guide.html#step3"
+                "name": "實施伺服器端追蹤",
+                "text": "整合伺服器端事件發送，設定事件參數"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "優化事件匹配品質",
+                "text": "提升EMQ分數，確保準確的事件歸因"
             }
-        ]
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "廖天佑 (Bless Liao)"
+        }
     }
     </script>
-
+    
     <style>
         :root {
             --primary-color: #1877f2;
             --secondary-color: #42b883;
+            --accent-color: #e31c5f;
             --text-color: #333;
+            --text-light: #666;
             --bg-light: #f8f9fa;
             --border-color: #e9ecef;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
         }
 
         * {
@@ -61,209 +80,370 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
             color: var(--text-color);
-            background-color: #fff;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        /* Header */
         header {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .quick-nav {
-            margin-top: 80px;
-            background: var(--bg-light);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .quick-nav ul {
+        nav ul {
             list-style: none;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 2rem;
+            align-items: center;
         }
 
-        .quick-nav a {
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
             color: var(--primary-color);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--primary-color);
-            border-radius: 20px;
-            transition: all 0.3s;
         }
 
-        .quick-nav a:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
+        /* Main Content */
         main {
             padding: 2rem 0;
         }
 
         h1 {
-            font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
 
+        /* Summary Section */
         .summary {
-            background: #e3f2fd;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--primary-color);
-            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .why-section {
-            background: #fff3e0;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .why-section h2 {
-            color: #f57c00;
+        .summary h2 {
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
-        .steps-container {
-            margin: 2rem 0;
+        .summary p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
-        .step {
+        /* Authority Sources */
+        .authority-sources {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .authority-sources h3 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+
+        .sources-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .source-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .source-icon {
+            font-size: 1.2rem;
+            margin-right: 0.8rem;
+            color: #2196f3;
+        }
+
+        .source-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Update Banner */
+        .update-banner {
+            background: linear-gradient(90deg, var(--warning-color), #fd7e14);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .update-banner strong {
+            font-size: 1.1rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin: 3rem 0;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 1.8rem;
+        }
+
+        .content-section h3 {
+            color: var(--text-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .content-section h4 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Technical Cards */
+        .tech-card {
             background: white;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 4rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .step-number {
-            position: absolute;
-            left: 1rem;
-            top: 1.5rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--secondary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+        .tech-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
             font-size: 1.2rem;
         }
 
-        .step h3 {
+        /* Step Cards */
+        .step-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .step-title {
             color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
 
+        /* Code Blocks */
         .code-block {
-            background: #263238;
-            color: #aed581;
-            padding: 1rem;
+            background: #f4f4f4;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            overflow-x: auto;
+            padding: 1rem;
             font-family: 'Courier New', monospace;
             font-size: 0.9rem;
+            overflow-x: auto;
             margin: 1rem 0;
         }
 
-        .common-mistakes {
-            background: #ffebee;
-            border: 1px solid #ffcdd2;
-            border-radius: 8px;
-            padding: 1.5rem;
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
         }
 
-        .common-mistakes h2 {
-            color: #c62828;
+        .benefit-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--success-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
             margin-bottom: 1rem;
+            display: block;
         }
 
-        .common-mistakes ul {
-            margin-left: 1.5rem;
-        }
-
-        .common-mistakes li {
+        .benefit-item h4 {
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
-        .faq-mini {
-            margin: 2rem 0;
+        /* Warning Boxes */
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
         }
 
-        .faq-mini details {
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-left: 4px solid var(--danger-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        details {
+            background: white;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .faq-mini summary {
+        summary {
             cursor: pointer;
             font-weight: 600;
             color: var(--primary-color);
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
         }
 
-        .next-steps {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            margin: 2rem 0;
+        summary:hover {
+            opacity: 0.8;
         }
 
-        .next-steps h2 {
-            margin-bottom: 1rem;
-        }
-
-        .next-steps .links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        details p {
             margin-top: 1rem;
+            line-height: 1.6;
         }
 
-        .next-steps a {
+        /* Navigation Cards */
+        .nav-section {
+            margin: 3rem 0;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .nav-card {
             background: white;
-            color: var(--primary-color);
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
             text-decoration: none;
-            transition: transform 0.3s;
+            color: var(--text-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .next-steps a:hover {
-            transform: scale(1.05);
+        .nav-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: var(--text-color);
         }
 
+        .nav-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
         footer {
             background: var(--text-color);
             color: white;
@@ -271,151 +451,628 @@
             padding: 2rem 0;
             margin-top: 4rem;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .benefits-grid,
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="container">
-            <a href="index.html" style="color: white; text-decoration: none;">
-                <strong>🎯 廣告投手養成中心</strong>
-            </a>
+            <ul>
+                <li><a href="index.html"><strong>🎯 廣告投手養成中心</strong></a></li>
+                <li><a href="algorithm-mastery.html">演算法</a></li>
+                <li><a href="budget-hacks.html">預算優化</a></li>
+                <li><a href="remarketing-funnel.html">再行銷</a></li>
+                <li><a href="white-hat-techniques.html">白帽技巧</a></li>
+                <li><a href="social-proof-tactics.html">社交證明</a></li>
+            </ul>
         </nav>
     </header>
 
-    <nav class="quick-nav">
-        <ul>
-            <li><a href="index.html">回首頁</a></li>
-            <li><a href="algorithm-mastery.html">演算法掌控</a></li>
-            <li><a href="#why">為什麼需要</a></li>
-            <li><a href="#steps">設定步驟</a></li>
-        </ul>
-    </nav>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">首頁</a> / <strong>Meta轉換API (CAPI) 2.0完整設定指南</strong>
+        </div>
+    </div>
 
     <main class="container">
-        <article>
-            <h1>廣告投手必學：3分鐘學會CAPI串接</h1>
+        <h1>Meta轉換API (CAPI) 2.0完整設定指南</h1>
+
+        <!-- Summary Section -->
+        <section class="summary">
+            <h2>🚀 廣告投手必學：3分鐘掌握CAPI核心概念</h2>
+            <p><strong>Meta轉換API (Conversions API)</strong>是Meta推出的伺服器端追蹤解決方案，專為應對iOS 14.5+隱私政策限制而設計。透過直接從您的伺服器向Meta發送轉換資料，CAPI能夠<strong>繞過瀏覽器限制</strong>，提升轉換追蹤準確度高達50%以上，同時改善廣告投放效果和ROI。</p>
             
-            <section class="summary">
-                <p><strong>【核心價值】</strong>廣告投手在iOS 14.5更新後面臨轉換追蹤不完整的挑戰，透過設定轉換API（CAPI）可以提升追蹤準確度50%以上，確保廣告優化不受影響。本指南將用最簡單的方式，教你完成CAPI基礎設定。</p>
-            </section>
+            <p>本指南基於<strong>Meta官方2024年最新技術文檔</strong>，涵蓋CAPI 2.0設定流程、事件匹配品質優化、與Pixel的協同運作，以及實務中的風險控管策略。無論您是技術新手或資深開發者，都能從中獲得實用的設定指導。</p>
+        </section>
 
-            <section id="why" class="why-section">
-                <h2>為什麼廣告投手需要CAPI？</h2>
-                <p>想像一下：你的廣告帶來100個購買，但Facebook只看到60個，演算法就會誤判你的廣告效果，導致：</p>
-                <ul>
-                    <li>🎯 優化方向錯誤（系統不知道誰真正購買）</li>
-                    <li>💰 成本虛高（CPA看起來比實際高）</li>
-                    <li>📉 觸及下降（系統認為廣告效果差）</li>
-                </ul>
-                <p><strong>CAPI就是解決方案！</strong>它從你的伺服器直接告訴Facebook：「這些人真的買了！」</p>
-            </section>
-
-            <section id="steps" class="steps-container">
-                <h2>廣告投手的CAPI設定步驟</h2>
-                
-                <div id="step1" class="step">
-                    <div class="step-number">1</div>
-                    <h3>確認技術需求</h3>
-                    <p>在開始前，廣告投手需要確認：</p>
-                    <ul>
-                        <li>✅ 有網站後端存取權限（或找工程師幫忙）</li>
-                        <li>✅ 已安裝Facebook Pixel</li>
-                        <li>✅ 使用PHP、Node.js、Python等後端語言</li>
-                    </ul>
+        <!-- Authority Sources -->
+        <div class="authority-sources">
+            <h3>📚 本指南基於以下權威資料來源</h3>
+            <div class="sources-list">
+                <div class="source-item">
+                    <span class="source-icon">🏢</span>
+                    <div class="source-text">Meta for Developers - 轉換API官方技術文檔</div>
                 </div>
-
-                <div id="step2" class="step">
-                    <div class="step-number">2</div>
-                    <h3>產生存取權杖</h3>
-                    <p>1. 進入 Events Manager</p>
-                    <p>2. 選擇你的Pixel</p>
-                    <p>3. 點擊「設定」→「轉換API」</p>
-                    <p>4. 產生系統用戶存取權杖</p>
-                    <div class="code-block">
-                        存取權杖範例：
-                        EAAGm6YKu8FsBANqfPZCZBHi7V...
-                    </div>
+                <div class="source-item">
+                    <span class="source-icon">📖</span>
+                    <div class="source-text">Meta Business Help Center - CAPI最佳實務指南</div>
                 </div>
-
-                <div id="step3" class="step">
-                    <div class="step-number">3</div>
-                    <h3>設定事件參數</h3>
-                    <p>最基本的購買事件需要這些參數：</p>
-                    <div class="code-block">
-{
-  "event_name": "Purchase",
-  "event_time": 1234567890,
-  "user_data": {
-    "em": "hash過的email",
-    "ph": "hash過的電話"
-  },
-  "custom_data": {
-    "currency": "TWD",
-    "value": 1000
-  }
-}
-                    </div>
+                <div class="source-item">
+                    <span class="source-icon">🔧</span>
+                    <div class="source-text">Stape、Triple Whale等技術夥伴文檔</div>
                 </div>
-
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>測試與驗證</h3>
-                    <p>使用測試事件工具確認數據正確傳送：</p>
-                    <ol>
-                        <li>在Events Manager開啟「測試事件」</li>
-                        <li>記下測試代碼</li>
-                        <li>在API請求中加入test_event_code</li>
-                        <li>發送測試事件，確認接收成功</li>
-                    </ol>
-                </div>
-            </section>
-
-            <section class="common-mistakes">
-                <h2>⚠️ 廣告投手常見錯誤</h2>
-                <ul>
-                    <li><strong>未做資料雜湊：</strong>個人資料必須先SHA256加密</li>
-                    <li><strong>時間格式錯誤：</strong>要用Unix時間戳記</li>
-                    <li><strong>重複事件：</strong>同一事件不要從Pixel和API重複發送</li>
-                    <li><strong>缺少事件ID：</strong>導致重複計算</li>
-                </ul>
-            </section>
-
-            <section class="faq-mini">
-                <h2>廣告投手快問快答</h2>
-                
-                <details>
-                    <summary>Q: 沒有工程師可以自己設定嗎？</summary>
-                    <p>可以使用第三方工具如Zapier、GTM伺服器版等，但效果可能不如直接串接完整。建議還是找技術人員協助。</p>
-                </details>
-
-                <details>
-                    <summary>Q: CAPI設定後多久看到效果？</summary>
-                    <p>通常24-48小時內就能看到事件配對率提升。完整效果需要7-14天的數據累積。</p>
-                </details>
-
-                <details>
-                    <summary>Q: 成本會增加嗎？</summary>
-                    <p>CAPI本身免費，但可能需要伺服器資源。長期來看，準確的數據帶來的優化效益遠大於成本。</p>
-                </details>
-            </section>
-
-            <div class="next-steps">
-                <h2>恭喜！你已經掌握CAPI基礎</h2>
-                <p>接下來，廣告投手可以：</p>
-                <div class="links">
-                    <a href="pixel-advanced.html">進階Pixel設定</a>
-                    <a href="algorithm-mastery.html">回到演算法掌控術</a>
-                    <a href="tracking-solutions.html">更多追蹤解決方案</a>
+                <div class="source-item">
+                    <span class="source-icon">📊</span>
+                    <div class="source-text">2024年CAPI實施案例與效果數據</div>
                 </div>
             </div>
-        </article>
+        </div>
+
+        <!-- Update Banner -->
+        <div class="update-banner">
+            <strong>🔥 2024年重要更新：</strong> Meta CAPI現已支援無身份信封的事件追蹤，Data Layer Detection功能上線，支援Google Tag Manager和Adobe Analytics整合
+        </div>
+
+        <!-- What is CAPI -->
+        <section class="content-section">
+            <h2>一、什麼是Meta轉換API (CAPI)？</h2>
+            
+            <div class="tech-card">
+                <h3>核心定義</h3>
+                <p><strong>Meta轉換API (CAPI)</strong>是一套伺服器端追蹤技術，允許廣告主直接從自己的伺服器向Meta發送轉換事件資料，而不依賴瀏覽器端的JavaScript像素碼。</p>
+            </div>
+
+            <h3>🆚 CAPI vs Meta Pixel 比較分析</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>Meta Pixel (瀏覽器端)</th>
+                        <th>轉換API (伺服器端)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>資料來源</strong></td>
+                        <td>用戶瀏覽器</td>
+                        <td>廣告主伺服器</td>
+                    </tr>
+                    <tr>
+                        <td><strong>隱私限制影響</strong></td>
+                        <td>受iOS 14.5+、Cookie限制影響嚴重</td>
+                        <td>不受瀏覽器隱私限制影響</td>
+                    </tr>
+                    <tr>
+                        <td><strong>資料完整性</strong></td>
+                        <td>可能因廣告攔截器而遺失</td>
+                        <td>直接伺服器傳輸，資料完整</td>
+                    </tr>
+                    <tr>
+                        <td><strong>設定複雜度</strong></td>
+                        <td>簡單（一段JavaScript代碼）</td>
+                        <td>複雜（需要伺服器端開發）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>即時性</strong></td>
+                        <td>即時追蹤用戶行為</td>
+                        <td>依賴伺服器事件觸發</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="success-box">
+                <strong>Meta官方建議：</strong>同時使用Pixel和CAPI以獲得最佳追蹤效果。根據2024年數據，雙重設定的廣告主平均CPA下降22.6%，ROI提升35%以上。
+            </div>
+        </section>
+
+        <!-- Why CAPI is Important -->
+        <section class="content-section">
+            <h2>二、為什麼CAPI在2024年變得如此重要？</h2>
+
+            <h3>📱 iOS隱私政策的衝擊</h3>
+            <p>自2021年iOS 14.5更新以來，Apple的App Tracking Transparency (ATT)政策要求用戶明確同意應用程式追蹤。<strong>據統計，只有約25%的iOS用戶選擇允許追蹤</strong>，這導致基於Pixel的轉換資料大幅流失。</p>
+
+            <h3>🍪 第三方Cookie的逐步淘汰</h3>
+            <p>Google已宣佈將在2024年逐步淘汰Chrome的第三方Cookie支援，Firefox和Safari更早已實施相關限制。這使得傳統的瀏覽器端追蹤面臨更大挑戰。</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <span class="benefit-icon">📈</span>
+                    <h4>提升追蹤準確度</h4>
+                    <p>CAPI可補足Pixel遺失的50-70%轉換資料，提供更完整的用戶旅程追蹤。</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎯</span>
+                    <h4>改善廣告優化</h4>
+                    <p>更準確的轉換資料幫助Meta演算法更好地識別高價值受眾，提升廣告投放效率。</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">💰</span>
+                    <h4>降低獲客成本</h4>
+                    <p>實際案例顯示，正確實施CAPI的廣告主平均CPA下降20-50%。</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔒</span>
+                    <h4>增強隱私合規</h4>
+                    <p>伺服器端處理用戶資料，更好地控制隱私保護和法規遵循。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup Process -->
+        <section class="content-section">
+            <h2>三、CAPI 2.0完整設定流程</h2>
+
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <div>
+                    <div class="step-title">準備工作與技術需求確認</div>
+                    <p><strong>系統需求：</strong></p>
+                    <ul>
+                        <li>Meta Business Manager帳戶與廣告帳戶</li>
+                        <li>已設定的Meta Pixel（建議同步運行）</li>
+                        <li>網站後端伺服器存取權限</li>
+                        <li>HTTPS網站（必要條件）</li>
+                    </ul>
+                    
+                    <p><strong>技能需求：</strong></p>
+                    <ul>
+                        <li>基礎伺服器端開發知識（或有開發人員協助）</li>
+                        <li>API整合經驗（可選，有合作夥伴解決方案）</li>
+                        <li>Meta Events Manager操作能力</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <div>
+                    <div class="step-title">在Events Manager建立轉換API連接</div>
+                    <p><strong>操作步驟：</strong></p>
+                    <ol>
+                        <li>登入Meta Business Manager，進入Events Manager</li>
+                        <li>選擇您的Pixel，點選「設定」→「轉換API」</li>
+                        <li>選擇整合方式：</li>
+                    </ol>
+                    
+                    <div class="tech-card">
+                        <h3>整合方式選擇</h3>
+                        <p><strong>方式一：合作夥伴整合（推薦初學者）</strong></p>
+                        <ul>
+                            <li><strong>Shopify：</strong>內建CAPI整合，一鍵啟用</li>
+                            <li><strong>Stape：</strong>提供CAPI Gateway，無需程式技能</li>
+                            <li><strong>GTM Server Container：</strong>透過Google Tag Manager</li>
+                        </ul>
+                        
+                        <p><strong>方式二：直接API整合（適合技術團隊）</strong></p>
+                        <ul>
+                            <li>完全控制資料傳輸過程</li>
+                            <li>可客製化事件參數</li>
+                            <li>需要開發資源投入</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <div>
+                    <div class="step-title">產生系統用戶存取權杖</div>
+                    <p><strong>重要步驟：</strong></p>
+                    <ol>
+                        <li>在Events Manager中點選「產生存取權杖」</li>
+                        <li>選擇適當的權限範圍（建議選擇「ads_management」）</li>
+                        <li>複製並安全儲存存取權杖（僅顯示一次）</li>
+                        <li>設定權杖到期時間（建議60天，可延長）</li>
+                    </ol>
+                    
+                    <div class="warning-box">
+                        <strong>安全提醒：</strong>存取權杖具有敏感權限，請妥善保管，避免在前端代碼中暴露。建議使用環境變數或安全的配置管理系統儲存。
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">4</span>
+                <div>
+                    <div class="step-title">設定伺服器端事件參數</div>
+                    <p><strong>必要事件參數：</strong></p>
+                    
+                    <div class="code-block">
+{
+  "data": [
+    {
+      "event_name": "Purchase",
+      "event_time": 1640995200,
+      "event_source_url": "https://yourwebsite.com/thank-you",
+      "event_id": "unique_event_id_12345",
+      "user_data": {
+        "email": "customer@example.com",
+        "phone": "+886912345678",
+        "first_name": "張",
+        "last_name": "小明",
+        "city": "台北",
+        "country": "TW"
+      },
+      "custom_data": {
+        "currency": "TWD",
+        "value": 1500,
+        "content_ids": ["product_123"],
+        "content_type": "product"
+      }
+    }
+  ]
+}
+                    </div>
+                    
+                    <p><strong>關鍵參數說明：</strong></p>
+                    <ul>
+                        <li><strong>event_id：</strong>唯一事件識別碼，用於去重複（與Pixel共用）</li>
+                        <li><strong>user_data：</strong>用戶識別資料，影響事件匹配品質</li>
+                        <li><strong>custom_data：</strong>轉換價值與產品資訊</li>
+                        <li><strong>event_source_url：</strong>事件發生的頁面URL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">5</span>
+                <div>
+                    <div class="step-title">測試與驗證設定</div>
+                    <p><strong>驗證流程：</strong></p>
+                    <ol>
+                        <li>使用Meta的Test Events工具發送測試事件</li>
+                        <li>在Events Manager中檢查「測試事件」標籤</li>
+                        <li>確認事件出現在「即時事件」中</li>
+                        <li>檢查事件匹配品質(EMQ)分數</li>
+                    </ol>
+                    
+                    <div class="success-box">
+                        <strong>測試成功標準：</strong>
+                        <ul>
+                            <li>事件在5分鐘內出現在Events Manager</li>
+                            <li>事件匹配品質分數達到「良好」以上</li>
+                            <li>沒有重複事件警告</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Match Quality -->
+        <section class="content-section">
+            <h2>四、事件匹配品質(EMQ)優化策略</h2>
+            
+            <div class="tech-card">
+                <h3>什麼是事件匹配品質？</h3>
+                <p>事件匹配品質(Event Match Quality, EMQ)是Meta用來衡量廣告主發送的轉換事件資料品質的指標。<strong>高EMQ分數有助於改善廣告投放效果和降低成本</strong>。</p>
+            </div>
+
+            <h3>📊 EMQ評分標準</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>評分等級</th>
+                        <th>分數範圍</th>
+                        <th>影響與建議</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>優秀</strong></td>
+                        <td>8.0 - 10.0</td>
+                        <td>最佳廣告投放效果，繼續維持</td>
+                    </tr>
+                    <tr>
+                        <td><strong>良好</strong></td>
+                        <td>6.0 - 7.9</td>
+                        <td>良好效果，可進一步優化用戶資料</td>
+                    </tr>
+                    <tr>
+                        <td><strong>一般</strong></td>
+                        <td>4.0 - 5.9</td>
+                        <td>效果受限，需要改善資料品質</td>
+                    </tr>
+                    <tr>
+                        <td><strong>待改善</strong></td>
+                        <td>0.0 - 3.9</td>
+                        <td>廣告效果差，急需優化</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🚀 EMQ優化技巧</h3>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <span class="benefit-icon">📧</span>
+                    <h4>提供更多用戶識別資料</h4>
+                    <p>包含email、電話、姓名、地址等，增加匹配成功率。Email和電話是最重要的匹配參數。</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔒</span>
+                    <h4>正確的資料雜湊處理</h4>
+                    <p>使用SHA-256演算法對敏感資料進行雜湊，確保隱私保護和匹配準確性。</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">⚡</span>
+                    <h4>即時事件發送</h4>
+                    <p>在轉換發生後立即發送事件，避免延遲影響匹配品質。建議在5分鐘內發送。</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎯</span>
+                    <h4>事件去重複設定</h4>
+                    <p>使用相同的event_id確保Pixel和CAPI事件不會重複計算。</p>
+                </div>
+            </div>
+
+            <div class="code-block">
+// 用戶資料雜湊範例 (JavaScript)
+const crypto = require('crypto');
+
+function hashUserData(userData) {
+  return {
+    email: userData.email ? crypto.createHash('sha256').update(userData.email.toLowerCase().trim()).digest('hex') : null,
+    phone: userData.phone ? crypto.createHash('sha256').update(userData.phone.replace(/[^0-9]/g, '')).digest('hex') : null,
+    first_name: userData.firstName ? crypto.createHash('sha256').update(userData.firstName.toLowerCase().trim()).digest('hex') : null,
+    last_name: userData.lastName ? crypto.createHash('sha256').update(userData.lastName.toLowerCase().trim()).digest('hex') : null
+  };
+}
+            </div>
+        </section>
+
+        <!-- Implementation Options -->
+        <section class="content-section">
+            <h2>五、實施方案選擇指南</h2>
+
+            <h3>🏪 電商平台整合方案</h3>
+            
+            <div class="tech-card">
+                <h3>Shopify CAPI整合（推薦指數：⭐⭐⭐⭐⭐）</h3>
+                <p><strong>優點：</strong></p>
+                <ul>
+                    <li>原生整合，一鍵啟用</li>
+                    <li>自動處理所有標準電商事件</li>
+                    <li>無需額外開發工作</li>
+                    <li>Meta官方合作夥伴，穩定可靠</li>
+                </ul>
+                
+                <p><strong>設定步驟：</strong></p>
+                <ol>
+                    <li>在Shopify管理後台搜尋「Facebook」應用</li>
+                    <li>安裝Facebook & Instagram by Meta應用</li>
+                    <li>連接您的Facebook Business Manager</li>
+                    <li>在設定中啟用「轉換API」選項</li>
+                    <li>完成權限授權即可開始運作</li>
+                </ol>
+            </div>
+
+            <div class="tech-card">
+                <h3>Stape CAPI Gateway（推薦指數：⭐⭐⭐⭐）</h3>
+                <p><strong>適用情況：</strong>非Shopify平台、需要快速部署、不想自己開發</p>
+                
+                <p><strong>優點：</strong></p>
+                <ul>
+                    <li>支援多種平台（WooCommerce、Magento等）</li>
+                    <li>提供第一方域名功能，提升追蹤準確度</li>
+                    <li>無需程式技能，圖形化設定介面</li>
+                    <li>支援多個Pixel同時管理</li>
+                </ul>
+                
+                <p><strong>設定概要：</strong></p>
+                <ol>
+                    <li>註冊Stape帳戶並選擇適合的方案</li>
+                    <li>建立CAPI Gateway並連接您的Pixel</li>
+                    <li>配置事件觸發條件</li>
+                    <li>設定第一方域名（可選但建議）</li>
+                </ol>
+            </div>
+
+            <div class="tech-card">
+                <h3>Google Tag Manager Server Container（推薦指數：⭐⭐⭐）</h3>
+                <p><strong>適用情況：</strong>已使用GTM、需要高度客製化、有技術團隊支援</p>
+                
+                <p><strong>優點：</strong></p>
+                <ul>
+                    <li>完全免費（除了伺服器成本）</li>
+                    <li>高度客製化彈性</li>
+                    <li>可同時處理多個廣告平台</li>
+                    <li>完全控制資料處理邏輯</li>
+                </ul>
+                
+                <p><strong>缺點：</strong></p>
+                <ul>
+                    <li>設定複雜，需要技術知識</li>
+                    <li>需要管理伺服器基礎設施</li>
+                    <li>維護成本較高</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Common Issues -->
+        <section class="content-section">
+            <h2>六、常見問題與故障排除</h2>
+
+            <div class="faq-section">
+                <details>
+                    <summary>Q1: CAPI設定後，轉換數據為什麼比之前少？</summary>
+                    <p>這是正常現象。CAPI顯示的是<strong>更準確的轉換數據</strong>，之前Pixel可能因為重複計算、假流量等因素而誇大了數字。建議：</p>
+                    <ul>
+                        <li>比較設定前後的實際業務指標（真實訂單、營收）</li>
+                        <li>觀察廣告投放效率是否改善（CPA、ROAS）</li>
+                        <li>給演算法2-4週的學習期適應新的資料模式</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Q2: 事件匹配品質分數偏低，如何改善？</summary>
+                    <p>EMQ分數低通常是因為用戶識別資料不足或品質差。改善方法：</p>
+                    <ul>
+                        <li><strong>增加用戶資料欄位：</strong>特別是email和電話號碼</li>
+                        <li><strong>資料標準化：</strong>統一格式，移除空格和特殊字符</li>
+                        <li><strong>正確雜湊：</strong>確保SHA-256雜湊過程正確</li>
+                        <li><strong>即時發送：</strong>在事件發生後立即發送，不要批次延遲</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Q3: CAPI和Pixel是否會重複計算轉換？</summary>
+                    <p>正確設定下不會重複計算。關鍵在於<strong>event_id的使用</strong>：</p>
+                    <ul>
+                        <li>為每個轉換事件生成唯一的event_id</li>
+                        <li>Pixel和CAPI發送相同事件時使用相同的event_id</li>
+                        <li>Meta系統會自動去重，只計算一次轉換</li>
+                        <li>在Events Manager中檢查是否出現重複事件警告</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Q4: 伺服器負載會因為CAPI增加很多嗎？</summary>
+                    <p>影響很小。CAPI的資料傳輸量相對較少：</p>
+                    <ul>
+                        <li>每個事件通常只有幾KB的資料量</li>
+                        <li>可以批次發送多個事件降低請求頻率</li>
+                        <li>建議使用非同步處理，避免影響用戶體驗</li>
+                        <li>對於高流量網站，可考慮使用專門的事件處理服務</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Q5: CAPI設定出錯會影響現有廣告嗎？</summary>
+                    <p>不會立即影響，但建議謹慎處理：</p>
+                    <ul>
+                        <li><strong>測試環境驗證：</strong>先在測試環境完整測試</li>
+                        <li><strong>漸進式啟用：</strong>可以先啟用部分事件類型</li>
+                        <li><strong>監控指標：</strong>密切觀察廣告投放指標變化</li>
+                        <li><strong>備用方案：</strong>保持Pixel正常運作作為備援</li>
+                    </ul>
+                </details>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="content-section">
+            <h2>七、2024年CAPI最佳實務建議</h2>
+
+            <div class="success-box">
+                <h3>🏆 成功案例分享</h3>
+                <p><strong>HoneyBook案例：</strong>透過正確實施CAPI，獲客成本下降50%，原因是更準確的轉換資料幫助演算法識別高價值用戶。</p>
+                <p><strong>Love Your Melon案例：</strong>CAPI整合後，Facebook廣告的增量轉換提升21%，整體ROAS改善明顯。</p>
+            </div>
+
+            <h3>📋 實施檢核清單</h3>
+            <div class="step-card">
+                <span class="step-number">✓</span>
+                <div>
+                    <div class="step-title">設定前檢查</div>
+                    <ul>
+                        <li>✅ 確認網站使用HTTPS</li>
+                        <li>✅ Meta Pixel已正常運作</li>
+                        <li>✅ 具備伺服器端開發能力或合作夥伴支援</li>
+                        <li>✅ 已備份現有追蹤設定</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">✓</span>
+                <div>
+                    <div class="step-title">設定過程檢查</div>
+                    <ul>
+                        <li>✅ 存取權杖安全儲存</li>
+                        <li>✅ 事件參數格式正確</li>
+                        <li>✅ event_id與Pixel同步</li>
+                        <li>✅ 用戶資料正確雜湊</li>
+                        <li>✅ 測試事件發送成功</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">✓</span>
+                <div>
+                    <div class="step-title">上線後監控</div>
+                    <ul>
+                        <li>✅ 事件匹配品質達到「良好」以上</li>
+                        <li>✅ 無重複事件警告</li>
+                        <li>✅ 廣告投放指標穩定</li>
+                        <li>✅ 定期檢查錯誤日誌</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ 重要提醒：</strong>
+                <ul>
+                    <li>CAPI不是Pixel的完全替代品，建議同時運行</li>
+                    <li>給演算法2-4週時間適應新的資料模式</li>
+                    <li>定期更新CAPI設定以符合Meta政策變化</li>
+                    <li>監控EMQ分數，持續優化資料品質</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="nav-section">
+            <h2>🔗 相關學習資源</h2>
+            <div class="nav-grid">
+                <a href="algorithm-mastery.html" class="nav-card">
+                    <h4>🧠 演算法掌控術</h4>
+                    <p>深入理解Meta廣告演算法，掌握受眾品質控管技術</p>
+                </a>
+                
+                <a href="budget-hacks.html" class="nav-card">
+                    <h4>💰 預算擴量策略</h4>
+                    <p>學習預算黑科技與ASC自動化廣告最佳實務</p>
+                </a>
+                
+                <a href="remarketing-funnel.html" class="nav-card">
+                    <h4>🔄 再行銷漏斗</h4>
+                    <p>建立封閉式再行銷策略，整合CAPI追蹤數據</p>
+                </a>
+                
+                <a href="white-hat-techniques.html" class="nav-card">
+                    <h4>✅ 白帽技術</h4>
+                    <p>50個官方認證策略，確保合規的同時提升效果</p>
+                </a>
+            </div>
+        </section>
     </main>
 
-   <footer>
-    <div class="container">
-        <p>&copy; 2024 廣告投手養成中心. All rights reserved. | 專案創建人: 廖天佑 Bless Liao</p>
-        <p>持續更新最新廣告投放策略與技巧 | <a href="https://bless25min.github.io/BrandShare/" style="color: white;" target="_blank">探索廣告共享平台</a></p>
-    </div>
-</footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MetaAd廣告投手養成中心 | 專案創建者：廖天佑 (Bless Liao)</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                本指南基於Meta官方技術文檔、Meta Business Help Center、以及業界最佳實務案例編寫
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
