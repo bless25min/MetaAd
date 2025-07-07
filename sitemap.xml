@@ -4,15 +4,23 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- 主頁面 - 最高優先級 -->
+  <!-- BrandShare 專案 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/</loc>
-    <lastmod>2024-12-01</lastmod>
+    <loc>https://bless25min.github.io/BrandShare/</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- 核心技能頁面 -->
+  <!-- MetaAd 專案主頁 -->
+  <url>
+    <loc>https://bless25min.github.io/MetaAd/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- MetaAd 核心技能頁面 -->
   <url>
     <loc>https://bless25min.github.io/MetaAd/algorithm-mastery.html</loc>
     <lastmod>2024-12-01</lastmod>
@@ -34,7 +42,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- 進階策略頁面 -->
+  <!-- MetaAd 進階策略頁面 -->
   <url>
     <loc>https://bless25min.github.io/MetaAd/remarketing-funnel.html</loc>
     <lastmod>2024-12-01</lastmod>
@@ -56,7 +64,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- 工具頁面 -->
+  <!-- MetaAd 工具頁面 -->
   <url>
     <loc>https://bless25min.github.io/MetaAd/tools/audience-calculator.html</loc>
     <lastmod>2024-12-01</lastmod>
@@ -76,46 +84,6 @@
     <lastmod>2024-12-01</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- 資源文件 -->
-  <url>
-    <loc>https://bless25min.github.io/MetaAd/MetaAdCollection.pdf</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 案例研究頁面 -->
-  <url>
-    <loc>https://bless25min.github.io/MetaAd/case-studies.html</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- 學習路徑頁面 -->
-  <url>
-    <loc>https://bless25min.github.io/MetaAd/learning-path.html</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 常見問題頁面 -->
-  <url>
-    <loc>https://bless25min.github.io/MetaAd/faq.html</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- 聯絡頁面 -->
-  <url>
-    <loc>https://bless25min.github.io/MetaAd/contact.html</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
   </url>
 
 </urlset>
