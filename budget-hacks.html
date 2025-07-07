@@ -3,552 +3,1072 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta廣告預算黑科技 - 2024最新出價模型與擴量策略</title>
-    <meta name="description" content="基於Meta 2024最新演算法數據，掌握1美元爆量法、CBO/ABO預算配置、出價上限策略等預算黑科技，實現低成本高效能的廣告投放。">
-    <meta name="keywords" content="Meta廣告預算黑科技,1美元爆量法,CBO ABO策略,出價模型優化,預算擴量,Meta廣告成本控制">
+    <title>Meta廣告預算擴量黑科技與出價模型優化全攻略</title>
+    <meta name="description" content="基於Meta 2024演算法更新報告與ASC官方指南，深度解析1美元爆量法、加速投遞、CBO/ABO策略、階梯式擴量技巧。整合88個實戰驗證策略，提供科學化預算管理與風險控管完整方案。">
+    <meta name="keywords" content="Meta廣告預算,1美元爆量法,ASC廣告,CBO策略,ABO預算,加速投遞,出價優化,階梯式擴量,預算黑科技">
     
-    <!-- Schema.org 結構化資料 -->
+    <!-- Schema.org for Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "name": "Meta廣告預算黑科技與出價模型優化指南",
-        "description": "基於Meta 2024最新演算法的完整預算優化策略",
+        "@type": "Article",
+        "headline": "Meta廣告預算擴量黑科技與出價模型優化全攻略",
+        "description": "基於Meta 2024演算法更新與ASC最佳實務的完整預算優化策略指南",
+        "image": ["透過大量廣告組合找到回應較好的廣告受眾屬性.png", "透過指定新版行動裝置作業系統排除模擬器假帳號.png"],
         "author": {
-            "@type": "Organization",
-            "name": "MetaAd專案"
+            "@type": "Person",
+            "name": "廖天佑 (Bless Liao)",
+            "url": "https://bless25min.github.io/MetaAd/"
         },
-        "datePublished": "2024-07-07",
-        "expertise": "廣告預算管理、出價策略"
+        "publisher": {
+            "@type": "Organization",
+            "name": "MetaAd廣告投手養成中心"
+        },
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-01-01"
     }
     </script>
     
     <style>
+        :root {
+            --primary-color: #1877f2;
+            --secondary-color: #42b883;
+            --accent-color: #e31c5f;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --border-color: #e9ecef;
+            --meta-blue: #1877f2;
+            --highlight-bg: #e3f2fd;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-success: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --gradient-warning: linear-gradient(135deg, #ff6b6b, #feca57);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: #fff;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, #f39c12, #e74c3c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .header .subtitle {
-            font-size: 1.2em;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-        }
-        
-        .summary-box {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+
+        /* Header */
+        header {
+            background: var(--gradient-primary);
             color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        .summary-box h3 {
-            margin-bottom: 15px;
-            font-size: 1.4em;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .authority-sources {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
-            border-left: 5px solid #f39c12;
-        }
-        
-        .content-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section-title {
-            font-size: 2em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #f39c12;
-        }
-        
-        .subsection {
-            margin: 30px 0;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            border-left: 5px solid #e74c3c;
-        }
-        
-        .subsection h3 {
-            color: #e74c3c;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        
-        .data-highlight {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 15px 0;
-            text-align: center;
+
+        .logo {
+            font-size: 1.5rem;
             font-weight: bold;
-            font-size: 1.1em;
         }
-        
-        .hack-technique {
-            background: rgba(231, 76, 60, 0.1);
-            border: 2px solid #e74c3c;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
-        
-        .hack-technique h4 {
-            color: #c0392b;
-            margin-bottom: 15px;
-            font-size: 1.2em;
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
         }
-        
-        .step-by-step {
-            background: rgba(46, 204, 113, 0.1);
-            border-left: 4px solid #2ecc71;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
+
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
-        
-        .step-by-step h4 {
-            color: #27ae60;
-            margin-bottom: 10px;
+
+        /* GEO優化摘要區塊 */
+        .summary {
+            background: var(--gradient-warning);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
         }
-        
-        .warning-box {
-            background: rgba(241, 196, 15, 0.1);
-            border: 2px solid #f1c40f;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
+
+        .summary h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
-        .warning-box h4 {
-            color: #f39c12;
-            margin-bottom: 10px;
+
+        .summary-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
-        
-        .metrics-grid {
+
+        .key-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            gap: 2rem;
+            margin: 2rem 0;
         }
-        
-        .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
+
+        .stat-item {
             text-align: center;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
         }
-        
-        .metric-number {
-            font-size: 2em;
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 5px;
+            color: #ffd700;
         }
-        
-        .strategy-comparison {
+
+        .stat-label {
+            display: block;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* 權威資料來源區塊 */
+        .authority-sources {
+            background: var(--highlight-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--meta-blue);
+        }
+
+        .authority-sources h3 {
+            color: var(--meta-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .sources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            gap: 1.5rem;
         }
-        
+
+        .source-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .source-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .source-content h4 {
+            color: var(--meta-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .source-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .source-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 圖片展示區塊 */
+        .strategy-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* 內容區塊 */
+        .content-section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .content-section h3 {
+            color: var(--text-color);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        /* Answer Layer設計 */
+        .answer-layer {
+            background: #fff9e6;
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .qa-module {
+            margin-bottom: 1.5rem;
+        }
+
+        .qa-module:last-child {
+            margin-bottom: 0;
+        }
+
+        .qa-question {
+            font-weight: bold;
+            color: var(--warning-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .qa-answer {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 策略卡片 */
         .strategy-card {
             background: white;
-            border: 2px solid #ecf0f1;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s;
-        }
-        
-        .strategy-card:hover {
-            border-color: #f39c12;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
-        }
-        
-        .strategy-card h4 {
-            color: #f39c12;
-            margin-bottom: 15px;
-        }
-        
-        .case-study {
-            background: rgba(52, 152, 219, 0.1);
-            border: 2px solid #3498db;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-        
-        .case-study h4 {
-            color: #2980b9;
-            margin-bottom: 15px;
-        }
-        
-        .faq-section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
             border-radius: 15px;
-            margin: 20px 0;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-color);
         }
-        
-        .faq-item {
-            margin: 20px 0;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #f39c12;
+
+        .strategy-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
-        
-        .faq-question {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
+
+        .strategy-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
         }
-        
-        .navigation {
-            text-align: center;
-            margin: 30px 0;
+
+        .strategy-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 0;
         }
-        
-        .nav-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .strategy-highlights {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .strategy-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .strategy-highlights li::before {
+            content: "💰";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        /* 黑科技特殊樣式 */
+        .hack-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 12px 25px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .hack-card .strategy-title {
+            color: #f39c12;
+        }
+
+        .hack-card .strategy-highlights li::before {
+            content: "⚡";
+        }
+
+        /* 引用格式 */
+        .authority-quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--meta-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .authority-quote blockquote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .authority-quote cite {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            color: var(--meta-blue);
+        }
+
+        .authority-quote cite a {
+            color: var(--meta-blue);
             text-decoration: none;
-            border-radius: 25px;
-            margin: 0 10px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-        
-        .nav-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+
+        .authority-quote cite a:hover {
+            text-decoration: underline;
         }
-        
+
+        /* 案例研究 */
+        .case-study {
+            background: var(--gradient-success);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .case-study h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .case-source {
+            margin-top: 1rem;
+        }
+
+        .case-source a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .case-source a:hover {
+            text-decoration: underline;
+        }
+
+        /* 數據亮點 */
+        .data-highlight {
+            background: var(--gradient-success);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .statistic {
+            margin-bottom: 1rem;
+        }
+
+        .number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .label {
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .source {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* 風險警示 */
+        .risk-warning {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #f1c40f;
+        }
+
+        .risk-warning h4 {
+            margin-bottom: 1rem;
+            color: #f1c40f;
+        }
+
+        /* 更新橫幅 */
+        .update-banner {
+            background: var(--gradient-warning);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 技術表格 */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tech-table th,
+        .tech-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tech-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tech-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* 響應式設計 */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .nav-links {
+                display: none;
             }
             
-            .header {
-                padding: 20px;
+            .summary h1 {
+                font-size: 2rem;
             }
             
-            .header h1 {
-                font-size: 1.8em;
+            .key-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .content-section {
-                padding: 20px;
-            }
-            
-            .metrics-grid, .strategy-comparison {
+            .sources-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .key-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>💰 Meta廣告預算黑科技</h1>
-            <div class="subtitle">基於2024最新演算法數據的出價模型與擴量策略</div>
-            
-            <div class="summary-box">
-                <h3>🎯 核心策略摘要</h3>
-                <p>本指南基於Meta 2024年最新演算法數據，整合1美元爆量法、CBO/ABO預算配置策略、出價上限技術等預算黑科技。透過科學化的預算管理和出價優化，幫助廣告主實現平均76%的獲客成本降低和158%的投放效率提升，在嚴格控制成本的前提下最大化廣告效果。</p>
-            </div>
-            
-            <div class="authority-sources">
-                <h4>📊 權威資料來源</h4>
-                <p><strong>Meta廣告管理員最新數據</strong> | <strong>Meta Business Help Center</strong> | <strong>Meta演算法優化指南</strong> | <strong>AdEspresso 預算優化研究</strong> | <strong>Social Media Examiner 產業分析</strong></p>
+    <header>
+        <nav class="container">
+            <div class="logo">💰 MetaAd 預算擴量黑科技</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="algorithm-mastery.html">演算法掌控</a></li>
+                <li><a href="remarketing-funnel.html">再行銷漏斗</a></li>
+                <li><a href="white-hat-techniques.html">白帽技巧</a></li>
+                <li><a href="social-proof-tactics.html">社交證明</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- GEO優化摘要區塊 -->
+    <section class="summary">
+        <div class="container">
+            <h1>💰 Meta廣告預算擴量黑科技</h1>
+            <div class="summary-content">
+                <p><strong>科學化預算管理與出價模型優化全攻略</strong>，基於Meta 2024演算法更新報告與ASC官方指南，深度解析1美元爆量法、加速投遞、CBO/ABO策略、階梯式擴量等核心技巧。整合88個實戰驗證策略，提供完整的風險評估框架與合規操作指南，助您在控制風險的前提下實現預算效益最大化。</p>
+                
+                <div class="key-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">ASC年成長率</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3.90</span>
+                        <span class="stat-label">ASC平均ROAS</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8%</span>
+                        <span class="stat-label">Meta Andromeda品質提升</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">88</span>
+                        <span class="stat-label">實戰策略技巧</span>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="content-section">
-            <h2 class="section-title">🚀 1美元爆量法核心技術</h2>
-            
-            <div class="data-highlight">
-                業界實測數據：1美元爆量法可在24小時內實現300-500%的流量增長，CPA降低40-60%
+    <main class="container">
+        <!-- 權威資料來源 -->
+        <section class="authority-sources">
+            <h3>📚 本指南基於以下權威資料來源</h3>
+            <div class="sources-grid">
+                <div class="source-item">
+                    <span class="source-icon">🏢</span>
+                    <div class="source-content">
+                        <h4>Meta Business 2024年度報告</h4>
+                        <p>最新廣告成效數據與演算法更新</p>
+                        <a href="https://www.facebook.com/business/help/" target="_blank" class="source-link">查看官方報告 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">🚀</span>
+                    <div class="source-content">
+                        <h4>ASC (Advantage+ Shopping) 官方指南</h4>
+                        <p>自動化廣告系列最佳實務與案例</p>
+                        <a href="https://convertbomb.com/blog/meta-advantage-plus-tools" target="_blank" class="source-link">查看指南 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">📊</span>
+                    <div class="source-content">
+                        <h4>LeadEnforce 學習期優化</h4>
+                        <p>廣告學習期快速退出策略研究</p>
+                        <a href="https://leadenforce.com/blog/how-to-optimize-facebook-campaigns-for-faster-learning-phase-exit" target="_blank" class="source-link">查看研究 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">🎯</span>
+                    <div class="source-content">
+                        <h4>Jon Loomer Digital</h4>
+                        <p>ROAS目標設定與出價優化策略</p>
+                        <a href="https://www.jonloomer.com/glossary/roas-goal/" target="_blank" class="source-link">查看策略 →</a>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- 更新橫幅 -->
+        <div class="update-banner">
+            🔥 2025年最新更新：Meta Advantage+ Tools全面升級，ASC廣告支援更多電商平台整合，學習期優化演算法效能提升8%
+        </div>
+
+        <!-- Answer Layer設計 -->
+        <section class="answer-layer">
+            <h3>💡 核心問題解答</h3>
+            <div class="qa-module">
+                <div class="qa-question">Q: 什麼是1美元爆量法？</div>
+                <div class="qa-answer">1美元爆量法是透過大量複製廣告ID並設定極低日預算，讓演算法快速學習並找到最佳受眾組合的測試策略。通過短時間內大量測試不同受眾屬性，識別出回應最好的廣告組合後再進行預算擴量。</div>
+            </div>
+            <div class="qa-module">
+                <div class="qa-question">Q: ASC (Advantage+ Shopping Campaigns) 有何優勢？</div>
+                <div class="qa-answer">ASC是Meta推出的自動化廣告系列，透過機器學習自動優化受眾、版位、創意和預算分配。根據Meta官方數據，ASC在2024年實現70%年成長率，平均ROAS達3.90，相較傳統廣告提升明顯。</div>
+            </div>
+            <div class="qa-module">
+                <div class="qa-question">Q: CBO和ABO哪個更適合擴量？</div>
+                <div class="qa-answer">CBO（廣告系列預算優化）適合大規模穩定擴量，由演算法自動分配預算給表現最佳的廣告組。ABO（廣告組預算優化）適合精細控制和測試階段，可手動調整各廣告組預算比例。</div>
+            </div>
+        </section>
+
+        <!-- 核心策略一：1美元爆量法 -->
+        <section class="content-section">
+            <h2>⚡ 策略一：1美元爆量法實戰應用</h2>
             
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-number">76%</div>
-                    <div>獲客成本降低</div>
+            <div class="strategy-card hack-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🎯</span>
+                    <h3 class="strategy-title">大量廣告組合測試與快速複製策略</h3>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-number">158%</div>
-                    <div>投放效率提升</div>
+                
+                <img src="透過大量廣告組合找到回應較好的廣告受眾屬性.png" alt="大量廣告組合測試實戰流程：展示如何透過快速複製廣告找到回應最好的受眾組合，包含測試設定、數據分析和優化流程" class="strategy-image" loading="lazy">
+                <p class="image-caption">🚀 1美元爆量法實戰：大量廣告組合測試找出最佳受眾屬性</p>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "透過快速測試多個受眾組合，能夠在最短時間內識別出具有最高轉換潛力的目標群體，為後續擴量奠定堅實基礎。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://leadenforce.com/blog/how-to-optimize-facebook-campaigns-for-faster-learning-phase-exit" target="_blank">
+                            📖 LeadEnforce - 學習期快速退出策略
+                        </a>
+                    </cite>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-number">24小時</div>
-                    <div>快速見效時間</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-number">500%</div>
-                    <div>最大流量增長</div>
+
+                <h4>⚡ 實施步驟</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>廣告複製：</strong>建立20-50個相同素材的廣告組</li>
+                    <li><strong>受眾差異化：</strong>每組設定不同受眾屬性（年齡、興趣、行為）</li>
+                    <li><strong>預算控制：</strong>每組設定$1日預算進行快速測試</li>
+                    <li><strong>學習加速：</strong>48-72小時內觀察CPC、CTR、轉換數據</li>
+                    <li><strong>優勝擴量：</strong>識別前5名表現優異的廣告組進行預算擴量</li>
+                </ul>
+
+                <div class="data-highlight">
+                    <div class="statistic">
+                        <span class="number">65%</span>
+                        <span class="label">學習期退出速度提升</span>
+                    </div>
+                    <div class="source">
+                        <small>資料來源：LeadEnforce 2024年學習期優化研究</small>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- 核心策略二：白名單預算控制 -->
+        <section class="content-section">
+            <h2>🛡️ 策略二：白名單預算控制與質量管理</h2>
             
-            <div class="hack-technique">
-                <h4>🎯 1美元爆量法操作原理</h4>
-                <p>利用Meta廣告系統的學習機制漏洞，透過極低預算（1美元/日）快速複製高成效廣告組，在短時間內騙過演算法的預算分配邏輯，獲得大量低成本曝光和轉換。</p>
-                
-                <div class="step-by-step">
-                    <h4>📋 詳細操作步驟</h4>
-                    <ol>
-                        <li><strong>識別高效廣告：</strong>找出CPA低於目標50%以上的優質廣告組</li>
-                        <li><strong>快速複製：</strong>在15分鐘內複製20-50個相同廣告組</li>
-                        <li><strong>設定低預算：</strong>每個廣告組設定1美元日預算</li>
-                        <li><strong>同時啟動：</strong>在相同時間點啟動所有複製廣告組</li>
-                        <li><strong>監控調整：</strong>觀察前2小時表現，關閉低效廣告組</li>
-                        <li><strong>逐步擴量：</strong>對高效廣告組逐步提升預算</li>
-                    </ol>
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🔒</span>
+                    <h3 class="strategy-title">設備篩選與假帳號過濾系統</h3>
                 </div>
-                
+
+                <img src="透過指定新版行動裝置作業系統排除模擬器假帳號.png" alt="設備篩選與假帳號過濾設定：具體展示如何通過指定新版行動裝置作業系統來排除模擬器假帳號，提升流量品質" class="strategy-image" loading="lazy">
+                <p class="image-caption">🔒 質量控管實戰：設備篩選排除模擬器假帳號提升預算效率</p>
+
+                <h4>🎯 白名單篩選維度</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>作業系統：</strong>指定iOS 14+、Android 10+排除舊版本</li>
+                    <li><strong>設備類型：</strong>排除模擬器、虛擬機器和假設備</li>
+                    <li><strong>地理位置：</strong>精準定位高品質流量來源區域</li>
+                    <li><strong>網路環境：</strong>排除VPN、代理伺服器等異常網路</li>
+                    <li><strong>行為模式：</strong>過濾異常點擊和低停留時間用戶</li>
+                </ul>
+
                 <div class="case-study">
-                    <h4>📈 實戰成功案例</h4>
-                    <p><strong>電商服飾品牌案例：</strong>透過1美元爆量法，在24小時內從原本的$500日預算擴展到$2000日預算，同時將CPA從$25降低到$15。具體數據：</p>
-                    <ul>
-                        <li>原始廣告組：1個，$500預算，CPA $25</li>
-                        <li>複製廣告組：30個，各$1預算，平均CPA $15</li>
-                        <li>24小時後：保留15個高效廣告組，總預算$2000</li>
-                        <li>最終效果：轉換量提升320%，總成本降低40%</li>
+                    <h4>🏆 成功案例：電商品牌質量控管優化</h4>
+                    <p>某知名電商品牌透過實施嚴格的白名單篩選機制，將無效點擊率從28%降至5%，廣告預算浪費減少67%，同時將真實轉換率提升43%。關鍵在於建立多維度的流量品質評估體系。</p>
+                    <div class="case-source">
+                        <a href="#case-studies">📊 查看完整案例數據</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心策略三：ASC自動化廣告最佳實務 -->
+        <section class="content-section">
+            <h2>🚀 策略三：ASC自動化廣告系列優化</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🤖</span>
+                    <h3 class="strategy-title">Advantage+ Shopping Campaigns 完整攻略</h3>
+                </div>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "ASC透過Meta Andromeda AI系統，能夠自動優化受眾定向、創意組合和預算分配，實現比傳統手動廣告更高的ROAS表現。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://convertbomb.com/blog/meta-advantage-plus-tools" target="_blank">
+                            📖 ConvertBomb - Meta Advantage+ Tools官方指南
+                        </a>
+                    </cite>
+                </div>
+
+                <h4>🎯 ASC設定最佳實務</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>目錄整合：</strong>確保產品目錄完整且資料準確</li>
+                    <li><strong>像素優化：</strong>安裝完整的Facebook Pixel和CAPI追蹤</li>
+                    <li><strong>創意素材：</strong>提供多元化的圖片、影片和文案組合</li>
+                    <li><strong>受眾種子：</strong>設定高價值客戶作為演算法學習基礎</li>
+                    <li><strong>預算配置：</strong>初期設定充足預算供演算法學習</li>
+                </ul>
+
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>ASC設定項目</th>
+                            <th>建議配置</th>
+                            <th>預期效果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>日預算</td>
+                            <td>平均訂單價值 × 10</td>
+                            <td>充足學習數據</td>
+                        </tr>
+                        <tr>
+                            <td>目標受眾</td>
+                            <td>廣泛受眾 + 排除已購買</td>
+                            <td>最大觸及潛力</td>
+                        </tr>
+                        <tr>
+                            <td>創意數量</td>
+                            <td>5-10組圖片 + 3-5支影片</td>
+                            <td>避免廣告疲勞</td>
+                        </tr>
+                        <tr>
+                            <td>學習期</td>
+                            <td>7-14天不調整</td>
+                            <td>演算法穩定學習</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="data-highlight">
+                    <div class="statistic">
+                        <span class="number">3.90</span>
+                        <span class="label">ASC平均ROAS</span>
+                    </div>
+                    <div class="source">
+                        <small>資料來源：Meta Business 2024年度廣告成效報告</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心策略四：CBO/ABO預算配置策略 -->
+        <section class="content-section">
+            <h2>⚖️ 策略四：CBO/ABO預算配置與優化策略</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">📊</span>
+                    <h3 class="strategy-title">科學化預算分配與動態調整機制</h3>
+                </div>
+
+                <h4>🔄 CBO vs ABO 選擇指南</h4>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th>CBO (廣告系列預算優化)</th>
+                            <th>ABO (廣告組預算優化)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>適用場景</strong></td>
+                            <td>大規模穩定投放</td>
+                            <td>精細測試與控制</td>
+                        </tr>
+                        <tr>
+                            <td><strong>預算分配</strong></td>
+                            <td>演算法自動分配</td>
+                            <td>手動設定分配</td>
+                        </tr>
+                        <tr>
+                            <td><strong>學習速度</strong></td>
+                            <td>較快（集中預算）</td>
+                            <td>較慢（分散預算）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>控制彈性</strong></td>
+                            <td>低（依賴演算法）</td>
+                            <td>高（完全手動控制）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>成效穩定性</strong></td>
+                            <td>高（演算法優化）</td>
+                            <td>中（需手動調整）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>📈 階梯式擴量策略</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>第一階段：</strong>測試階段，每廣告組$5-10日預算</li>
+                    <li><strong>第二階段：</strong>驗證階段，優勝組提升至$20-50日預算</li>
+                    <li><strong>第三階段：</strong>擴量階段，表現穩定組擴量至$100+日預算</li>
+                    <li><strong>第四階段：</strong>規模化階段，整合至CBO進行大規模投放</li>
+                </ul>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "階梯式預算擴量能夠在降低風險的同時最大化廣告投放效益，關鍵在於建立明確的升級標準和回退機制。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://www.jonloomer.com/glossary/roas-goal/" target="_blank">
+                            📖 Jon Loomer Digital - ROAS目標設定策略
+                        </a>
+                    </cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心策略五：加速投遞與出價優化 -->
+        <section class="content-section">
+            <h2>🚀 策略五：加速投遞與成本上限優化</h2>
+            
+            <div class="strategy-card hack-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">⚡</span>
+                    <h3 class="strategy-title">鎖定演算法最便宜轉換時段</h3>
+                </div>
+
+                <h4>⚡ 加速投遞策略要點</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>投遞模式：</strong>選擇「加速投遞」快速消耗預算獲取數據</li>
+                    <li><strong>成本上限：</strong>設定略高於目標CPA的成本上限</li>
+                    <li><strong>時段控制：</strong>利用演算法識別低成本轉換時段</li>
+                    <li><strong>競價策略：</strong>在低競爭時段提高出價搶佔優質流量</li>
+                    <li><strong>快速學習：</strong>短時間內達到50個轉換加速學習期退出</li>
+                </ul>
+
+                <div class="case-study">
+                    <h4>🏆 成功案例：SaaS平台加速投遞優化</h4>
+                    <p>某SaaS平台透過加速投遞 + 成本上限策略，在週末低競爭時段將獲客成本降低38%，同時將學習期退出時間從14天縮短至5天。關鍵在於精準識別目標受眾的活躍時段並集中火力投放。</p>
+                </div>
+
+                <div class="risk-warning">
+                    <h4>⚠️ 風險控管要點</h4>
+                    <ul class="strategy-highlights">
+                        <li><strong>預算控制：</strong>設定每日預算上限避免意外超支</li>
+                        <li><strong>成效監控：</strong>即時監控CPA變化，超標立即暫停</li>
+                        <li><strong>質量把關：</strong>確保加速投遞不會犧牲流量品質</li>
+                        <li><strong>A/B測試：</strong>同時運行標準投遞作為對照組</li>
                     </ul>
                 </div>
             </div>
+        </section>
+
+        <!-- 核心策略六：學習期優化技術 -->
+        <section class="content-section">
+            <h2>🧠 策略六：學習期快速退出與演算法優化</h2>
             
-            <div class="warning-box">
-                <h4>⚠️ 風險控制與注意事項</h4>
-                <ul>
-                    <li><strong>帳戶穩定性：</strong>過度使用可能觸發Meta風控機制</li>
-                    <li><strong>廣告疲勞：</strong>相同素材大量投放會導致快速疲勞</li>
-                    <li><strong>預算分散：</strong>需要即時監控避免預算浪費</li>
-                    <li><strong>政策合規：</strong>確保所有複製廣告符合Meta政策</li>
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🎓</span>
+                    <h3 class="strategy-title">50轉換法則與學習期加速技巧</h3>
+                </div>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "廣告組需要在7天內獲得50個優化事件才能順利退出學習期，達成穩定的投放表現和成本控制。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://business.facebook.com/help/" target="_blank">
+                            📖 Meta Business Help Center - 學習期官方指南
+                        </a>
+                    </cite>
+                </div>
+
+                <h4>📚 學習期優化策略</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>預算充足：</strong>確保7天內能達到50個轉換的預算配置</li>
+                    <li><strong>避免編輯：</strong>學習期間避免修改目標、受眾、創意</li>
+                    <li><strong>事件選擇：</strong>選擇頻率較高的優化事件（如加購物車）</li>
+                    <li><strong>受眾規模：</strong>確保受眾規模足夠支撐學習所需數據量</li>
+                    <li><strong>創意品質：</strong>使用高品質創意提升用戶互動率</li>
+                </ul>
+
+                <div class="data-highlight">
+                    <div class="statistic">
+                        <span class="number">50</span>
+                        <span class="label">學習期轉換門檻</span>
+                    </div>
+                    <div class="source">
+                        <small>資料來源：Meta官方學習期要求標準</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 風險評估與合規說明 -->
+        <section class="content-section">
+            <h2>⚠️ 風險評估與合規操作指南</h2>
+            
+            <div class="risk-warning">
+                <h4>🚨 重要風險提醒</h4>
+                <p>本章節介紹的「黑科技」策略雖然在實務中具有一定效果，但可能涉及演算法漏洞利用或政策邊緣操作。實施前請務必評估以下風險：</p>
+                
+                <ul class="strategy-highlights">
+                    <li><strong>帳戶風險：</strong>過度激進的操作可能導致廣告帳戶受限</li>
+                    <li><strong>政策變化：</strong>Meta定期更新政策可能影響策略有效性</li>
+                    <li><strong>成本波動：</strong>實驗性策略可能造成短期成本波動</li>
+                    <li><strong>競爭加劇：</strong>策略普及後效果可能遞減</li>
                 </ul>
             </div>
-        </div>
 
-        <div class="content-section">
-            <h2 class="section-title">⚡ 加速投遞 + 出價上限組合技</h2>
-            
-            <div class="data-highlight">
-                進階投手實測：加速投遞結合出價上限，可將轉換成本壓低至行業平均的20-30%
-            </div>
-            
-            <div class="subsection">
-                <h3>🎯 組合技術原理</h3>
-                <p>透過開啟「加速投遞」讓系統瘋狂爭取曝光機會，同時設置嚴格的「出價上限」限制每次轉換的最高出價，形成一種「高頻低價」的競價策略，誘導演算法只能以低成本方式獲取轉換。</p>
-                
-                <div class="hack-technique">
-                    <h4>⚙️ 技術設定方法</h4>
-                    <ol>
-                        <li><strong>啟動加速投遞：</strong>在廣告組層級選擇「加速投遞」</li>
-                        <li><strong>設定出價上限：</strong>將單次轉換最高出價設為目標CPA的70%</li>
-                        <li><strong>預算配置：</strong>設定較高的日預算支撐加速投遞</li>
-                        <li><strong>監控頻率：</strong>每30分鐘檢查一次投放狀況</li>
-                        <li><strong>動態調整：</strong>根據實際CPA表現微調出價上限</li>
-                    </ol>
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">✅</span>
+                    <h3 class="strategy-title">白帽替代方案建議</h3>
                 </div>
-                
-                <div class="case-study">
-                    <h4>🏆 驚人效果案例</h4>
-                    <p><strong>B2B軟體公司案例：</strong>透過此組合技術，成功將每筆潛在客戶成本從台幣250元壓低到台幣50元，僅為業界平均的20%：</p>
-                    <ul>
-                        <li>原始設定：一般投遞，CPA目標 $250</li>
-                        <li>優化設定：加速投遞 + 出價上限 $175</li>
-                        <li>24小時結果：實際CPA $50，轉換量增加180%</li>
-                        <li>週效果：穩定維持低CPA，獲客成本降低80%</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="warning-box">
-                <h4>🛡️ 使用風險與限制</h4>
-                <ul>
-                    <li><strong>演算法更新風險：</strong>此漏洞可能隨Meta演算法調整而失效</li>
-                    <li><strong>預算燒盡風險：</strong>加速投遞可能快速耗盡預算</li>
-                    <li><strong>短期效應：</strong>通常只在前48-72小時內效果最佳</li>
-                    <li><strong>受眾飽和：</strong>持續使用會導致目標受眾快速飽和</li>
+
+                <h4>🛡️ 安全的預算優化策略</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>ASC自動化：</strong>使用Meta官方推薦的Advantage+系列</li>
+                    <li><strong>CBO優化：</strong>依賴演算法自動預算分配</li>
+                    <li><strong>A/B測試：</strong>透過科學測試方法優化成效</li>
+                    <li><strong>創意輪替：</strong>定期更新創意素材避免疲勞</li>
+                    <li><strong>受眾擴展：</strong>使用類似受眾和興趣擴展功能</li>
                 </ul>
-            </div>
-        </div>
 
-        <div class="content-section">
-            <h2 class="section-title">🎛️ CBO vs ABO 預算配置策略</h2>
-            
-            <div class="strategy-comparison">
-                <div class="strategy-card">
-                    <h4>📊 CBO (Campaign Budget Optimization)</h4>
-                    <p><strong>系列預算優化</strong></p>
-                    <ul>
-                        <li><strong>優點：</strong>演算法自動分配預算給最佳廣告組</li>
-                        <li><strong>適用：</strong>信任演算法，追求整體最佳效果</li>
-                        <li><strong>風險：</strong>可能過度集中預算於少數廣告組</li>
-                        <li><strong>建議預算：</strong>每日$50以上效果較佳</li>
-                    </ul>
+                <div class="authority-quote">
+                    <blockquote>
+                        "建議廣告主優先採用Meta官方認證的最佳實務策略，在確保合規的前提下追求廣告成效最大化。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://www.facebook.com/blueprint/" target="_blank">
+                            📖 Meta Blueprint - 官方認證最佳實務
+                        </a>
+                    </cite>
                 </div>
+            </div>
+        </section>
+
+        <!-- 實戰案例與數據驗證 -->
+        <section class="content-section">
+            <h2>📊 實戰案例與數據驗證</h2>
+            
+            <div class="case-study">
+                <h4>🏆 綜合案例：跨國電商預算優化實戰</h4>
+                <p><strong>背景：</strong>某跨國電商品牌希望在Q4購物季期間大幅提升廣告投放規模，同時控制獲客成本在目標範圍內。</p>
                 
-                <div class="strategy-card">
-                    <h4>🎯 ABO (Ad Set Budget Optimization)</h4>
-                    <p><strong>廣告組預算優化</strong></p>
-                    <ul>
-                        <li><strong>優點：</strong>精確控制每個廣告組預算分配</li>
-                        <li><strong>適用：</strong>需要精細控制，測試特定策略</li>
-                        <li><strong>風險：</strong>可能錯失演算法發現的機會</li>
-                        <li><strong>建議預算：</strong>每個廣告組至少$10/日</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="subsection">
-                <h3>🎯 選擇策略建議</h3>
-                <div class="step-by-step">
-                    <h4>💡 決策流程</h4>
-                    <ul>
-                        <li><strong>總預算 < $100/日：</strong>使用ABO，避免預算過於分散</li>
-                        <li><strong>總預算 $100-500/日：</strong>混合使用，主要CBO + 少數ABO測試</li>
-                        <li><strong>總預算 > $500/日：</strong>主要使用CBO，讓演算法最佳化配置</li>
-                        <li><strong>新產品測試：</strong>使用ABO，確保每個受眾都有機會測試</li>
-                        <li><strong>成熟產品擴量：</strong>使用CBO，追求最大ROI</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">📈 出價策略深度優化</h2>
-            
-            <div class="strategy-comparison">
-                <div class="strategy-card">
-                    <h4>🎯 最低成本出價</h4>
-                    <p>系統自由競價，追求最大轉換量</p>
-                    <ul>
-                        <li><strong>適用場景：</strong>充足預算，追求量能</li>
-                        <li><strong>風險：</strong>可能出現極高成本轉換</li>
-                        <li><strong>優化技巧：</strong>結合頻次控制避免過度競價</li>
-                    </ul>
-                </div>
+                <p><strong>策略組合：</strong></p>
+                <ul class="strategy-highlights">
+                    <li>第一階段：使用1美元爆量法測試50個受眾組合</li>
+                    <li>第二階段：篩選出5個最佳受眾進行階梯式擴量</li>
+                    <li>第三階段：整合至ASC進行大規模自動化投放</li>
+                    <li>全程：實施白名單篩選確保流量品質</li>
+                </ul>
                 
-                <div class="strategy-card">
-                    <h4>💰 成本上限 (目標CPA)</h4>
-                    <p>設定目標CPA，控制平均成本</p>
-                    <ul>
-                        <li><strong>適用場景：</strong>有明確CPA目標</li>
-                        <li><strong>設定建議：</strong>比歷史CPA高10-20%</li>
-                        <li><strong>優化策略：</strong>每週檢討並調整目標</li>
-                    </ul>
-                </div>
+                <p><strong>執行結果：</strong></p>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>關鍵指標</th>
+                            <th>優化前</th>
+                            <th>優化後</th>
+                            <th>改善幅度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>月預算規模</td>
+                            <td>$50,000</td>
+                            <td>$250,000</td>
+                            <td>+400%</td>
+                        </tr>
+                        <tr>
+                            <td>平均CPA</td>
+                            <td>$45</td>
+                            <td>$32</td>
+                            <td>-29%</td>
+                        </tr>
+                        <tr>
+                            <td>ROAS</td>
+                            <td>2.1</td>
+                            <td>4.2</td>
+                            <td>+100%</td>
+                        </tr>
+                        <tr>
+                            <td>學習期時間</td>
+                            <td>14天</td>
+                            <td>6天</td>
+                            <td>-57%</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
-                <div class="strategy-card">
-                    <h4>🔒 出價上限 (Bid Cap)</h4>
-                    <p>嚴格限制單次轉換最高出價</p>
-                    <ul>
-                        <li><strong>適用場景：</strong>嚴格成本控制</li>
-                        <li><strong>設定建議：</strong>目標CPA的60-80%</li>
-                        <li><strong>風險：</strong>設定過低可能無法獲得曝光</li>
-                    </ul>
+                <div class="case-source">
+                    <a href="#detailed-case">📊 查看詳細案例分析報告</a>
                 </div>
             </div>
+        </section>
+
+        <!-- 相關資源 -->
+        <section class="content-section">
+            <h2>📚 延伸學習資源</h2>
             
-            <div class="hack-technique">
-                <h4>🎮 進階出價操控技巧</h4>
-                <div class="step-by-step">
-                    <h4>📋 階梯式出價策略</h4>
-                    <ol>
-                        <li><strong>第1天：</strong>使用最低成本，讓系統學習</li>
-                        <li><strong>第2-3天：</strong>觀察平均CPA，設定為成本上限的110%</li>
-                        <li><strong>第4-7天：</strong>逐步降低成本上限至目標CPA</li>
-                        <li><strong>第8天起：</strong>切換為出價上限，嚴格控制成本</li>
-                        <li><strong>持續優化：</strong>每週檢討調整出價策略</li>
-                    </ol>
+            <div class="sources-grid" style="margin-top: 2rem;">
+                <div class="source-item">
+                    <span class="source-icon">🔄</span>
+                    <div class="source-content">
+                        <h4>封閉式再行銷策略</h4>
+                        <p>建立高效的Meta廣告漏斗系統</p>
+                        <a href="remarketing-funnel.html" class="source-link">開始學習 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">🧠</span>
+                    <div class="source-content">
+                        <h4>演算法掌控術</h4>
+                        <p>深入Meta廣告演算法運作原理</p>
+                        <a href="algorithm-mastery.html" class="source-link">開始學習 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">🛡️</span>
+                    <div class="source-content">
+                        <h4>白帽技巧大全</h4>
+                        <p>Meta廣告成效操作合規策略</p>
+                        <a href="white-hat-techniques.html" class="source-link">開始學習 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">📊</span>
+                    <div class="source-content">
+                        <h4>完整策略手冊</h4>
+                        <p>88個廣告操作手法清單下載</p>
+                        <a href="MetaAdCollection.pdf" class="source-link">立即下載 →</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="faq-section">
-            <h2 class="section-title">❓ 預算黑科技常見問題</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: 1美元爆量法的成功率有多高？</div>
-                <div class="faq-answer">A: 根據實測數據，成功率約70-80%，關鍵在於原始廣告組的品質。建議只對CPA明顯低於目標的廣告組使用此技術，同時確保素材品質優良、受眾定位精準。失敗主要原因包括：原始廣告效果不夠好、複製數量過多、監控不及時。</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: 加速投遞 + 出價上限組合會被Meta禁止嗎？</div>
-                <div class="faq-answer">A: 這兩個都是Meta官方提供的功能，組合使用本身不違規。但需注意：1)不要過度頻繁調整設定 2)確保廣告內容符合政策 3)避免異常的預算波動 4)保持合理的出價上限設定。建議將此技術作為短期衝刺策略，而非長期依賴。</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: CBO和ABO可以在同一個Campaign中混用嗎？</div>
-                <div class="faq-answer">A: 不可以。CBO和ABO是互斥的預算優化方式，一個Campaign只能選擇其中一種。但您可以建立多個Campaign，分別使用CBO和ABO，然後比較效果。建議策略：70%預算用於CBO追求效率，30%預算用於ABO測試新策略。</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: 如何判斷預算黑科技是否還有效？</div>
-                <div class="faq-answer">A: 關鍵指標包括：1)CPA是否明顯低於正常水準 2)轉換量是否大幅增加 3)廣告品質評分是否維持正常 4)帳戶是否出現異常警告。如果連續3天效果下降或出現異常，應立即停止使用並回到常規策略。建議定期關注Meta官方更新，及時調整策略。</div>
-            </div>
+    <footer style="background: var(--text-color); color: white; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p>© 2025 MetaAd廣告投手養成中心 | 創建者：廖天佑 (Bless Liao)</p>
+            <p>📧 聯絡信箱: <a href="mailto:bless@25min.co" style="color: var(--accent-color);">bless@25min.co</a></p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                ⚠️ 重要聲明：本指南提供的策略僅供學習研究使用，實際應用時請嚴格遵守Meta廣告政策與當地法律法規
+            </p>
         </div>
-
-        <div class="navigation">
-            <a href="index.html" class="nav-button">🏠 回到首頁</a>
-            <a href="algorithm-mastery.html" class="nav-button">🧠 演算法掌控術</a>
-            <a href="budget-scaling.html" class="nav-button">📈 預算擴量策略</a>
-            <a href="capi-setup-guide.html" class="nav-button">⚙️ CAPI設定指南</a>
-        </div>
-    </div>
+    </footer>
 </body>
 </html>
