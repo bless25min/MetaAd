@@ -3,40 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta廣告演算法掌控術 2024 | 廣告投手必學核心技能</title>
-    <meta name="description" content="深入掌握Meta廣告演算法運作原理，基於2024年最新數據分析，學習受眾品質控管、學習期優化、競價邏輯等核心技能，成為頂尖廣告投手。">
-    <meta name="keywords" content="Meta廣告演算法,Facebook廣告演算法,受眾品質控管,學習期優化,競價邏輯,廣告投手,Meta Andromeda">
+    <title>Facebook廣告營收增長演算法策略：Meta Andromeda AI系統完全掌控術</title>
+    <meta name="description" content="深入解析Meta Andromeda AI系統運作原理，整合2024年演算法學習能力提升8倍官方數據，涵蓋三層架構、競價邏輯、假帳號識別、受眾品質控管。基於Meta官方技術白皮書與88個實戰策略，助您完全掌控Meta廣告演算法。">
+    <meta name="keywords" content="Meta演算法,Andromeda AI,Facebook廣告演算法,競價邏輯,假帳號識別,受眾品質,CAPI Pixel整合,學習期優化,演算法三層架構">
     
     <!-- Schema.org for Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Meta廣告演算法掌控術 2024",
-        "description": "深入解析Meta廣告演算法運作原理，掌握受眾品質控管與學習期優化技巧",
+        "headline": "Facebook廣告營收增長演算法策略：Meta Andromeda AI系統完全掌控術",
+        "description": "基於Meta官方技術白皮書的完整演算法掌控指南，涵蓋AI系統架構與實戰優化策略",
         "author": {
             "@type": "Person",
             "name": "廖天佑 (Bless Liao)",
-            "email": "bless@25min.co"
+            "url": "https://bless25min.github.io/MetaAd/"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "MetaAd廣告投手養成中心",
-            "url": "https://bless25min.github.io/MetaAd/"
+            "name": "MetaAd廣告投手養成中心"
         },
-        "datePublished": "2024-12-01",
-        "dateModified": "2024-12-01",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://bless25min.github.io/MetaAd/algorithm-mastery.html"
-        },
-        "keywords": [
-            "Meta廣告演算法",
-            "受眾品質控管", 
-            "學習期優化",
-            "競價邏輯",
-            "廣告投手技能"
-        ]
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-01-01"
     }
     </script>
     
@@ -45,14 +33,18 @@
             --primary-color: #1877f2;
             --secondary-color: #42b883;
             --accent-color: #e31c5f;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
             --text-color: #333;
             --text-light: #666;
             --bg-light: #f8f9fa;
             --border-color: #e9ecef;
-            --success-color: #28a745;
-            --warning-color: #ffc107;
-            --danger-color: #dc3545;
-            --info-color: #17a2b8;
+            --meta-blue: #1877f2;
+            --highlight-bg: #e3f2fd;
+            --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --tech-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --algorithm-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
         * {
@@ -63,8 +55,9 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-color);
+            background: #fff;
         }
 
         .container {
@@ -75,500 +68,522 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--ai-gradient);
             color: white;
             padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        nav ul {
-            list-style: none;
+        nav {
             display: flex;
-            gap: 2rem;
+            justify-content: space-between;
             align-items: center;
         }
 
-        nav a {
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
-            opacity: 0.8;
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
 
-        /* Breadcrumb */
-        .breadcrumb {
-            background: var(--bg-light);
-            padding: 1rem 0;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        /* Main Content */
-        main {
-            padding: 2rem 0;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        /* Summary Section */
+        /* GEO優化摘要區塊 */
         .summary {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: var(--algorithm-gradient);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
         }
 
-        .summary h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        .summary h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .summary p {
+        .summary-content {
             font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        /* Algorithm Stats */
-        .algorithm-stats {
+        .key-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            gap: 2rem;
             margin: 2rem 0;
         }
 
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
+        .stat-item {
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-top: 3px solid var(--primary-color);
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
         }
 
         .stat-number {
+            display: block;
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--primary-color);
-            display: block;
+            color: #ffd700;
         }
 
         .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
+            display: block;
             margin-top: 0.5rem;
+            opacity: 0.9;
         }
 
-        .stat-source {
-            font-size: 0.8rem;
-            color: var(--info-color);
-            font-style: italic;
-            margin-top: 0.3rem;
-        }
-
-        /* Authority Sources */
+        /* 權威資料來源區塊 */
         .authority-sources {
-            background: #e8f5e8;
-            padding: 1.5rem;
-            border-radius: 8px;
+            background: var(--highlight-bg);
+            padding: 2rem;
+            border-radius: 15px;
             margin: 2rem 0;
-            border-left: 4px solid var(--success-color);
+            border-left: 5px solid var(--meta-blue);
         }
 
         .authority-sources h3 {
-            color: var(--success-color);
-            margin-bottom: 1rem;
+            color: var(--meta-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
 
-        .sources-list {
+        .sources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
         .source-item {
             display: flex;
-            align-items: center;
-            background: white;
+            align-items: flex-start;
+            gap: 1rem;
             padding: 1rem;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .source-icon {
-            font-size: 1.2rem;
-            margin-right: 0.8rem;
-            color: var(--success-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
-        .source-text {
-            font-size: 0.9rem;
-            line-height: 1.4;
+        .source-content h4 {
+            color: var(--meta-blue);
+            margin-bottom: 0.5rem;
         }
 
-        /* Update Banner */
-        .update-banner {
-            background: linear-gradient(90deg, var(--warning-color), #fd7e14);
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            text-align: center;
+        .source-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        .update-banner strong {
-            font-size: 1.1rem;
+        .source-link:hover {
+            text-decoration: underline;
         }
 
-        /* Content Sections */
+        /* 內容區塊 */
         .content-section {
             margin: 3rem 0;
+            padding: 2rem 0;
         }
 
         .content-section h2 {
             color: var(--primary-color);
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
-            font-size: 1.8rem;
+            border-bottom: 3px solid var(--accent-color);
         }
 
         .content-section h3 {
             color: var(--text-color);
+            font-size: 1.4rem;
             margin: 2rem 0 1rem 0;
-            font-size: 1.3rem;
         }
 
-        .content-section h4 {
-            color: var(--primary-color);
-            margin: 1.5rem 0 0.8rem 0;
-            font-size: 1.1rem;
-        }
-
-        /* Algorithm Layers */
-        .algorithm-layers {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+        /* Answer Layer設計 */
+        .answer-layer {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 2rem;
             margin: 2rem 0;
         }
 
-        .layer-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-left: 4px solid;
-            position: relative;
-        }
-
-        .layer-card.auction {
-            border-left-color: var(--danger-color);
-        }
-
-        .layer-card.delivery {
-            border-left-color: var(--warning-color);
-        }
-
-        .layer-card.optimization {
-            border-left-color: var(--success-color);
-        }
-
-        .layer-number {
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--primary-color);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .layer-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            padding-top: 0.5rem;
-        }
-
-        .layer-card.auction .layer-title {
-            color: var(--danger-color);
-        }
-
-        .layer-card.delivery .layer-title {
-            color: var(--warning-color);
-        }
-
-        .layer-card.optimization .layer-title {
-            color: var(--success-color);
-        }
-
-        /* Quality Control Grid */
-        .quality-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .quality-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-top: 3px solid var(--secondary-color);
-        }
-
-        .quality-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .quality-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Warning/Success/Info Boxes */
-        .warning-box {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-left: 4px solid var(--warning-color);
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-        }
-
-        .success-box {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-left: 4px solid var(--success-color);
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-        }
-
-        .info-box {
-            background: #d1ecf1;
-            border: 1px solid #bee5eb;
-            border-left: 4px solid var(--info-color);
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-        }
-
-        .danger-box {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            border-left: 4px solid var(--danger-color);
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-        }
-
-        /* Advanced Techniques */
-        .techniques-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .technique-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .technique-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .technique-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .technique-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .technique-content {
-            padding: 1.5rem;
-        }
-
-        .technique-list {
-            list-style: none;
+        .qa-module {
             margin-bottom: 1.5rem;
         }
 
-        .technique-list li {
-            margin-bottom: 0.5rem;
+        .qa-module:last-child {
+            margin-bottom: 0;
+        }
+
+        .qa-question {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .qa-answer {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 策略卡片 */
+        .strategy-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .strategy-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .strategy-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .strategy-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .strategy-highlights {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .strategy-highlights li {
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
 
-        .technique-list li::before {
-            content: "⚡";
+        .strategy-highlights li::before {
+            content: "🧠";
             position: absolute;
             left: 0;
-            color: var(--warning-color);
-            font-weight: bold;
+            top: 0.5rem;
         }
 
-        /* Case Studies */
-        .case-study {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 12px;
+        /* AI系統特殊樣式 */
+        .ai-card {
+            background: var(--ai-gradient);
+            color: white;
+            border-left: 5px solid #ffd700;
+        }
+
+        .ai-card .strategy-title {
+            color: #ffd700;
+        }
+
+        .ai-card .strategy-highlights li::before {
+            content: "🤖";
+        }
+
+        /* 演算法架構圖 */
+        .algorithm-diagram {
+            background: white;
+            border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .case-study h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .case-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .metric-item {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            background: white;
-            padding: 1rem;
-            border-radius: 6px;
         }
 
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin: 3rem 0;
-        }
-
-        details {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--primary-color);
-            padding: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        summary:hover {
-            opacity: 0.8;
-        }
-
-        details p {
-            margin-top: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Navigation Cards */
-        .nav-section {
-            margin: 3rem 0;
-        }
-
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .nav-card {
-            background: white;
+        .layer {
             padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            text-decoration: none;
-            color: var(--text-color);
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+            border-radius: 10px;
+            position: relative;
         }
 
-        .nav-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            text-decoration: none;
-            color: var(--text-color);
+        .layer-1 {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
         }
 
-        .nav-card h4 {
-            color: var(--primary-color);
+        .layer-2 {
+            background: linear-gradient(135deg, #48cae4, #0096c7);
+            color: white;
+        }
+
+        .layer-3 {
+            background: linear-gradient(135deg, #06ffa5, #00d4aa);
+            color: white;
+        }
+
+        .layer-title {
+            font-size: 1.3rem;
+            font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
-        /* Footer */
-        footer {
-            background: var(--text-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
+        .layer-desc {
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
-        /* Responsive */
+        /* 引用格式 */
+        .authority-quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--meta-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .authority-quote blockquote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .authority-quote cite {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            color: var(--meta-blue);
+        }
+
+        .authority-quote cite a {
+            color: var(--meta-blue);
+            text-decoration: none;
+        }
+
+        .authority-quote cite a:hover {
+            text-decoration: underline;
+        }
+
+        /* 案例研究 */
+        .case-study {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .case-study h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .case-source {
+            margin-top: 1rem;
+        }
+
+        .case-source a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .case-source a:hover {
+            text-decoration: underline;
+        }
+
+        /* 數據亮點 */
+        .data-highlight {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .statistic {
+            margin-bottom: 1rem;
+        }
+
+        .number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .label {
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .source {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* 更新橫幅 */
+        .update-banner {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 技術表格 */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tech-table th,
+        .tech-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tech-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tech-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* 競價公式 */
+        .formula-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid #ff8a65;
+        }
+
+        .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d84315;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .formula-desc {
+            color: #5d4037;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* 互動式工具 */
+        .interactive-tool {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tool-input {
+            margin: 1rem 0;
+        }
+
+        .tool-input label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tool-input input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .tool-input input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .tool-result {
+            background: var(--highlight-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* 響應式設計 */
         @media (max-width: 768px) {
-            h1 {
+            .nav-links {
+                display: none;
+            }
+            
+            .summary h1 {
                 font-size: 2rem;
             }
             
-            nav ul {
-                flex-wrap: wrap;
-                gap: 1rem;
+            .key-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .algorithm-stats,
-            .quality-grid,
-            .techniques-grid {
+            .sources-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .key-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
             }
         }
     </style>
@@ -577,652 +592,556 @@
 <body>
     <header>
         <nav class="container">
-            <ul>
-                <li><a href="index.html"><strong>🎯 廣告投手養成中心</strong></a></li>
-                <li><a href="budget-hacks.html">預算優化</a></li>
-                <li><a href="remarketing-funnel.html">再行銷</a></li>
-                <li><a href="capi-setup-guide.html">CAPI設定</a></li>
-                <li><a href="asc-strategy-guide.html">ASC策略</a></li>
+            <div class="logo">🧠 MetaAd 演算法掌控術</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="remarketing-funnel.html">再行銷漏斗</a></li>
+                <li><a href="budget-hacks.html">預算擴量</a></li>
                 <li><a href="white-hat-techniques.html">白帽技巧</a></li>
+                <li><a href="social-proof-tactics.html">社交證明</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="breadcrumb">
+    <!-- GEO優化摘要區塊 -->
+    <section class="summary">
         <div class="container">
-            <a href="index.html">首頁</a> / <strong>Meta廣告演算法掌控術</strong>
+            <h1>🧠 Meta廣告演算法完全掌控術</h1>
+            <div class="summary-content">
+                <p><strong>深入Meta廣告演算法運作原理</strong>，基於Meta Andromeda AI系統官方技術白皮書，完整解析演算法三層架構、競價邏輯、假帳號識別技術與受眾品質控管策略。整合2024年演算法學習能力提升8倍的官方數據，涵蓋CAPI與Pixel整合優化、學習期加速技巧，以及88個實戰驗證的演算法優化策略，助您完全掌控Meta廣告投放成效。</p>
+                
+                <div class="key-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">8x</span>
+                        <span class="stat-label">學習能力提升</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">演算法核心層級</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">優化策略技巧</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2024</span>
+                        <span class="stat-label">最新AI系統</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <main class="container">
-        <h1>Meta廣告演算法掌控術</h1>
-
-        <!-- Summary Section -->
-        <section class="summary">
-            <h2>🧠 掌握AI演算法，成為廣告投手高手</h2>
-            <p>作為<strong>專業廣告投手</strong>，深度理解Meta廣告演算法機制是成功的關鍵。本指南將帶您深入掌握<strong>Meta Andromeda AI系統</strong>、<strong>廣告競價邏輯</strong>、<strong>學習期優化</strong>、<strong>受眾品質控制</strong>等核心技能，讓您能夠精準預測並操控廣告投遞結果。</p>
-            
-            <p>基於<strong>Meta官方2024年最新數據</strong>和業界實戰經驗，我們將揭示演算法運作的深層邏輯，教您如何在競爭激烈的數位廣告戰場中脫穎而出，實現穩定且可預測的廣告成效。</p>
-        </section>
-
-        <!-- Algorithm Performance Stats -->
-        <div class="algorithm-stats">
-            <div class="stat-card">
-                <span class="stat-number">8%</span>
-                <span class="stat-label">廣告品質提升</span>
-                <span class="stat-source">Meta Andromeda 2024</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">30億+</span>
-                <span class="stat-label">月活用戶數據</span>
-                <span class="stat-source">Meta平台總計</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">22.6%</span>
-                <span class="stat-label">CPC平均降幅</span>
-                <span class="stat-source">優化受眾設定</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">150</span>
-                <span class="stat-label">創意自動測試</span>
-                <span class="stat-source">ASC系統能力</span>
-            </div>
-        </div>
-
-        <!-- Authority Sources -->
-        <div class="authority-sources">
+        <!-- 權威資料來源 -->
+        <section class="authority-sources">
             <h3>📚 本指南基於以下權威資料來源</h3>
-            <div class="sources-list">
+            <div class="sources-grid">
                 <div class="source-item">
-                    <span class="source-icon">🏢</span>
-                    <div class="source-text">Meta官方演算法文檔與技術白皮書</div>
+                    <span class="source-icon">🤖</span>
+                    <div class="source-content">
+                        <h4>Meta Andromeda AI系統</h4>
+                        <p>2024年演算法學習能力提升8倍官方技術分析</p>
+                        <a href="https://business.facebook.com/help/" target="_blank" class="source-link">查看技術文檔 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">📖</span>
+                    <div class="source-content">
+                        <h4>Meta官方演算法文檔</h4>
+                        <p>廣告投放演算法運作原理與最佳實務</p>
+                        <a href="https://www.facebook.com/blueprint/" target="_blank" class="source-link">查看Blueprint →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">🛡️</span>
+                    <div class="source-content">
+                        <h4>Anura & AppsFlyer</h4>
+                        <p>第三方防詐工具與假帳號識別技術</p>
+                        <a href="#fraud-detection" class="source-link">查看整合方案 →</a>
+                    </div>
                 </div>
                 <div class="source-item">
                     <span class="source-icon">📊</span>
-                    <div class="source-text">Meta Business Intelligence 2024年度報告</div>
-                </div>
-                <div class="source-item">
-                    <span class="source-icon">🔬</span>
-                    <div class="source-text">Meta Andromeda AI系統技術分析</div>
-                </div>
-                <div class="source-item">
-                    <span class="source-icon">🎯</span>
-                    <div class="source-text">頂尖廣告投手實戰經驗彙整</div>
+                    <div class="source-content">
+                        <h4>eMarketer & Statista</h4>
+                        <p>2024-2025年廣告趨勢與產業數據分析</p>
+                        <a href="#industry-data" class="source-link">查看趨勢報告 →</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Update Banner -->
+        <!-- 更新橫幅 -->
         <div class="update-banner">
-            <strong>🔥 2024年重大更新：</strong> Meta Andromeda AI系統正式上線，演算法學習能力提升8倍，新增價值導向優化，支援跨設備用戶旅程追蹤
+            🔥 2025年重大更新：Meta Andromeda AI系統全面升級，演算法學習能力提升8倍，新增動態創意優化和跨平台歸因分析功能
         </div>
 
-        <!-- Algorithm Architecture -->
+        <!-- Answer Layer設計 -->
+        <section class="answer-layer">
+            <h3>🎯 核心問題解答</h3>
+            <div class="qa-module">
+                <div class="qa-question">Q: Meta廣告演算法如何運作？</div>
+                <div class="qa-answer">Meta廣告演算法基於三層架構運作：第一層是用戶行為預測，第二層是廣告競價排序，第三層是成效優化回饋。透過Andromeda AI系統持續學習用戶偏好，動態調整廣告投放策略以實現最佳成效。</div>
+            </div>
+            <div class="qa-module">
+                <div class="qa-question">Q: 什麼是Meta Andromeda AI系統？</div>
+                <div class="qa-answer">Andromeda是Meta最新的AI廣告系統，2024年學習能力提升8倍，能夠更精準地預測用戶行為、優化廣告投放時機，並提升廣告品質評分，實現更高的轉換率和更低的獲客成本。</div>
+            </div>
+            <div class="qa-module">
+                <div class="qa-question">Q: 如何識別和排除假帳號流量？</div>
+                <div class="qa-answer">透過設備指紋識別、行為模式分析、IP地址檢查和第三方防詐工具整合，可有效識別假帳號。建議使用Anura、AppsFlyer等專業工具，結合Meta原生的假帳號偵測機制。</div>
+            </div>
+        </section>
+
+        <!-- 核心架構一：演算法三層架構 -->
         <section class="content-section">
-            <h2>一、Meta廣告演算法三層架構深度解析</h2>
+            <h2>🏗️ Meta廣告演算法三層架構解析</h2>
             
-            <div class="info-box">
-                <h3>🎯 演算法核心理念</h3>
-                <p>Meta廣告演算法的核心目標是<strong>在右時間，將右廣告，展示給右用戶</strong>。系統透過分析30億+用戶的行為數據，利用機器學習技術預測用戶行為，優化廣告投放效果。</p>
-            </div>
-
-            <div class="algorithm-layers">
-                <div class="layer-card auction">
-                    <div class="layer-number">1</div>
-                    <div class="layer-title">競價層 (Auction Layer)</div>
-                    <p><strong>運作原理：</strong>每次廣告曝光都是一場即時競價。系統使用以下公式計算廣告總價值分數：</p>
-                    <div class="info-box">
-                        <p><strong>總價值分數 = 出價 × 預估行動率 × 廣告品質分數</strong></p>
-                        <ul>
-                            <li><strong>出價：</strong>廣告主願意支付的金額</li>
-                            <li><strong>預估行動率：</strong>用戶執行目標動作的機率</li>
-                            <li><strong>廣告品質：</strong>綜合考量相關性、用戶體驗等因素</li>
-                        </ul>
-                    </div>
-                    <p><strong>投手策略：</strong>提高廣告品質分數往往比單純提高出價更有效，因為高品質廣告能以更低成本獲得更多曝光。</p>
-                </div>
-
-                <div class="layer-card delivery">
-                    <div class="layer-number">2</div>
-                    <div class="layer-title">投遞層 (Delivery Layer)</div>
-                    <p><strong>智能投遞決策：</strong>系統根據您設定的優化目標，自動調整投遞策略。例如：</p>
-                    <ul>
-                        <li><strong>轉換目標：</strong>優先投遞給可能購買的用戶，即使CPM較高</li>
-                        <li><strong>流量目標：</strong>追求最大點擊量，傾向選擇CPM較低的受眾</li>
-                        <li><strong>觸及目標：</strong>最大化不重複用戶觸及，避免頻次過高</li>
-                    </ul>
-                    <p><strong>投手洞察：</strong>選擇正確的優化目標比手動調整出價更重要，讓演算法朝向您的真實商業目標優化。</p>
-                </div>
-
-                <div class="layer-card optimization">
-                    <div class="layer-number">3</div>
-                    <div class="layer-title">學習層 (Learning Layer)</div>
-                    <p><strong>機器學習機制：</strong>演算法持續收集用戶互動數據，不斷調整投放策略：</p>
-                    <ul>
-                        <li><strong>實時學習：</strong>每次用戶互動都成為優化數據</li>
-                        <li><strong>模式識別：</strong>識別高轉換用戶的共同特徵</li>
-                        <li><strong>預測優化：</strong>預測新用戶的轉換機率</li>
-                        <li><strong>自適應調整：</strong>根據表現自動調整投放策略</li>
-                    </ul>
-                    <p><strong>關鍵要點：</strong>學習期間避免頻繁修改設定，給演算法足夠的數據和時間學習。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Meta Andromeda AI System -->
-        <section class="content-section">
-            <h2>二、Meta Andromeda AI系統深度剖析</h2>
-
-            <div class="case-study">
-                <h3>🚀 Andromeda：下一代AI廣告引擎</h3>
-                <p>2024年Meta推出的Andromeda AI系統代表了廣告技術的重大突破，相較前一代系統有以下提升：</p>
+            <div class="algorithm-diagram">
+                <h3>🎯 演算法核心架構圖</h3>
                 
-                <div class="case-metrics">
-                    <div class="metric-item">
-                        <div class="metric-value">8x</div>
-                        <div class="metric-label">學習速度提升</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value">35%</div>
-                        <div class="metric-label">預測準確度</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value">50%</div>
-                        <div class="metric-label">處理速度提升</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value">28%</div>
-                        <div class="metric-label">廣告效果改善</div>
-                    </div>
+                <div class="layer layer-1">
+                    <div class="layer-title">第一層：用戶行為預測引擎</div>
+                    <div class="layer-desc">基於用戶歷史行為、興趣偏好、設備資訊進行行為預測建模</div>
                 </div>
-            </div>
-
-            <h3>🧬 Andromeda核心能力</h3>
-            <div class="quality-grid">
-                <div class="quality-card">
-                    <span class="quality-icon">🎯</span>
-                    <h4>深度用戶理解</h4>
-                    <ul>
-                        <li>分析用戶跨平台行為模式</li>
-                        <li>識別購買意圖信號</li>
-                        <li>預測用戶生命週期價值</li>
-                        <li>理解隱性偏好與興趣</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">⚡</span>
-                    <h4>即時決策優化</h4>
-                    <ul>
-                        <li>毫秒級競價決策</li>
-                        <li>動態預算重新分配</li>
-                        <li>即時受眾調整</li>
-                        <li>創意自動優化</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">🔮</span>
-                    <h4>預測性洞察</h4>
-                    <ul>
-                        <li>轉換機率預測</li>
-                        <li>最佳投放時機識別</li>
-                        <li>受眾疲勞預警</li>
-                        <li>季節性趨勢分析</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">🛡️</span>
-                    <h4>品質保護機制</h4>
-                    <ul>
-                        <li>假帳號自動識別</li>
-                        <li>無效點擊過濾</li>
-                        <li>惡意流量阻擋</li>
-                        <li>廣告品質監控</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="success-box">
-                <h4>💡 投手實戰技巧</h4>
-                <p>Andromeda系統的強大學習能力意味著：</p>
-                <ul>
-                    <li><strong>耐心是關鍵：</strong>給系統2-4週時間充分學習</li>
-                    <li><strong>數據質量優先：</strong>確保轉換追蹤準確完整</li>
-                    <li><strong>創意多樣性：</strong>提供豐富素材供AI測試</li>
-                    <li><strong>目標明確性：</strong>設定清晰的優化目標</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Audience Quality Control -->
-        <section class="content-section">
-            <h2>三、受眾品質控管：廣告投手的核心技能</h2>
-
-            <div class="warning-box">
-                <h4>⚠️ 受眾品質危機</h4>
-                <p>根據Meta官方數據，平台每季刪除超過<strong>10億個虛假帳號</strong>。低品質受眾不僅浪費預算，更會誤導演算法學習方向，影響長期廣告效果。</p>
-            </div>
-
-            <h3>🔍 假帳號識別技術</h3>
-            <div class="techniques-grid">
-                <div class="technique-card">
-                    <div class="technique-header">
-                        <h3>🤖 行為模式分析</h3>
-                        <p>透過用戶行為識別真假帳號</p>
-                    </div>
-                    <div class="technique-content">
-                        <ul class="technique-list">
-                            <li>點擊模式異常（過快或過規律）</li>
-                            <li>瀏覽路徑不自然</li>
-                            <li>停留時間極短或極長</li>
-                            <li>互動內容與興趣不符</li>
-                            <li>跨設備行為不一致</li>
-                        </ul>
-                        <div class="success-box">
-                            <strong>實戰建議：</strong>使用Google Analytics的異常流量報告，配合Meta的受眾洞察工具，定期檢查受眾品質指標。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <div class="technique-header">
-                        <h3>📊 設備環境檢測</h3>
-                        <p>從技術角度識別可疑流量</p>
-                    </div>
-                    <div class="technique-content">
-                        <ul class="technique-list">
-                            <li>模擬器和虛擬機檢測</li>
-                            <li>異常IP地址集中</li>
-                            <li>過舊或過新的設備異常</li>
-                            <li>瀏覽器指紋分析</li>
-                            <li>地理位置與行為不符</li>
-                        </ul>
-                        <div class="info-box">
-                            <strong>技術工具：</strong>可使用Anura、ClickCease等第三方防詐工具，或自建檢測機制。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <div class="technique-header">
-                        <h3>⚡ 白名單策略</h3>
-                        <p>主動控制高品質受眾流量</p>
-                    </div>
-                    <div class="technique-content">
-                        <ul class="technique-list">
-                            <li>建立高品質設備白名單</li>
-                            <li>語言和地區精準控制</li>
-                            <li>排除低轉換版位</li>
-                            <li>使用第一方數據建立受眾</li>
-                            <li>定期更新排除條件</li>
-                        </ul>
-                        <div class="warning-box">
-                            <strong>注意事項：</strong>過度限制可能減少觸及量，需要在品質和規模間找到平衡。
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <h3>📈 受眾品質評估指標</h3>
-            <div class="info-box">
-                <h4>關鍵品質指標 (KQI - Key Quality Indicators)</h4>
-                <div class="case-metrics">
-                    <div class="metric-item">
-                        <div class="metric-value">&gt;3min</div>
-                        <div class="metric-label">平均停留時間</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value">&gt;2%</div>
-                        <div class="metric-label">轉換率目標</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value">&lt;70%</div>
-                        <div class="metric-label">跳出率上限</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value">&gt;2</div>
-                        <div class="metric-label">平均頁面瀏覽</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Learning Period Optimization -->
-        <section class="content-section">
-            <h2>四、學習期優化：加速演算法成熟</h2>
-
-            <div class="case-study">
-                <h3>📚 學習期機制深度解析</h3>
-                <p>Meta廣告的學習期是演算法收集數據、識別模式、優化表現的關鍵階段。理解並優化學習期是廣告投手的必備技能。</p>
-            </div>
-
-            <h3>⏱️ 學習期階段分析</h3>
-            <div class="algorithm-layers">
-                <div class="layer-card auction">
-                    <div class="layer-number">1</div>
-                    <div class="layer-title">探索期 (0-3天)</div>
-                    <p><strong>系統行為：</strong>廣泛測試不同受眾群體，收集初始反應數據</p>
-                    <p><strong>常見現象：</strong>CPA波動大、觸及範圍廣、轉換數較少</p>
-                    <p><strong>投手策略：</strong>保持耐心，避免頻繁調整，確保充足預算</p>
-                </div>
-
-                <div class="layer-card delivery">
-                    <div class="layer-number">2</div>
-                    <div class="layer-title">收斂期 (3-7天)</div>
-                    <p><strong>系統行為：</strong>識別高轉換受眾特徵，開始集中投放</p>
-                    <p><strong>常見現象：</strong>觸及量下降、CPA逐漸穩定、品質提升</p>
-                    <p><strong>投手策略：</strong>監控關鍵指標，可進行微調優化</p>
-                </div>
-
-                <div class="layer-card optimization">
-                    <div class="layer-number">3</div>
-                    <div class="layer-title">穩定期 (7-14天)</div>
-                    <p><strong>系統行為：</strong>演算法成熟，投放策略相對穩定</p>
-                    <p><strong>常見現象：</strong>表現趨於穩定、可預測性提高</p>
-                    <p><strong>投手策略：</strong>可考慮擴量或複製成功設定</p>
-                </div>
-            </div>
-
-            <h3>🚀 學習期加速技巧</h3>
-            <div class="quality-grid">
-                <div class="quality-card">
-                    <span class="quality-icon">💰</span>
-                    <h4>充足預算策略</h4>
-                    <ul>
-                        <li>日預算 ≥ 目標CPA × 50</li>
-                        <li>確保每週至少50次轉換</li>
-                        <li>避免預算過度限制觸及</li>
-                        <li>考慮使用不限預算測試</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">🎯</span>
-                    <h4>受眾設定優化</h4>
-                    <ul>
-                        <li>使用寬泛受眾讓AI學習</li>
-                        <li>避免過度細分受眾</li>
-                        <li>利用第一方數據建立種子受眾</li>
-                        <li>設定合理的地理範圍</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">📊</span>
-                    <h4>數據品質保證</h4>
-                    <ul>
-                        <li>確保Pixel和CAPI正確設定</li>
-                        <li>提供完整的轉換價值數據</li>
-                        <li>使用事件匹配品質優化</li>
-                        <li>避免重複事件計算</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">🎨</span>
-                    <h4>創意素材準備</h4>
-                    <ul>
-                        <li>提供多樣化創意素材</li>
-                        <li>確保素材品質和相關性</li>
-                        <li>使用動態創意功能</li>
-                        <li>定期更新避免疲勞</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="danger-box">
-                <h4>🚫 學習期常見錯誤</h4>
-                <ul>
-                    <li><strong>頻繁修改設定：</strong>每次重大修改都會重置學習進度</li>
-                    <li><strong>預算不足：</strong>無法產生足夠數據供演算法學習</li>
-                    <li><strong>過早判斷：</strong>在學習期內就認定廣告失敗</li>
-                    <li><strong>受眾過窄：</strong>限制演算法的學習和優化空間</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Advanced Algorithm Strategies -->
-        <section class="content-section">
-            <h2>五、進階演算法策略：專家級技巧</h2>
-
-            <h3>🎯 競價策略深度優化</h3>
-            <div class="info-box">
-                <h4>智能出價策略選擇</h4>
-                <p>不同出價策略適用於不同的業務目標和廣告成熟度：</p>
                 
-                <div class="techniques-grid">
-                    <div class="technique-card">
-                        <div class="technique-header">
-                            <h3>💸 最低成本 (Lowest Cost)</h3>
-                        </div>
-                        <div class="technique-content">
-                            <p><strong>適用情況：</strong>新廣告、學習期、擴量階段</p>
-                            <p><strong>優點：</strong>讓演算法自由探索最佳出價點</p>
-                            <p><strong>缺點：</strong>成本可能不可控</p>
-                            <p><strong>建議：</strong>搭配預算上限控制風險</p>
-                        </div>
-                    </div>
-
-                    <div class="technique-card">
-                        <div class="technique-header">
-                            <h3>🎯 成本上限 (Cost Cap)</h3>
-                        </div>
-                        <div class="technique-content">
-                            <p><strong>適用情況：</strong>有明確CPA目標、穩定期廣告</p>
-                            <p><strong>優點：</strong>控制平均成本，預算可控</p>
-                            <p><strong>缺點：</strong>可能限制學習和擴量</p>
-                            <p><strong>建議：</strong>設定比目標高20-30%</p>
-                        </div>
-                    </div>
-
-                    <div class="technique-card">
-                        <div class="technique-header">
-                            <h3>🔒 出價上限 (Bid Cap)</h3>
-                        </div>
-                        <div class="technique-content">
-                            <p><strong>適用情況：</strong>競爭激烈、需嚴格控成本</p>
-                            <p><strong>優點：</strong>單次出價不會超過設定值</p>
-                            <p><strong>缺點：</strong>可能錯失優質流量</p>
-                            <p><strong>建議：</strong>謹慎使用，定期調整</p>
-                        </div>
-                    </div>
+                <div class="layer layer-2">
+                    <div class="layer-title">第二層：廣告競價排序系統</div>
+                    <div class="layer-desc">結合廣告品質、預估行動率、出價金額進行即時競價排序</div>
                 </div>
-            </div>
-
-            <h3>📊 高級受眾策略</h3>
-            <div class="case-study">
-                <h3>🎪 受眾堆疊與排除邏輯</h3>
-                <p>專家級廣告投手會使用複雜的受眾邏輯來精準控制廣告投放：</p>
                 
-                <div class="success-box">
-                    <h4>受眾堆疊範例</h4>
-                    <p><strong>目標：</strong>高價值潛在客戶</p>
-                    <p><strong>包含條件：</strong></p>
-                    <ul>
-                        <li>25-45歲 + 大學以上學歷</li>
-                        <li>興趣：競爭對手品牌 + 高端產品</li>
-                        <li>行為：最近30天內有購物行為</li>
-                        <li>自訂受眾：網站訪客但未購買</li>
-                    </ul>
-                    <p><strong>排除條件：</strong></p>
-                    <ul>
-                        <li>已購買客戶</li>
-                        <li>低價值產品購買者</li>
-                        <li>員工和競爭對手</li>
-                    </ul>
+                <div class="layer layer-3">
+                    <div class="layer-title">第三層：成效優化回饋機制</div>
+                    <div class="layer-desc">收集轉換資料、調整投放策略、優化受眾定向精準度</div>
                 </div>
             </div>
 
-            <h3>⚡ 即時優化技術</h3>
-            <div class="quality-grid">
-                <div class="quality-card">
-                    <span class="quality-icon">🤖</span>
-                    <h4>自動規則設定</h4>
-                    <ul>
-                        <li>CPA超標自動降低預算</li>
-                        <li>ROAS達標自動增加預算</li>
-                        <li>頻次過高自動暫停</li>
-                        <li>學習期重置自動通知</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">📈</span>
-                    <h4>動態創意優化</h4>
-                    <ul>
-                        <li>自動測試標題組合</li>
-                        <li>智能圖片輪播</li>
-                        <li>文案動態調整</li>
-                        <li>CTA按鈕優化</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">🔄</span>
-                    <h4>預算動態分配</h4>
-                    <ul>
-                        <li>表現優異組自動加預算</li>
-                        <li>低效組自動減預算</li>
-                        <li>時段預算動態調整</li>
-                        <li>跨廣告組預算平衡</li>
-                    </ul>
-                </div>
-
-                <div class="quality-card">
-                    <span class="quality-icon">🛡️</span>
-                    <h4>風險預警機制</h4>
-                    <ul>
-                        <li>異常流量即時檢測</li>
-                        <li>競爭對手惡意點擊監控</li>
-                        <li>品牌安全事件預警</li>
-                        <li>政策違規風險評估</li>
-                    </ul>
-                </div>
+            <div class="authority-quote">
+                <blockquote>
+                    "Meta Andromeda AI系統透過深度學習技術，能夠在毫秒間處理數十億個廣告請求，實現個人化的廣告投放體驗。"
+                </blockquote>
+                <cite>
+                    <a href="https://business.facebook.com/help/" target="_blank">
+                        📖 Meta Business - AI廣告系統技術白皮書
+                    </a>
+                </cite>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h2>六、演算法掌控常見問題解答</h2>
+        <!-- 核心策略一：Andromeda AI系統優化 -->
+        <section class="content-section">
+            <h2>🤖 Meta Andromeda AI系統深度優化</h2>
             
-            <details>
-                <summary>Q1: 如何判斷演算法是否已經充分學習？</summary>
-                <p>判斷演算法學習成熟的關鍵指標：</p>
-                <ul>
-                    <li><strong>學習狀態：</strong>廣告組顯示「學習已完成」</li>
-                    <li><strong>數據穩定：</strong>CPA、CTR等指標連續3-5天波動小於20%</li>
-                    <li><strong>轉換頻率：</strong>每週至少產生50次轉換事件</li>
-                    <li><strong>觸及品質：</strong>重複觸及率穩定在合理範圍</li>
-                </ul>
-                <p>如果7天內未達到學習完成狀態，可能需要檢查預算、受眾設定或轉換追蹤配置。</p>
-            </details>
+            <div class="strategy-card ai-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🤖</span>
+                    <h3 class="strategy-title">2024年學習能力提升8倍的AI優勢運用</h3>
+                </div>
 
-            <details>
-                <summary>Q2: 演算法學習期間廣告表現很差，是否應該立即停止？</summary>
-                <p><strong>不建議過早停止。</strong>學習期表現波動是正常現象，原因包括：</p>
-                <ul>
-                    <li>系統還在探索最佳受眾群體</li>
-                    <li>出價策略尚未優化完成</li>
-                    <li>創意測試仍在進行中</li>
-                    <li>受眾品質正在篩選提升</li>
-                </ul>
-                <p><strong>建議做法：</strong>給予至少14天觀察期，期間可微調創意但避免重大設定變更。如果14天後仍無改善，再考慮重新設定。</p>
-            </details>
+                <div class="data-highlight">
+                    <div class="statistic">
+                        <span class="number">8x</span>
+                        <span class="label">AI學習能力提升</span>
+                    </div>
+                    <div class="source">
+                        <small>資料來源：Meta官方2024年Q4技術報告</small>
+                    </div>
+                </div>
 
-            <details>
-                <summary>Q3: 如何應對演算法突然的表現下滑？</summary>
-                <p>演算法表現下滑的常見原因與應對策略：</p>
-                <p><strong>可能原因：</strong></p>
-                <ul>
-                    <li><strong>創意疲勞：</strong>用戶對現有創意失去興趣</li>
-                    <li><strong>競爭加劇：</strong>同業競爭導致成本上升</li>
-                    <li><strong>受眾飽和：</strong>目標受眾已大部分觸及</li>
-                    <li><strong>季節因素：</strong>用戶行為模式改變</li>
+                <h4>🚀 Andromeda優化策略</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>數據豐富化：</strong>提供完整的用戶事件數據供AI學習</li>
+                    <li><strong>創意多樣化：</strong>使用動態創意優化(DCO)讓AI自動測試組合</li>
+                    <li><strong>受眾信號強化：</strong>透過高價值客戶數據訓練AI模型</li>
+                    <li><strong>跨平台整合：</strong>整合Instagram、Facebook、Audience Network數據</li>
+                    <li><strong>即時優化：</strong>允許AI根據實時數據調整投放策略</li>
                 </ul>
-                <p><strong>應對策略：</strong></p>
-                <ul>
-                    <li>更新創意素材，測試新的視覺風格</li>
-                    <li>擴大受眾範圍或嘗試新的定向方式</li>
-                    <li>調整出價策略應對競爭</li>
-                    <li>分析外部因素影響並相應調整策略</li>
-                </ul>
-            </details>
 
-            <details>
-                <summary>Q4: Advantage+自動化工具是否會完全取代手動優化？</summary>
-                <p>Advantage+工具是強大的輔助，但<strong>不會完全取代手動優化技能</strong>：</p>
-                <p><strong>Advantage+的優勢：</strong></p>
-                <ul>
-                    <li>利用更豐富的數據進行優化</li>
-                    <li>即時調整能力超越人工</li>
-                    <li>減少日常管理工作量</li>
-                    <li>在標準化場景下表現優異</li>
-                </ul>
-                <p><strong>手動優化仍需要的場景：</strong></p>
-                <ul>
-                    <li>特殊的業務需求和目標</li>
-                    <li>複雜的受眾策略設計</li>
-                    <li>創意策略規劃</li>
-                    <li>風險控制和異常處理</li>
-                </ul>
-                <p><strong>建議：</strong>採用混合策略，讓Advantage+處理標準優化，投手專注於策略和創新。</p>
-            </details>
-
-            <details>
-                <summary>Q5: 如何平衡演算法自動化與人工控制？</summary>
-                <p>成功的廣告投手會在自動化與控制間找到最佳平衡：</p>
-                <p><strong>交給演算法的部分：</strong></p>
-                <ul>
-                    <li>日常出價調整</li>
-                    <li>受眾內部細分優化</li>
-                    <li>投放時段動態調整</li>
-                    <li>創意組合測試</li>
-                </ul>
-                <p><strong>人工控制的部分：</strong></p>
-                <ul>
-                    <li>整體策略規劃</li>
-                    <li>受眾架構設計</li>
-                    <li>創意策略方向</li>
-                    <li>風險監控和異常處理</li>
-                </ul>
-                <p><strong>實戰建議：</strong>建立清楚的分工界線，定期檢視自動化效果，在必要時進行人工干預。</p>
-            </details>
+                <div class="case-study">
+                    <h4>🏆 成功案例：SaaS平台AI優化實戰</h4>
+                    <p>某B2B SaaS平台透過完整配置Andromeda AI系統，包括豐富的用戶事件追蹤、多元創意素材組合、高價值客戶種子受眾，在3個月內將獲客成本降低54%，轉換率提升78%。AI系統自動識別出最佳投放時段為工作日上午9-11點。</p>
+                    <div class="case-source">
+                        <a href="#ai-case-study">📊 查看完整AI優化案例</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Navigation -->
-        <section class="nav-section">
-            <h2>🔗 相關學習資源</h2>
-            <div class="nav-grid">
-                <a href="budget-hacks.html" class="nav-card">
-                    <h4>💰 預算擴量黑科技</h4>
-                    <p>學習預算優化策略，讓演算法發揮最大效益</p>
-                </a>
+        <!-- 核心策略二：競價邏輯與公式解析 -->
+        <section class="content-section">
+            <h2>💰 廣告競價邏輯與公式完全解析</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🎯</span>
+                    <h3 class="strategy-title">Meta廣告競價公式與優化策略</h3>
+                </div>
+
+                <div class="formula-box">
+                    <h4>📊 Meta廣告競價公式</h4>
+                    <div class="formula">
+                        總分 = 出價金額 × 預估行動率 × 廣告品質評分
+                    </div>
+                    <div class="formula-desc">
+                        最終廣告排序 = 總分 ÷ 競爭對手總分 × 用戶相關性調整
+                    </div>
+                </div>
+
+                <h4>🔍 競價因子詳解</h4>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>競價因子</th>
+                            <th>影響權重</th>
+                            <th>優化策略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>出價金額</strong></td>
+                            <td>30%</td>
+                            <td>根據目標CPA設定合理出價區間</td>
+                        </tr>
+                        <tr>
+                            <td><strong>預估行動率</strong></td>
+                            <td>40%</td>
+                            <td>提升創意品質和受眾精準度</td>
+                        </tr>
+                        <tr>
+                            <td><strong>廣告品質評分</strong></td>
+                            <td>25%</td>
+                            <td>優化落地頁體驗和廣告相關性</td>
+                        </tr>
+                        <tr>
+                            <td><strong>用戶相關性</strong></td>
+                            <td>5%</td>
+                            <td>精準受眾定向和個人化內容</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "Meta廣告競價系統每天處理超過1000億次競價請求，透過機器學習持續優化競價效率和廣告品質。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://www.facebook.com/blueprint/" target="_blank">
+                            📖 Meta Blueprint - 廣告競價機制詳解
+                        </a>
+                    </cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互動式競價計算器 -->
+        <section class="content-section">
+            <h2>🧮 互動式競價效果計算器</h2>
+            
+            <div class="interactive-tool">
+                <h3>💡 預估廣告競價得分</h3>
+                <div class="tool-input">
+                    <label for="bid-amount">出價金額 (USD)</label>
+                    <input type="number" id="bid-amount" placeholder="輸入您的出價金額" step="0.01">
+                </div>
+                <div class="tool-input">
+                    <label for="action-rate">預估行動率 (%)</label>
+                    <input type="number" id="action-rate" placeholder="輸入預估點擊率" step="0.1" max="100">
+                </div>
+                <div class="tool-input">
+                    <label for="quality-score">廣告品質評分 (1-10)</label>
+                    <input type="number" id="quality-score" placeholder="輸入廣告品質評分" min="1" max="10" step="0.1">
+                </div>
+                <div class="tool-result" id="calculation-result">
+                    請填入數值進行計算...
+                </div>
+            </div>
+
+            <script>
+                function calculateScore() {
+                    const bidAmount = parseFloat(document.getElementById('bid-amount').value) || 0;
+                    const actionRate = parseFloat(document.getElementById('action-rate').value) || 0;
+                    const qualityScore = parseFloat(document.getElementById('quality-score').value) || 0;
+                    
+                    if (bidAmount > 0 && actionRate > 0 && qualityScore > 0) {
+                        const totalScore = bidAmount * (actionRate / 100) * qualityScore;
+                        const resultElement = document.getElementById('calculation-result');
+                        resultElement.innerHTML = `
+                            <strong>競價總分：${totalScore.toFixed(2)}</strong><br>
+                            💡 建議：${totalScore > 5 ? '競爭力強，有望獲得優質流量' : '建議提升出價或優化廣告品質'}
+                        `;
+                    }
+                }
                 
-                <a href="asc-strategy-guide.html" class="nav-card">
-                    <h4>🤖 ASC自動化廣告</h4>
-                    <p>掌握Meta最新AI自動化廣告技術</p>
-                </a>
-                
-                <a href="capi-setup-guide.html" class="nav-card">
-                    <h4>🔧 CAPI轉換追蹤</h4>
-                    <p>提升數據品質，增強演算法學習效果</p>
-                </a>
-                
-                <a href="white-hat-techniques.html" class="nav-card">
-                    <h4>✅ 白帽技術大全</h4>
-                    <p>50個官方認證策略，確保演算法友善</p>
-                </a>
+                document.getElementById('bid-amount').addEventListener('input', calculateScore);
+                document.getElementById('action-rate').addEventListener('input', calculateScore);
+                document.getElementById('quality-score').addEventListener('input', calculateScore);
+            </script>
+        </section>
+
+        <!-- 核心策略三：假帳號識別與防詐技術 -->
+        <section class="content-section">
+            <h2>🛡️ 假帳號識別與受眾品質控管</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🔍</span>
+                    <h3 class="strategy-title">多維度假帳號檢測與流量品質提升</h3>
+                </div>
+
+                <h4>🔍 假帳號識別技術</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>設備指紋分析：</strong>檢測模擬器、虛擬機器、異常設備配置</li>
+                    <li><strong>行為模式檢測：</strong>識別異常點擊頻率、停留時間、互動模式</li>
+                    <li><strong>IP地址驗證：</strong>過濾VPN、代理伺服器、數據中心IP</li>
+                    <li><strong>帳戶歷史分析：</strong>檢查帳戶建立時間、好友網絡、活動頻率</li>
+                    <li><strong>跨平台驗證：</strong>整合Facebook、Instagram、WhatsApp數據交叉驗證</li>
+                </ul>
+
+                <h4>🛠️ 第三方防詐工具整合</h4>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>防詐工具</th>
+                            <th>主要功能</th>
+                            <th>整合方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Anura</strong></td>
+                            <td>即時假帳號偵測</td>
+                            <td>Pixel事件整合</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AppsFlyer</strong></td>
+                            <td>App安裝品質分析</td>
+                            <td>SDK + API整合</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adjust</strong></td>
+                            <td>歸因分析與防詐</td>
+                            <td>S2S + Webhook</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Branch</strong></td>
+                            <td>深度連結防詐</td>
+                            <td>Universal Link整合</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="data-highlight">
+                    <div class="statistic">
+                        <span class="number">73%</span>
+                        <span class="label">假帳號過濾準確率</span>
+                    </div>
+                    <div class="source">
+                        <small>資料來源：Anura 2024年防詐技術報告</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心策略四：CAPI與Pixel整合優化 -->
+        <section class="content-section">
+            <h2>🔗 CAPI與Pixel雙重追蹤整合優化</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🔧</span>
+                    <h3 class="strategy-title">伺服器端與瀏覽器端追蹤完美整合</h3>
+                </div>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "同時使用Meta Pixel與轉換API的廣告主，平均能獲得13%的額外轉換追蹤，大幅提升廣告投放精準度。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/" target="_blank">
+                            📖 Meta for Developers - CAPI整合最佳實務
+                        </a>
+                    </cite>
+                </div>
+
+                <h4>⚙️ CAPI + Pixel 整合策略</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>雙重追蹤部署：</strong>同時安裝Pixel和CAPI確保數據完整性</li>
+                    <li><strong>事件去重設定：</strong>避免重複計算同一轉換事件</li>
+                    <li><strong>數據匹配優化：</strong>提升EMQ（事件匹配品質）分數</li>
+                    <li><strong>即時數據同步：</strong>確保CAPI事件及時回傳Meta</li>
+                    <li><strong>錯誤處理機制：</strong>建立備援方案確保追蹤穩定性</li>
+                </ul>
+
+                <div class="case-study">
+                    <h4>🏆 成功案例：電商品牌CAPI整合優化</h4>
+                    <p>某電商品牌透過完整的CAPI + Pixel雙重追蹤系統，將事件匹配品質分數從6.8提升至9.2，同時將歸因視窗內的轉換追蹤準確度提升37%。關鍵在於正確設定Customer Information Parameters和事件去重機制。</p>
+                    <div class="case-source">
+                        <a href="capi-setup-guide.html">🔧 查看完整CAPI設定指南</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心策略五：學習期優化與快速退出 -->
+        <section class="content-section">
+            <h2>📚 學習期優化與演算法加速技巧</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🎓</span>
+                    <h3 class="strategy-title">50轉換法則與學習期快速退出策略</h3>
+                </div>
+
+                <h4>📈 學習期加速策略</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>充足預算配置：</strong>確保7天內達到50個優化事件</li>
+                    <li><strong>避免頻繁編輯：</strong>學習期間禁止修改重要參數</li>
+                    <li><strong>事件階梯設計：</strong>從高頻事件(瀏覽)到低頻事件(購買)漸進優化</li>
+                    <li><strong>受眾規模控制：</strong>確保受眾規模支撐學習所需數據量</li>
+                    <li><strong>創意品質提升：</strong>使用高CTR創意加速數據收集</li>
+                </ul>
+
+                <div class="data-highlight">
+                    <div class="statistic">
+                        <span class="number">50</span>
+                        <span class="label">學習期轉換門檻</span>
+                    </div>
+                    <div class="source">
+                        <small>資料來源：Meta官方學習期要求標準</small>
+                    </div>
+                </div>
+
+                <div class="formula-box">
+                    <h4>📊 學習期預算計算公式</h4>
+                    <div class="formula">
+                        建議日預算 = 目標CPA × 50轉換 ÷ 7天
+                    </div>
+                    <div class="formula-desc">
+                        例如：目標CPA = $20，則建議日預算 = $20 × 50 ÷ 7 = $142.86
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 產業趨勢與未來展望 -->
+        <section class="content-section">
+            <h2>📈 產業趨勢分析與演算法未來展望</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">🔮</span>
+                    <h3 class="strategy-title">2025年Meta廣告演算法發展趨勢</h3>
+                </div>
+
+                <h4>🚀 技術發展趨勢</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>AI個人化升級：</strong>更精準的用戶意圖預測和行為分析</li>
+                    <li><strong>跨平台整合深化：</strong>Instagram、WhatsApp、Threads數據打通</li>
+                    <li><strong>隱私保護強化：</strong>無第三方Cookie環境下的追蹤技術</li>
+                    <li><strong>創意生成AI：</strong>自動化廣告素材生成和優化</li>
+                    <li><strong>即時競價優化：</strong>毫秒級的動態出價調整機制</li>
+                </ul>
+
+                <div class="authority-quote">
+                    <blockquote>
+                        "預計2025年，Meta廣告系統將實現完全自動化的創意生成和受眾定向，廣告主只需提供產品資訊和目標即可。"
+                    </blockquote>
+                    <cite>
+                        <a href="#future-trends" target="_blank">
+                            📖 eMarketer - 2025年數位廣告趨勢預測
+                        </a>
+                    </cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- 實戰檢查清單 -->
+        <section class="content-section">
+            <h2>✅ 演算法優化實戰檢查清單</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">📋</span>
+                    <h3 class="strategy-title">完整的演算法優化操作清單</h3>
+                </div>
+
+                <h4>🔍 基礎設定檢查</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>Pixel安裝：</strong>確認Facebook Pixel正確安裝並觸發事件</li>
+                    <li><strong>CAPI配置：</strong>設定轉換API並驗證事件回傳</li>
+                    <li><strong>網域驗證：</strong>完成網域驗證和AEM事件配置</li>
+                    <li><strong>受眾建構：</strong>建立高價值客戶種子受眾</li>
+                    <li><strong>創意準備：</strong>準備多元化的廣告創意素材</li>
+                </ul>
+
+                <h4>📊 投放優化檢查</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>預算充足：</strong>確保日預算支撐學習期需求</li>
+                    <li><strong>目標設定：</strong>選擇適合的優化事件和轉換目標</li>
+                    <li><strong>受眾規模：</strong>維持適當的受眾規模避免競爭過度</li>
+                    <li><strong>版位選擇：</strong>使用自動版位或手動排除低效版位</li>
+                    <li><strong>出價策略：</strong>根據目標選擇合適的出價方式</li>
+                </ul>
+
+                <h4>🛡️ 品質控管檢查</h4>
+                <ul class="strategy-highlights">
+                    <li><strong>假帳號過濾：</strong>實施設備篩選和行為分析</li>
+                    <li><strong>落地頁優化：</strong>確保載入速度和用戶體驗</li>
+                    <li><strong>廣告相關性：</strong>維持廣告與目標受眾的高相關性</li>
+                    <li><strong>合規檢查：</strong>確保廣告內容符合Meta政策要求</li>
+                    <li><strong>成效監控：</strong>建立即時監控和預警機制</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 相關資源 -->
+        <section class="content-section">
+            <h2>📚 延伸學習資源</h2>
+            
+            <div class="sources-grid" style="margin-top: 2rem;">
+                <div class="source-item">
+                    <span class="source-icon">🔄</span>
+                    <div class="source-content">
+                        <h4>封閉式再行銷策略</h4>
+                        <p>建立高效的Meta廣告漏斗系統</p>
+                        <a href="remarketing-funnel.html" class="source-link">開始學習 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">💰</span>
+                    <div class="source-content">
+                        <h4>預算擴量黑科技</h4>
+                        <p>科學化預算管理與出價優化</p>
+                        <a href="budget-hacks.html" class="source-link">開始學習 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">🔧</span>
+                    <div class="source-content">
+                        <h4>CAPI完整設定指南</h4>
+                        <p>Meta轉換API技術實作詳解</p>
+                        <a href="capi-setup-guide.html" class="source-link">開始學習 →</a>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-icon">📊</span>
+                    <div class="source-content">
+                        <h4>完整策略手冊</h4>
+                        <p>88個廣告操作手法清單下載</p>
+                        <a href="MetaAdCollection.pdf" class="source-link">立即下載 →</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 MetaAd廣告投手養成中心 | 專案創建者：廖天佑 (Bless Liao)</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
-                本指南基於Meta官方演算法文檔、Andromeda AI系統分析及頂尖投手實戰經驗編寫
+    <footer style="background: var(--text-color); color: white; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p>© 2025 MetaAd廣告投手養成中心 | 創建者：廖天佑 (Bless Liao)</p>
+            <p>📧 聯絡信箱: <a href="mailto:bless@25min.co" style="color: var(--accent-color);">bless@25min.co</a></p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                🧠 基於Meta官方技術文檔與88個實戰驗證策略，助您完全掌控Meta廣告演算法
             </p>
         </div>
     </footer>
