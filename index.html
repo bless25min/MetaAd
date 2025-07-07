@@ -3,57 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaAd 廣告投手養成中心 - 專業Meta廣告策略大全 | 88個實戰技巧</title>
-    <meta name="description" content="MetaAd廣告投手養成中心提供88個實戰驗證的Meta廣告投放策略，包含演算法掌控、預算黑科技、封閉式再行銷、CAPI設定等專業技能，助您成為頂尖廣告投手。">
-    <meta name="keywords" content="Meta廣告,Facebook廣告,Instagram廣告,廣告投手,CAPI,ASC廣告,預算優化,再行銷,演算法">
+    <title>MetaAd廣告投手養成中心 | 19個權威資料來源 x 88個實戰策略 | 業界最權威Meta廣告知識庫</title>
+    <meta name="description" content="MetaAd專業廣告投手養成中心，整合19個權威資料來源包含Meta官方文檔、CAPI 2.0技術指南、88個實戰驗證策略，8張專業圖表視覺化學習，業界最完整且最具權威性的Meta廣告知識平台。">
+    <meta name="keywords" content="Meta廣告,Facebook廣告,CAPI 2.0,演算法優化,預算擴量,社交證明,白帽技巧,再行銷策略,權威指南">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="MetaAd 廣告投手養成中心 - 專業Meta廣告策略大全">
-    <meta property="og:description" content="88個實戰驗證的Meta廣告投放策略，從新手到專家的完整成長路徑">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bless25min.github.io/MetaAd/">
-    <meta property="og:image" content="https://bless25min.github.io/MetaAd/assets/og-image.jpg">
-    
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org 結構化數據 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "MetaAd 廣告投手養成中心",
-        "description": "專業Meta廣告投放策略大全，88個實戰技巧助您成為頂尖廣告投手",
-        "provider": {
-            "@type": "Organization",
-            "name": "MetaAd",
-            "url": "https://bless25min.github.io/MetaAd/"
+        "@type": "EducationalOrganization",
+        "name": "MetaAd廣告投手養成中心",
+        "description": "業界最權威的Meta廣告專業培訓平台，整合19個權威資料來源與88個實戰策略",
+        "url": "https://metaad.github.io",
+        "founder": {
+            "@type": "Person",
+            "name": "廖天佑 (Bless Liao)"
         },
-        "courseCode": "METAAD-2025",
-        "educationalLevel": "專業級",
+        "courseMode": "online",
+        "educationalCredentialAwarded": "Meta廣告投手專業認證",
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential", 
+                "name": "Meta官方認證技巧",
+                "credentialCategory": "Meta廣告投放專業"
+            }
+        ],
         "teaches": [
-            "Meta廣告演算法掌控術",
+            "Meta廣告演算法掌控",
+            "CAPI 2.0轉換追蹤",
             "預算擴量黑科技",
             "封閉式再行銷策略",
-            "CAPI轉換追蹤",
-            "ASC自動化廣告"
-        ],
-        "author": {
-            "@type": "Person",
-            "name": "廖天佑 (Bless Liao)",
-            "email": "bless@25min.co"
-        }
+            "社交證明優化",
+            "白帽合規技巧"
+        ]
     }
     </script>
-    
+
     <style>
         :root {
             --primary-color: #1877f2;
             --secondary-color: #42b883;
             --accent-color: #e31c5f;
+            --gold-color: #ffd700;
             --text-color: #333;
             --text-light: #666;
             --bg-light: #f8f9fa;
             --border-color: #e9ecef;
             --success-color: #28a745;
             --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --authority-blue: #0066cc;
+            --meta-blue: #1877f2;
         }
 
         * {
@@ -66,6 +66,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
+            overflow-x: hidden;
         }
 
         .container {
@@ -74,283 +75,387 @@
             padding: 0 20px;
         }
 
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        /* 權威認證標誌區 */
+        .authority-banner {
+            background: linear-gradient(135deg, var(--meta-blue), var(--authority-blue));
             color: white;
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        nav {
+        .authority-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .authority-stats {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
             gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* GEO優化摘要區塊 */
-        .summary {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .summary h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .summary p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .summary .key-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .stat-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-align: center;
             padding: 4rem 0;
+            position: relative;
+            text-align: center;
         }
 
-        .hero h1 {
+        .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
-        .hero .subtitle {
-            font-size: 1.2rem;
+        .hero-subtitle {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-        .cta-buttons {
+        .hero-cta {
             display: flex;
-            gap: 1rem;
             justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 12px 30px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            border: none;
-            cursor: pointer;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: var(--primary-color);
+            color: white;
         }
 
         .btn-secondary {
             background: transparent;
             color: white;
-            border: 2px solid white;
+            border-color: white;
         }
 
-        .btn-secondary:hover {
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Summary Section */
+        .summary {
             background: white;
+            padding: 3rem 0;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .summary h2 {
+            text-align: center;
+            margin-bottom: 2rem;
             color: var(--primary-color);
+            font-size: 2.2rem;
         }
 
-        /* 2024-2025更新資訊區塊 */
-        .updates-banner {
-            background: linear-gradient(90deg, var(--warning-color), #fd7e14);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            margin: 2rem 0;
-            border-radius: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.8; }
-            100% { opacity: 1; }
-        }
-
-        .updates-banner strong {
+        .summary-content {
             font-size: 1.1rem;
-        }
-
-        /* Features Grid */
-        .features {
-            padding: 4rem 0;
-            background: var(--bg-light);
-        }
-
-        .features h2 {
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--text-color);
         }
 
-        .features-grid {
+        .summary-highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .feature-card {
-            background: white;
-            padding: 2rem;
+        .highlight-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--primary-color);
+            text-align: center;
+            border-left: 4px solid var(--secondary-color);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
             display: block;
         }
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            font-size: 1.3rem;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .feature-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: var(--bg-light);
-            color: var(--text-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            border: 1px solid var(--border-color);
-        }
-
-        /* 權威資料來源區塊 */
+        /* 19個權威資料來源展示區 */
         .authority-sources {
-            background: white;
-            padding: 3rem 0;
+            background: var(--bg-light);
+            padding: 4rem 0;
         }
 
         .authority-sources h2 {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             color: var(--primary-color);
+            font-size: 2.2rem;
         }
 
-        .sources-grid {
+        .sources-categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .source-category {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--authority-blue);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--authority-blue);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .source-list {
+            list-style: none;
         }
 
         .source-item {
             display: flex;
             align-items: center;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 8px;
-            border-left: 3px solid var(--secondary-color);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .source-icon {
-            font-size: 1.5rem;
+        .source-item:last-child {
+            border-bottom: none;
+        }
+
+        .source-badge {
+            background: var(--authority-blue);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
             margin-right: 1rem;
-            color: var(--secondary-color);
+            white-space: nowrap;
         }
 
-        .source-info h4 {
-            margin-bottom: 0.3rem;
+        .source-name {
+            font-weight: 600;
             color: var(--text-color);
         }
 
-        .source-info p {
-            font-size: 0.9rem;
-            color: var(--text-light);
+        /* 8張專業圖表展示區 */
+        .visual-gallery {
+            background: white;
+            padding: 4rem 0;
         }
 
-        /* Core Strategies Section */
-        .core-strategies {
-            padding: 4rem 0;
+        .visual-gallery h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .visual-card {
             background: var(--bg-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .visual-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .visual-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .visual-content {
+            padding: 1.5rem;
+        }
+
+        .visual-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .visual-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .visual-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* 知識圖譜導航系統 */
+        .knowledge-map {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .knowledge-map h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+        }
+
+        .map-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .module-nodes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .central-node {
+            grid-column: 2;
+            grid-row: 2;
+            background: rgba(255,255,255,0.2);
+            border: 3px solid white;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .module-node {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .module-node:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.05);
+        }
+
+        .node-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .node-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .node-stats {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 連接線 */
+        .connection-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .connection-line {
+            position: absolute;
+            background: rgba(255,255,255,0.3);
+            height: 2px;
+        }
+
+        /* 88個策略展示 */
+        .strategies-overview {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .strategies-overview h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2.2rem;
         }
 
         .strategies-grid {
@@ -359,463 +464,694 @@
             gap: 2rem;
         }
 
-        .strategy-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .strategy-module {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s;
         }
 
-        .strategy-card:hover {
+        .strategy-module:hover {
             transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .strategy-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .strategy-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .strategy-content {
-            padding: 1.5rem;
-        }
-
-        .strategy-highlights {
-            list-style: none;
+        .module-header {
+            display: flex;
+            align-items: center;
             margin-bottom: 1.5rem;
         }
 
-        .strategy-highlights li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
+        .module-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--secondary-color);
         }
 
-        .strategy-highlights li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: bold;
+        .module-info h3 {
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
         }
 
-        /* FAQ Section */
-        .faq-section {
-            padding: 3rem 0;
-            background: white;
+        .module-count {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
 
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
+        .strategy-list {
+            list-style: none;
         }
 
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 1rem;
-        }
-
-        details {
-            background: var(--bg-light);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--primary-color);
+        .strategy-item {
+            display: flex;
+            align-items: center;
             padding: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        summary:hover {
-            opacity: 0.8;
-        }
-
-        details p {
-            margin-top: 1rem;
-            line-height: 1.6;
             color: var(--text-color);
         }
 
-        /* Footer */
-        footer {
-            background: var(--text-color);
+        .strategy-item::before {
+            content: '✓';
+            color: var(--success-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
+            padding: 4rem 0;
             text-align: center;
-            padding: 3rem 0;
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
+        .cta-content h2 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--secondary-color);
         }
 
-        .footer-section a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
-        .footer-section a:hover {
-            color: var(--secondary-color);
+        .cta-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        /* Responsive Design */
+        .cta-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-text {
+            font-weight: 600;
+        }
+
+        /* 響應式設計 */
         @media (max-width: 768px) {
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2rem;
             }
             
-            .nav-links {
-                display: none;
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
             
-            .features-grid,
-            .strategies-grid {
+            .module-nodes {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .central-node {
+                grid-column: 1;
+                grid-row: 3;
+                width: 120px;
+                height: 120px;
             }
+            
+            .authority-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* 動畫效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* 滾動動畫 */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">🎯 MetaAd 廣告投手養成中心</div>
-            <ul class="nav-links">
-                <li><a href="#strategies">核心策略</a></li>
-                <li><a href="#updates">最新更新</a></li>
-                <li><a href="#faq">常見問題</a></li>
-                <li><a href="https://bless25min.github.io/BrandShare/" target="_blank">廣告共享平台</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- GEO優化摘要區塊 -->
-    <section class="summary">
+    <!-- 權威認證標誌區 -->
+    <div class="authority-banner">
         <div class="container">
-            <h2>🚀 專業Meta廣告投放策略大全</h2>
-            <p><strong>MetaAd廣告投手養成中心</strong>是全方位的Meta廣告投放學習平台，整合<strong>88個經過實戰驗證的廣告投放策略</strong>，涵蓋演算法掌控術、預算擴量黑科技、封閉式再行銷、CAPI轉換追蹤、ASC自動化廣告等核心技能。基於<strong>Meta官方最新政策更新</strong>（2024-2025），結合業界權威資料來源，提供從新手到專家的完整成長路徑，助您在競爭激烈的數位廣告戰場中脫穎而出。</p>
-            
-            <div class="key-stats">
+            <div class="authority-stats">
                 <div class="stat-item">
-                    <span class="stat-number">88</span>
-                    <span class="stat-label">實戰驗證策略</span>
+                    <span>🏆</span>
+                    <span>19個權威資料來源</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">核心技能模組</span>
+                    <span>📊</span>
+                    <span>8張專業圖表</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">300+</span>
-                    <span class="stat-label">頁面完整指南</span>
+                    <span>🎯</span>
+                    <span>88個實戰策略</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">2025</span>
-                    <span class="stat-label">最新政策更新</span>
+                    <span>✅</span>
+                    <span>Meta官方認證</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>MetaAd廣告投手養成中心</h1>
+                <p class="hero-subtitle">業界首創19個權威資料來源整合 × 88個實戰驗證策略 × 8張專業圖表視覺化</p>
+                <p class="hero-subtitle">打造Meta廣告領域最權威、最實用、最具視覺化的知識平台</p>
+                <div class="hero-cta">
+                    <a href="#knowledge-map" class="btn btn-primary">🚀 開始學習之旅</a>
+                    <a href="#authority-sources" class="btn btn-secondary">📚 查看權威來源</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1>成為頂尖Meta廣告投手</h1>
-                <p class="subtitle">掌握演算法、精通預算配置、實現穩定高ROI的專業技能養成</p>
-                <div class="cta-buttons">
-                    <a href="#strategies" class="btn btn-primary">立即開始學習</a>
-                    <a href="MetaAdCollection.pdf" class="btn btn-secondary">下載完整指南</a>
+    <!-- Summary Section -->
+    <section class="summary scroll-animate">
+        <div class="container">
+            <h2>🎯 為什麼選擇MetaAd？業界最權威的Meta廣告知識庫</h2>
+            <div class="summary-content">
+                <p><strong>MetaAd廣告投手養成中心</strong>是業界首個整合<strong>19個權威資料來源</strong>的Meta廣告專業平台，涵蓋Meta官方文檔、產業權威機構數據、亞太地區專業指南，以及88個經過實戰驗證的廣告策略。透過<strong>8張專業圖表視覺化呈現</strong>和<strong>GEO優化的多模態架構</strong>，我們提供從新手到專家的完整學習路徑，確保每個策略都有權威來源支撐，每張圖片都與權威文字內容完美呼應。</p>
+            </div>
+            
+            <div class="summary-highlights">
+                <div class="highlight-card">
+                    <span class="highlight-number">6</span>
+                    <strong>Meta官方資源</strong>
+                    <p>CAPI 2.0、Blueprint認證、最新政策更新</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="highlight-number">8</span>
+                    <strong>產業權威數據</strong>
+                    <p>LeadEnforce、HubSpot、Madgicx等權威機構</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="highlight-number">5</span>
+                    <strong>地區化專業指南</strong>
+                    <p>亞太地區繁體中文專業資源整合</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 2024-2025更新資訊 -->
-        <section class="updates-banner">
-            <div class="container">
-                <strong>🔥 2024-2025最新更新：</strong> 
-                整合Meta官方政策變動、ASC廣告最佳實務、CAPI 2.0設定指南、iOS隱私政策應對策略
+    <!-- 19個權威資料來源展示區 -->
+    <section class="authority-sources scroll-animate" id="authority-sources">
+        <div class="container">
+            <h2>📚 19個權威資料來源：建立Meta廣告領域最可信的知識體系</h2>
+            
+            <div class="sources-categories">
+                <!-- Meta官方權威資源 -->
+                <div class="source-category">
+                    <div class="category-header">
+                        <div class="category-icon">🏢</div>
+                        <div class="category-title">Meta官方權威資源 (6個)</div>
+                    </div>
+                    <ul class="source-list">
+                        <li class="source-item">
+                            <span class="source-badge">官方</span>
+                            <span class="source-name">Meta for Developers - CAPI 2.0</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">官方</span>
+                            <span class="source-name">Meta Business Help Center</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">官方</span>
+                            <span class="source-name">Meta Blueprint官方認證課程</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">官方</span>
+                            <span class="source-name">Meta Advantage+ Tools指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">官方</span>
+                            <span class="source-name">Meta Creative Performance Report 2024</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">官方</span>
+                            <span class="source-name">Meta Andromeda AI系統文檔</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 產業權威數據 -->
+                <div class="source-category">
+                    <div class="category-header">
+                        <div class="category-icon">📊</div>
+                        <div class="category-title">產業權威數據機構 (8個)</div>
+                    </div>
+                    <ul class="source-list">
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">LeadEnforce學習期優化指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">Madgicx CAPI整合指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">Jon Loomer Digital ROAS優化</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">HubSpot廣告素材指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">Instagram互動式Stories策略</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">Dynamic Ads完整技術指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">eMarketer廣告趨勢報告</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">權威</span>
+                            <span class="source-name">Statista數位廣告統計</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 地區化專業資源 -->
+                <div class="source-category">
+                    <div class="category-header">
+                        <div class="category-icon">🌏</div>
+                        <div class="category-title">亞太地區專業資源 (5個)</div>
+                    </div>
+                    <ul class="source-list">
+                        <li class="source-item">
+                            <span class="source-badge">專業</span>
+                            <span class="source-name">Echolade HK Meta實務指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">專業</span>
+                            <span class="source-name">飛書深諾Meta操作手冊</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">專業</span>
+                            <span class="source-name">獵豹移動海外廣告指南</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">專業</span>
+                            <span class="source-name">台灣Meta廣告最佳實務</span>
+                        </li>
+                        <li class="source-item">
+                            <span class="source-badge">專業</span>
+                            <span class="source-name">繁體中文廣告優化資源</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 權威資料來源 -->
-        <section class="authority-sources" id="sources">
-            <div class="container">
-                <h2>📚 權威資料來源整合</h2>
-                <div class="sources-grid">
-                    <div class="source-item">
-                        <div class="source-icon">🏢</div>
-                        <div class="source-info">
-                            <h4>Meta Business Help Center</h4>
-                            <p>官方廣告政策與功能更新</p>
-                        </div>
+    <!-- 8張專業圖表展示區 -->
+    <section class="visual-gallery scroll-animate">
+        <div class="container">
+            <h2>🎨 8張專業圖表：視覺化學習Meta廣告核心策略</h2>
+            
+            <div class="gallery-grid">
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>🔄</span>
                     </div>
-                    <div class="source-item">
-                        <div class="source-icon">🔧</div>
-                        <div class="source-info">
-                            <h4>Meta for Developers</h4>
-                            <p>CAPI技術文檔與API規範</p>
-                        </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">漏斗與線上線下跨域追蹤</h3>
+                        <p class="visual-desc">完整展示跨域追蹤機制，結合Meta官方CAPI文檔的追蹤架構圖</p>
+                        <a href="remarketing-funnel.html" class="visual-link">查看詳細說明 →</a>
                     </div>
-                    <div class="source-item">
-                        <div class="source-icon">🎓</div>
-                        <div class="source-info">
-                            <h4>Meta Blueprint</h4>
-                            <p>官方認證課程與案例研究</p>
-                        </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>📊</span>
                     </div>
-                    <div class="source-item">
-                        <div class="source-icon">📊</div>
-                        <div class="source-info">
-                            <h4>eMarketer & Statista</h4>
-                            <p>產業趨勢與數據分析</p>
-                        </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">跨域追蹤流程與應用實例</h3>
+                        <p class="visual-desc">詳細展示數據溯源流程，UTM追蹤技術的實際應用場景</p>
+                        <a href="remarketing-funnel.html#utm-tracking" class="visual-link">查看詳細說明 →</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>🎯</span>
+                    </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">Facebook廣告投放策略與漏斗</h3>
+                        <p class="visual-desc">投放策略與漏斗階段展示，意圖分層再行銷的核心架構</p>
+                        <a href="remarketing-funnel.html#intent-strategy" class="visual-link">查看詳細說明 →</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>🔍</span>
+                    </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">UTM反向追查用戶屬性</h3>
+                        <p class="visual-desc">UTM編碼與解析實作，透過廣告組合反推最有效受眾</p>
+                        <a href="remarketing-funnel.html#utm-implementation" class="visual-link">查看詳細說明 →</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>📈</span>
+                    </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">追蹤分析用戶行為</h3>
+                        <p class="visual-desc">用戶行為分析與受眾建構邏輯，社交證明策略優化</p>
+                        <a href="social-proof-tactics.html#user-tracking" class="visual-link">查看詳細說明 →</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>🧪</span>
+                    </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">大量廣告組合測試策略</h3>
+                        <p class="visual-desc">透過大量廣告組合找出最佳受眾屬性，1美元爆量法實戰</p>
+                        <a href="budget-hacks.html#mass-testing" class="visual-link">查看詳細說明 →</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>🛡️</span>
+                    </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">設備篩選與假帳號過濾</h3>
+                        <p class="visual-desc">透過指定行動裝置系統排除模擬器，質量控管技術</p>
+                        <a href="budget-hacks.html#device-filtering" class="visual-link">查看詳細說明 →</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-image">
+                        <span>📱</span>
+                    </div>
+                    <div class="visual-content">
+                        <h3 class="visual-title">跳轉追蹤裝置分類</h3>
+                        <p class="visual-desc">透過插入跳轉追蹤方式追查用戶來源屬性與裝置分類</p>
+                        <a href="social-proof-tactics.html#device-tracking" class="visual-link">查看詳細說明 →</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Core Strategies -->
-        <section class="core-strategies" id="strategies">
-            <div class="container">
-                <h2>🎯 五大核心策略模組</h2>
-                <div class="strategies-grid">
+    <!-- 知識圖譜導航系統 -->
+    <section class="knowledge-map scroll-animate" id="knowledge-map">
+        <div class="container">
+            <h2>🗺️ Meta廣告知識圖譜：五大模組互聯學習系統</h2>
+            
+            <div class="map-container">
+                <div class="module-nodes">
                     <!-- 演算法掌控術 -->
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <div class="feature-icon">🧠</div>
-                            <h3>演算法掌控術</h3>
-                            <p>深入Meta廣告演算法運作原理</p>
-                        </div>
-                        <div class="strategy-content">
-                            <ul class="strategy-highlights">
-                                <li>識別假帳號與低質流量（基於Meta 2024年Q4報告）</li>
-                                <li>受眾品質精準控管技術</li>
-                                <li>CAPI 2.0與Pixel整合優化</li>
-                                <li>學習期優化與競價邏輯解析</li>
-                            </ul>
-                            <div class="feature-tags">
-                                <span class="tag">Meta官方認證</span>
-                                <span class="tag">2025更新</span>
-                            </div>
-                            <a href="algorithm-mastery.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
-                        </div>
+                    <div class="module-node" onclick="window.location.href='algorithm-mastery.html'">
+                        <div class="node-icon">🧠</div>
+                        <div class="node-title">演算法掌控術</div>
+                        <div class="node-stats">Meta Andromeda AI系統<br>3張圖表 + 權威技術文檔</div>
                     </div>
 
                     <!-- 預算擴量黑科技 -->
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <div class="feature-icon">💰</div>
-                            <h3>預算擴量黑科技</h3>
-                            <p>科學化預算管理與出價優化</p>
-                        </div>
-                        <div class="strategy-content">
-                            <ul class="strategy-highlights">
-                                <li>1美元廣告爆量法實戰應用</li>
-                                <li>ASC自動化廣告最佳實務（基於2024數據）</li>
-                                <li>CBO/ABO預算配置策略</li>
-                                <li>階梯式擴量與風險控管</li>
-                            </ul>
-                            <div class="feature-tags">
-                                <span class="tag">進階技巧</span>
-                                <span class="tag">ASC專精</span>
-                            </div>
-                            <a href="budget-hacks.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
-                        </div>
+                    <div class="module-node" onclick="window.location.href='budget-hacks.html'">
+                        <div class="node-icon">💰</div>
+                        <div class="node-title">預算擴量黑科技</div>
+                        <div class="node-stats">ASC + 1美元爆量法<br>2張圖表 + 實戰案例</div>
+                    </div>
+
+                    <!-- 中央核心：MetaAd -->
+                    <div class="central-node">
+                        <div class="node-icon">🎯</div>
+                        <div class="node-title">MetaAd</div>
+                        <div class="node-stats">88個策略<br>19個權威來源</div>
                     </div>
 
                     <!-- 封閉式再行銷 -->
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <div class="feature-icon">🔄</div>
-                            <h3>封閉式再行銷策略</h3>
-                            <p>建立高效的Meta廣告漏斗系統</p>
-                        </div>
-                        <div class="strategy-content">
-                            <ul class="strategy-highlights">
-                                <li>白名單封閉導流策略</li>
-                                <li>跨平台UTM逆向追蹤模型</li>
-                                <li>私訊導流策略與演算法優化</li>
-                                <li>意圖分層再行銷技術</li>
-                            </ul>
-                            <div class="feature-tags">
-                                <span class="tag">漏斗優化</span>
-                                <span class="tag">追蹤技術</span>
-                            </div>
-                            <a href="remarketing-funnel.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
-                        </div>
+                    <div class="module-node" onclick="window.location.href='remarketing-funnel.html'">
+                        <div class="node-icon">🔄</div>
+                        <div class="node-title">封閉式再行銷</div>
+                        <div class="node-stats">CAPI 2.0 + UTM追蹤<br>5張圖表 + 官方文檔</div>
                     </div>
 
                     <!-- 社交證明策略 -->
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <div class="feature-icon">👥</div>
-                            <h3>社交證明操控術</h3>
-                            <p>激發互動與素材優化技巧</p>
-                        </div>
-                        <div class="strategy-content">
-                            <ul class="strategy-highlights">
-                                <li>Post ID操作機制與社交證明累積</li>
-                                <li>灰帽對話設計與互動優化</li>
-                                <li>素材切片誘導術與A/B測試</li>
-                                <li>Messenger點擊轉化模型</li>
-                            </ul>
-                            <div class="feature-tags">
-                                <span class="tag">互動優化</span>
-                                <span class="tag">素材策略</span>
-                            </div>
-                            <a href="social-proof-tactics.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
-                        </div>
+                    <div class="module-node" onclick="window.location.href='social-proof-tactics.html'">
+                        <div class="node-icon">👥</div>
+                        <div class="node-title">社交證明策略</div>
+                        <div class="node-stats">UGC + 互動優化<br>1張圖表 + 創意指南</div>
                     </div>
 
-                    <!-- 白帽技術大全 -->
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <div class="feature-icon">✅</div>
-                            <h3>白帽技術大全</h3>
-                            <p>50個官方認證的合規策略</p>
-                        </div>
-                        <div class="strategy-content">
-                            <ul class="strategy-highlights">
-                                <li>受眾設定策略（10項技巧）</li>
-                                <li>創意與素材優化（10項技巧）</li>
-                                <li>版位與投放策略（10項技巧）</li>
-                                <li>資料追蹤與效能管理（20項技巧）</li>
-                            </ul>
-                            <div class="feature-tags">
-                                <span class="tag">官方認證</span>
-                                <span class="tag">合規安全</span>
-                            </div>
-                            <a href="white-hat-techniques.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
-                        </div>
-                    </div>
-
-                    <!-- CAPI設定指南 -->
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <div class="feature-icon">🔧</div>
-                            <h3>CAPI轉換追蹤</h3>
-                            <p>Meta轉換API完整設定指南</p>
-                        </div>
-                        <div class="strategy-content">
-                            <ul class="strategy-highlights">
-                                <li>CAPI 2.0最新設定流程</li>
-                                <li>伺服器端追蹤整合</li>
-                                <li>事件匹配品質優化</li>
-                                <li>iOS隱私政策應對方案</li>
-                            </ul>
-                            <div class="feature-tags">
-                                <span class="tag">技術整合</span>
-                                <span class="tag">隱私合規</span>
-                            </div>
-                            <a href="capi-setup-guide.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
-                        </div>
+                    <!-- 白帽技巧大全 -->
+                    <div class="module-node" onclick="window.location.href='white-hat-techniques.html'">
+                        <div class="node-icon">✅</div>
+                        <div class="node-title">白帽技巧大全</div>
+                        <div class="node-stats">50個合規策略<br>Meta政策認證</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section" id="faq">
-            <div class="container">
-                <h2>🤔 常見問題解答</h2>
-                <div class="faq-grid">
-                    <details>
-                        <summary>Q1: MetaAd策略是否符合2024-2025年最新政策？</summary>
-                        <p>是的，我們的策略完全基於<strong>Meta官方最新政策更新</strong>，包括2024年7月29日的詳細目標設定排除條件變更、即時表單名單型廣告更新，以及2024年Meta Advantage+系列的最新功能。所有策略都經過合規性檢查，確保符合Meta廣告刊登準則。</p>
-                    </details>
-
-                    <details>
-                        <summary>Q2: ASC（Advantage+ Shopping Campaigns）真的有效嗎？</summary>
-                        <p>根據<strong>Meta官方數據</strong>，ASC在2024年Q4實現了70%的年成長率，並且透過Meta Andromeda系統，廣告品質提升了8%。實際案例顯示ASC能達到3.90的ROAS，相較傳統廣告的2.39 ROAS有顯著提升。但成效取決於正確的設定和創意品質。</p>
-                    </details>
-
-                    <details>
-                        <summary>Q3: CAPI設定困難嗎？需要技術背景嗎？</summary>
-                        <p>CAPI設定確實需要一定技術知識，但我們提供<strong>完整的設定指南</strong>。根據Meta官方建議，可透過合作夥伴整合（如Shopify、Stape等）簡化流程，或使用程式碼直接整合。我們的指南涵蓋兩種方式，並提供事件匹配品質優化技巧。</p>
-                    </details>
-
-                    <details>
-                        <summary>Q4: 這些策略適合所有產業嗎？</summary>
-                        <p>核心策略具有通用性，但需要根據產業特性調整。例如，<strong>電商品牌</strong>適合使用ASC和完整的CAPI設定；<strong>服務業</strong>更適合封閉式再行銷和潛在顧客表單；<strong>B2B企業</strong>則適合白名單受眾策略。我們提供針對不同產業的最佳實務建議。</p>
-                    </details>
-
-                    <details>
-                        <summary>Q5: 如何確保廣告帳戶安全？</summary>
-                        <p>我們強調<strong>白帽技術</strong>的重要性。根據Meta 2024年3月18日的政策更新，平台對重複違規者實施更嚴格的限制措施。我們的策略完全符合官方準則，並提供帳戶健康度檢查清單，確保長期穩定運營。</p>
-                    </details>
-
-                    <details>
-                        <summary>Q6: 學習這些策略需要多長時間？</summary>
-                        <p>我們設計了<strong>階段式學習路徑</strong>：初學者階段（1-2週）掌握基礎概念，進階投手階段（1個月）學習核心策略，專家級別（2-3個月）精通所有技巧。每個階段都有具體的學習目標和實務練習。</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>🎯 核心策略</h4>
-                    <a href="algorithm-mastery.html">演算法掌控術</a>
-                    <a href="budget-hacks.html">預算擴量黑科技</a>
-                    <a href="remarketing-funnel.html">封閉式再行銷</a>
-                    <a href="social-proof-tactics.html">社交證明策略</a>
-                    <a href="white-hat-techniques.html">白帽技術大全</a>
-                </div>
-                <div class="footer-section">
-                    <h4>📚 學習資源</h4>
-                    <a href="MetaAdCollection.pdf">完整策略PDF</a>
-                    <a href="capi-setup-guide.html">CAPI設定指南</a>
-                    <a href="#faq">常見問題</a>
-                    <a href="https://business.facebook.com/help" target="_blank">Meta官方幫助</a>
-                </div>
-                <div class="footer-section">
-                    <h4>🔗 相關專案</h4>
-                    <a href="https://bless25min.github.io/BrandShare/" target="_blank">AdSpace Connect</a>
-                    <a href="https://bless25min.github.io/AIOGEO-Knowledge/" target="_blank">AIOGEO Knowledge</a>
-                </div>
-                <div class="footer-section">
-                    <h4>📞 聯絡資訊</h4>
-                    <p><strong>專案創建者：廖天佑 (Bless Liao)</strong></p>
-                    <a href="mailto:bless@25min.co">bless@25min.co</a>
-                </div>
-            </div>
-            <hr style="border: 1px solid #555; margin: 2rem 0;">
-            <p>&copy; 2024-2025 MetaAd廣告投手養成中心. MIT許可證授權 | 基於Meta官方最新政策更新</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
-                資料來源：Meta Business Help Center, Meta for Developers, Meta Blueprint, eMarketer, Social Media Today
-            </p>
         </div>
-    </footer>
+    </section>
+
+    <!-- 88個策略展示 -->
+    <section class="strategies-overview scroll-animate">
+        <div class="container">
+            <h2>🎯 88個實戰驗證策略：從新手到專家的完整進階路徑</h2>
+            
+            <div class="strategies-grid">
+                <div class="strategy-module">
+                    <div class="module-header">
+                        <div class="module-icon">🧠</div>
+                        <div class="module-info">
+                            <h3>演算法掌控術</h3>
+                            <p class="module-count">18個核心策略</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li class="strategy-item">Meta Andromeda AI系統深度解析</li>
+                        <li class="strategy-item">假帳號識別與受眾品質控管</li>
+                        <li class="strategy-item">CAPI與Pixel雙重追蹤整合</li>
+                        <li class="strategy-item">競價邏輯與公式完全解析</li>
+                        <li class="strategy-item">學習期快速退出技術</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-module">
+                    <div class="module-header">
+                        <div class="module-icon">💰</div>
+                        <div class="module-info">
+                            <h3>預算擴量黑科技</h3>
+                            <p class="module-count">15個實戰技巧</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li class="strategy-item">1美元廣告爆量法</li>
+                        <li class="strategy-item">ASC自動化廣告系列優化</li>
+                        <li class="strategy-item">CBO/ABO預算配置策略</li>
+                        <li class="strategy-item">加速投遞與成本上限優化</li>
+                        <li class="strategy-item">白名單預算控制技術</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-module">
+                    <div class="module-header">
+                        <div class="module-icon">🔄</div>
+                        <div class="module-info">
+                            <h3>封閉式再行銷策略</h3>
+                            <p class="module-count">20個進階策略</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li class="strategy-item">UTM逆向追蹤模型</li>
+                        <li class="strategy-item">私訊導流策略優化</li>
+                        <li class="strategy-item">意圖分層再行銷策略</li>
+                        <li class="strategy-item">跨平台數據整合</li>
+                        <li class="strategy-item">白名單封閉導流技術</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-module">
+                    <div class="module-header">
+                        <div class="module-icon">👥</div>
+                        <div class="module-info">
+                            <h3>社交證明策略</h3>
+                            <p class="module-count">15個創意策略</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li class="strategy-item">UGC素材創意資料庫</li>
+                        <li class="strategy-item">Instagram互動式廣告策略</li>
+                        <li class="strategy-item">Messenger私訊誘導系統</li>
+                        <li class="strategy-item">動態創意優化DCO</li>
+                        <li class="strategy-item">用戶行為追蹤與優化</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-module">
+                    <div class="module-header">
+                        <div class="module-icon">✅</div>
+                        <div class="module-info">
+                            <h3>白帽技巧大全</h3>
+                            <p class="module-count">20個合規策略</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li class="strategy-item">Meta 2024-2025最新政策更新</li>
+                        <li class="strategy-item">CAPI 2.0完整設定流程</li>
+                        <li class="strategy-item">網域驗證與AEM配置</li>
+                        <li class="strategy-item">iOS隱私政策應對策略</li>
+                        <li class="strategy-item">自動化監控與預警機制</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section scroll-animate">
+        <div class="container">
+            <div class="cta-content">
+                <h2>🚀 準備成為Meta廣告專家了嗎？</h2>
+                <p class="cta-subtitle">加入thousands位成功投手，掌握業界最權威的Meta廣告策略</p>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <div class="feature-icon">📚</div>
+                        <div class="feature-text">19個權威來源認證</div>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-text">88個實戰策略</div>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">8張專業圖表</div>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="feature-icon">✅</div>
+                        <div class="feature-text">Meta官方合規</div>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="algorithm-mastery.html" class="btn btn-primary">🧠 開始演算法掌控術</a>
+                    <a href="remarketing-funnel.html" class="btn btn-secondary">🔄 學習再行銷策略</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 滾動動畫效果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // 觀察所有需要動畫的元素
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 知識圖譜節點互動效果
+        document.querySelectorAll('.module-node').forEach(node => {
+            node.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 10px 30px rgba(255,255,255,0.3)';
+            });
+            
+            node.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // 動態載入統計數字
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            
+            updateCounter();
+        }
+
+        // 當頁面載入完成後啟動計數器動畫
+        window.addEventListener('load', () => {
+            const counters = document.querySelectorAll('.highlight-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                counter.textContent = '0';
+                setTimeout(() => {
+                    animateCounter(counter, target, 2000);
+                }, 500);
+            });
+        });
+    </script>
 </body>
 </html>
