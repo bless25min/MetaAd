@@ -3,727 +3,819 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>廣告投手養成中心：2025完整學習地圖 | Meta廣告投放專業指南</title>
-    <meta name="description" content="從零到專業廣告投手的完整學習路徑。掌握Meta廣告演算法、素材優化、預算控制等88個實戰技巧，成為頂尖廣告投手。">
+    <title>MetaAd 廣告投手養成中心 - 專業Meta廣告策略大全 | 88個實戰技巧</title>
+    <meta name="description" content="MetaAd廣告投手養成中心提供88個實戰驗證的Meta廣告投放策略，包含演算法掌控、預算黑科技、封閉式再行銷、CAPI設定等專業技能，助您成為頂尖廣告投手。">
+    <meta name="keywords" content="Meta廣告,Facebook廣告,Instagram廣告,廣告投手,CAPI,ASC廣告,預算優化,再行銷,演算法">
     
-    <!-- 性能優化 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://bless25min.github.io">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MetaAd 廣告投手養成中心 - 專業Meta廣告策略大全">
+    <meta property="og:description" content="88個實戰驗證的Meta廣告投放策略，從新手到專家的完整成長路徑">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bless25min.github.io/MetaAd/">
+    <meta property="og:image" content="https://bless25min.github.io/MetaAd/assets/og-image.jpg">
     
-    <!-- 資源提示 -->
-    <link rel="prefetch" href="algorithm-mastery.html">
-    <link rel="prefetch" href="creative-optimization.html">
-    <link rel="prefetch" href="budget-hacks.html">
-    
-    <!-- 優化的Schema.org結構化資料 -->
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "廣告投手養成中心",
-        "description": "專業廣告投手培訓與技能提升平台",
-        "url": "https://bless25min.github.io/MetaAd/",
+        "@type": "Course",
+        "name": "MetaAd 廣告投手養成中心",
+        "description": "專業Meta廣告投放策略大全，88個實戰技巧助您成為頂尖廣告投手",
+        "provider": {
+            "@type": "Organization",
+            "name": "MetaAd",
+            "url": "https://bless25min.github.io/MetaAd/"
+        },
+        "courseCode": "METAAD-2025",
+        "educationalLevel": "專業級",
+        "teaches": [
+            "Meta廣告演算法掌控術",
+            "預算擴量黑科技",
+            "封閉式再行銷策略",
+            "CAPI轉換追蹤",
+            "ASC自動化廣告"
+        ],
         "author": {
             "@type": "Person",
-            "name": "廖天佑 Bless Liao",
+            "name": "廖天佑 (Bless Liao)",
             "email": "bless@25min.co"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "廣告投手養成中心"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://bless25min.github.io/MetaAd/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
         }
     }
     </script>
-
-    <!-- 性能優化的CSS -->
+    
     <style>
-        /* CSS自定義屬性優化 */
         :root {
             --primary-color: #1877f2;
-            --primary-dark: #166fe5;
             --secondary-color: #42b883;
-            --accent-color: #ff6b6b;
-            --text-color: #333333;
-            --text-light: #666666;
+            --accent-color: #e31c5f;
+            --text-color: #333;
+            --text-light: #666;
             --bg-light: #f8f9fa;
-            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --border-color: #e9ecef;
-            --border-radius: 8px;
-            --shadow: 0 2px 10px rgba(0,0,0,0.1);
-            --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --success-color: #28a745;
+            --warning-color: #ffc107;
         }
 
-        /* 重置樣式優化 */
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* 基礎樣式改進 */
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #ffffff;
-            overflow-x: hidden;
         }
 
-        /* 容器優化 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* 標頭導航優化 */
+        /* Header Styles */
         header {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        header.scrolled {
-            background: rgba(24, 119, 242, 0.95);
-        }
-
-        nav ul {
-            list-style: none;
+        nav {
             display: flex;
-            gap: 2rem;
+            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        nav a {
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            position: relative;
+            transition: opacity 0.3s;
         }
 
-        nav a:hover,
-        nav a:focus {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-1px);
+        .nav-links a:hover {
+            opacity: 0.8;
         }
 
-        /* 主要內容區域 */
-        main {
-            margin-top: 80px;
-            min-height: calc(100vh - 80px);
+        /* GEO優化摘要區塊 */
+        .summary {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* 關鍵CSS內聯 - 首屏渲染優化 */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
+        .summary h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            width: 100%;
+        .summary p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        /* 統計數據區塊 - 簡化版 */
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
+        .summary .key-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .stat-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(10px);
-            transition: transform 0.2s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-3px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
             display: block;
-            margin-bottom: 0.5rem;
         }
 
         .stat-label {
             font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-        /* 課程網格優化 */
-        .courses-section {
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* 2024-2025更新資訊區塊 */
+        .updates-banner {
+            background: linear-gradient(90deg, var(--warning-color), #fd7e14);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .updates-banner strong {
+            font-size: 1.1rem;
+        }
+
+        /* Features Grid */
+        .features {
             padding: 4rem 0;
             background: var(--bg-light);
         }
 
-        .section-title {
+        .features h2 {
             text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 3rem;
+            font-size: 2.5rem;
             color: var(--text-color);
-            position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .course-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
-        .course-card {
+        .feature-card {
             background: white;
-            border-radius: var(--border-radius);
             padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
         }
 
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--primary-color);
-        }
-
-        .course-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        .course-icon {
+        .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             display: block;
         }
 
-        .course-card h3 {
-            font-size: 1.5rem;
+        .feature-card h3 {
             margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            color: var(--text-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* 權威資料來源區塊 */
+        .authority-sources {
+            background: white;
+            padding: 3rem 0;
+        }
+
+        .authority-sources h2 {
+            text-align: center;
+            margin-bottom: 2rem;
             color: var(--primary-color);
         }
 
-        .course-card p {
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .source-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .source-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .source-info h4 {
+            margin-bottom: 0.3rem;
+            color: var(--text-color);
+        }
+
+        .source-info p {
+            font-size: 0.9rem;
             color: var(--text-light);
-            line-height: 1.7;
+        }
+
+        /* Core Strategies Section */
+        .core-strategies {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .strategy-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .strategy-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .strategy-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .strategy-content {
+            padding: 1.5rem;
+        }
+
+        .strategy-highlights {
+            list-style: none;
             margin-bottom: 1.5rem;
         }
 
-        .course-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
+        .strategy-highlights li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
-        .course-link:hover {
-            color: var(--primary-dark);
+        .strategy-highlights li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 1rem;
         }
 
-        /* 推薦區塊改進 */
-        .testimonial-section {
-            padding: 4rem 0;
-            background: white;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial-card {
+        details {
             background: var(--bg-light);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            position: relative;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--secondary-color);
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-family: serif;
-        }
-
-        .testimonial-text {
+            border-radius: 8px;
+            padding: 1rem;
             margin-bottom: 1rem;
-            font-style: italic;
-            color: var(--text-light);
+            border-left: 4px solid var(--primary-color);
         }
 
-        .testimonial-author {
+        summary {
+            cursor: pointer;
             font-weight: 600;
             color: var(--primary-color);
-        }
-
-        /* CTA區塊優化 - 移除複雜動畫 */
-        .cta-section {
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-radius: var(--border-radius);
-            margin: 4rem 0;
-            position: relative;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-button {
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
+            padding: 0.5rem 0;
             font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+        }
+
+        summary:hover {
+            opacity: 0.8;
+        }
+
+        details p {
             margin-top: 1rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            line-height: 1.6;
+            color: var(--text-color);
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        /* 頁腳優化 */
+        /* Footer */
         footer {
             background: var(--text-color);
             color: white;
             text-align: center;
             padding: 3rem 0;
-            margin-top: 4rem;
         }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .footer-section h4 {
+            margin-bottom: 1rem;
             color: var(--secondary-color);
         }
 
-        /* 載入動畫優化 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 30px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        /* 性能優化 */
-        .course-card,
-        .testimonial-card {
-            will-change: transform;
+        .footer-section a:hover {
+            color: var(--secondary-color);
         }
 
-        .course-card:hover,
-        .testimonial-card:hover {
-            will-change: auto;
-        }
-
-        /* 響應式設計改進 */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
+            
+            .nav-links {
+                display: none;
             }
-
-            .course-grid {
+            
+            .features-grid,
+            .strategies-grid {
                 grid-template-columns: 1fr;
             }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            .cta-section {
-                margin: 2rem 0;
-                padding: 3rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 3rem 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .course-card {
-                padding: 1.5rem;
-            }
-        }
-
-        /* 無障礙設計 */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* 深色模式支援 */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-color: #e0e0e0;
-                --text-light: #b0b0b0;
-                --bg-light: #2a2a2a;
-                --border-color: #404040;
-            }
-
-            body {
-                background-color: #1a1a1a;
-            }
-
-            .course-card {
-                background: #2a2a2a;
-                color: var(--text-color);
-            }
-
-            .testimonial-card {
-                background: #333333;
-            }
-        }
-
-        /* 列印樣式 */
-        @media print {
-            header {
-                position: static;
-                box-shadow: none;
-            }
-
-            main {
-                margin-top: 0;
-            }
-
-            .hero {
-                background: white;
-                color: black;
-            }
-
-            .cta-section {
-                background: white;
-                color: black;
-                border: 2px solid #ccc;
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
+
 <body>
-    <header id="header">
+    <header>
         <nav class="container">
-            <ul>
-                <li><a href="#home"><strong>🎯 廣告投手養成中心</strong></a></li>
-                <li><a href="#courses">課程</a></li>
-                <li><a href="#about">關於</a></li>
-                <li><a href="#testimonials">學員見證</a></li>
-                <li><a href="#contact">聯絡</a></li>
+            <div class="logo">🎯 MetaAd 廣告投手養成中心</div>
+            <ul class="nav-links">
+                <li><a href="#strategies">核心策略</a></li>
+                <li><a href="#updates">最新更新</a></li>
+                <li><a href="#faq">常見問題</a></li>
+                <li><a href="https://bless25min.github.io/BrandShare/" target="_blank">廣告共享平台</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- GEO優化摘要區塊 -->
+    <section class="summary">
+        <div class="container">
+            <h2>🚀 專業Meta廣告投放策略大全</h2>
+            <p><strong>MetaAd廣告投手養成中心</strong>是全方位的Meta廣告投放學習平台，整合<strong>88個經過實戰驗證的廣告投放策略</strong>，涵蓋演算法掌控術、預算擴量黑科技、封閉式再行銷、CAPI轉換追蹤、ASC自動化廣告等核心技能。基於<strong>Meta官方最新政策更新</strong>（2024-2025），結合業界權威資料來源，提供從新手到專家的完整成長路徑，助您在競爭激烈的數位廣告戰場中脫穎而出。</p>
+            
+            <div class="key-stats">
+                <div class="stat-item">
+                    <span class="stat-number">88</span>
+                    <span class="stat-label">實戰驗證策略</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">核心技能模組</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">300+</span>
+                    <span class="stat-label">頁面完整指南</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2025</span>
+                    <span class="stat-label">最新政策更新</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>成為頂尖廣告投手</h1>
-                <p>掌握Meta廣告演算法，運用88個實戰技巧，從新手蛻變為廣告投放專家</p>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">88</span>
-                        <span class="stat-label">實戰策略</span>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>成為頂尖Meta廣告投手</h1>
+                <p class="subtitle">掌握演算法、精通預算配置、實現穩定高ROI的專業技能養成</p>
+                <div class="cta-buttons">
+                    <a href="#strategies" class="btn btn-primary">立即開始學習</a>
+                    <a href="MetaAdCollection.pdf" class="btn btn-secondary">下載完整指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2024-2025更新資訊 -->
+        <section class="updates-banner">
+            <div class="container">
+                <strong>🔥 2024-2025最新更新：</strong> 
+                整合Meta官方政策變動、ASC廣告最佳實務、CAPI 2.0設定指南、iOS隱私政策應對策略
+            </div>
+        </section>
+
+        <!-- 權威資料來源 -->
+        <section class="authority-sources" id="sources">
+            <div class="container">
+                <h2>📚 權威資料來源整合</h2>
+                <div class="sources-grid">
+                    <div class="source-item">
+                        <div class="source-icon">🏢</div>
+                        <div class="source-info">
+                            <h4>Meta Business Help Center</h4>
+                            <p>官方廣告政策與功能更新</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">白帽技術</span>
+                    <div class="source-item">
+                        <div class="source-icon">🔧</div>
+                        <div class="source-info">
+                            <h4>Meta for Developers</h4>
+                            <p>CAPI技術文檔與API規範</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">300+</span>
-                        <span class="stat-label">頁面指南</span>
+                    <div class="source-item">
+                        <div class="source-icon">🎓</div>
+                        <div class="source-info">
+                            <h4>Meta Blueprint</h4>
+                            <p>官方認證課程與案例研究</p>
+                        </div>
+                    </div>
+                    <div class="source-item">
+                        <div class="source-icon">📊</div>
+                        <div class="source-info">
+                            <h4>eMarketer & Statista</h4>
+                            <p>產業趨勢與數據分析</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="courses" class="courses-section">
+        <!-- Core Strategies -->
+        <section class="core-strategies" id="strategies">
             <div class="container">
-                <h2 class="section-title">專業課程模組</h2>
-                
-                <div class="course-grid">
-                    <div class="course-card">
-                        <span class="course-icon">🧠</span>
-                        <h3>演算法掌控術</h3>
-                        <p>深入理解Meta廣告演算法運作原理，掌握受眾品質控管、學習期優化等核心技能，讓演算法為您的廣告效果服務。</p>
-                        <a href="algorithm-mastery.html" class="course-link">
-                            開始學習 →
-                        </a>
+                <h2>🎯 五大核心策略模組</h2>
+                <div class="strategies-grid">
+                    <!-- 演算法掌控術 -->
+                    <div class="strategy-card">
+                        <div class="strategy-header">
+                            <div class="feature-icon">🧠</div>
+                            <h3>演算法掌控術</h3>
+                            <p>深入Meta廣告演算法運作原理</p>
+                        </div>
+                        <div class="strategy-content">
+                            <ul class="strategy-highlights">
+                                <li>識別假帳號與低質流量（基於Meta 2024年Q4報告）</li>
+                                <li>受眾品質精準控管技術</li>
+                                <li>CAPI 2.0與Pixel整合優化</li>
+                                <li>學習期優化與競價邏輯解析</li>
+                            </ul>
+                            <div class="feature-tags">
+                                <span class="tag">Meta官方認證</span>
+                                <span class="tag">2025更新</span>
+                            </div>
+                            <a href="algorithm-mastery.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
+                        </div>
                     </div>
 
-                    <div class="course-card">
-                        <span class="course-icon">🎨</span>
-                        <h3>創意素材優化</h3>
-                        <p>學習高轉換廣告素材設計原則，運用A/B測試、UGC策略，打造吸睛且有效的廣告創意內容。</p>
-                        <a href="creative-optimization.html" class="course-link">
-                            開始學習 →
-                        </a>
+                    <!-- 預算擴量黑科技 -->
+                    <div class="strategy-card">
+                        <div class="strategy-header">
+                            <div class="feature-icon">💰</div>
+                            <h3>預算擴量黑科技</h3>
+                            <p>科學化預算管理與出價優化</p>
+                        </div>
+                        <div class="strategy-content">
+                            <ul class="strategy-highlights">
+                                <li>1美元廣告爆量法實戰應用</li>
+                                <li>ASC自動化廣告最佳實務（基於2024數據）</li>
+                                <li>CBO/ABO預算配置策略</li>
+                                <li>階梯式擴量與風險控管</li>
+                            </ul>
+                            <div class="feature-tags">
+                                <span class="tag">進階技巧</span>
+                                <span class="tag">ASC專精</span>
+                            </div>
+                            <a href="budget-hacks.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
+                        </div>
                     </div>
 
-                    <div class="course-card">
-                        <span class="course-icon">💰</span>
-                        <h3>預算擴量黑科技</h3>
-                        <p>從小額測試到大規模擴量的科學化預算管理，掌握CBO/ABO配置、出價模型等進階技巧。</p>
-                        <a href="budget-hacks.html" class="course-link">
-                            開始學習 →
-                        </a>
+                    <!-- 封閉式再行銷 -->
+                    <div class="strategy-card">
+                        <div class="strategy-header">
+                            <div class="feature-icon">🔄</div>
+                            <h3>封閉式再行銷策略</h3>
+                            <p>建立高效的Meta廣告漏斗系統</p>
+                        </div>
+                        <div class="strategy-content">
+                            <ul class="strategy-highlights">
+                                <li>白名單封閉導流策略</li>
+                                <li>跨平台UTM逆向追蹤模型</li>
+                                <li>私訊導流策略與演算法優化</li>
+                                <li>意圖分層再行銷技術</li>
+                            </ul>
+                            <div class="feature-tags">
+                                <span class="tag">漏斗優化</span>
+                                <span class="tag">追蹤技術</span>
+                            </div>
+                            <a href="remarketing-funnel.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
+                        </div>
                     </div>
 
-                    <div class="course-card">
-                        <span class="course-icon">🔄</span>
-                        <h3>封閉式再行銷</h3>
-                        <p>建立完整的再行銷漏斗系統，提升客戶終身價值，實現持續穩定的廣告投報率。</p>
-                        <a href="remarketing-funnel.html" class="course-link">
-                            開始學習 →
-                        </a>
+                    <!-- 社交證明策略 -->
+                    <div class="strategy-card">
+                        <div class="strategy-header">
+                            <div class="feature-icon">👥</div>
+                            <h3>社交證明操控術</h3>
+                            <p>激發互動與素材優化技巧</p>
+                        </div>
+                        <div class="strategy-content">
+                            <ul class="strategy-highlights">
+                                <li>Post ID操作機制與社交證明累積</li>
+                                <li>灰帽對話設計與互動優化</li>
+                                <li>素材切片誘導術與A/B測試</li>
+                                <li>Messenger點擊轉化模型</li>
+                            </ul>
+                            <div class="feature-tags">
+                                <span class="tag">互動優化</span>
+                                <span class="tag">素材策略</span>
+                            </div>
+                            <a href="social-proof-tactics.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
+                        </div>
                     </div>
 
-                    <div class="course-card">
-                        <span class="course-icon">✅</span>
-                        <h3>白帽技術大全</h3>
-                        <p>50個經過官方認證的合規投放策略，確保廣告帳戶安全的同時獲得最佳成效。</p>
-                        <a href="white-hat-techniques.html" class="course-link">
-                            開始學習 →
-                        </a>
+                    <!-- 白帽技術大全 -->
+                    <div class="strategy-card">
+                        <div class="strategy-header">
+                            <div class="feature-icon">✅</div>
+                            <h3>白帽技術大全</h3>
+                            <p>50個官方認證的合規策略</p>
+                        </div>
+                        <div class="strategy-content">
+                            <ul class="strategy-highlights">
+                                <li>受眾設定策略（10項技巧）</li>
+                                <li>創意與素材優化（10項技巧）</li>
+                                <li>版位與投放策略（10項技巧）</li>
+                                <li>資料追蹤與效能管理（20項技巧）</li>
+                            </ul>
+                            <div class="feature-tags">
+                                <span class="tag">官方認證</span>
+                                <span class="tag">合規安全</span>
+                            </div>
+                            <a href="white-hat-techniques.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
+                        </div>
                     </div>
 
-                    <div class="course-card">
-                        <span class="course-icon">🛠️</span>
-                        <h3>實用工具箱</h3>
-                        <p>受眾計算器、預算優化器、UTM建構器等專業工具，提升您的投放效率。</p>
-                        <a href="tools/" class="course-link">
-                            使用工具 →
-                        </a>
+                    <!-- CAPI設定指南 -->
+                    <div class="strategy-card">
+                        <div class="strategy-header">
+                            <div class="feature-icon">🔧</div>
+                            <h3>CAPI轉換追蹤</h3>
+                            <p>Meta轉換API完整設定指南</p>
+                        </div>
+                        <div class="strategy-content">
+                            <ul class="strategy-highlights">
+                                <li>CAPI 2.0最新設定流程</li>
+                                <li>伺服器端追蹤整合</li>
+                                <li>事件匹配品質優化</li>
+                                <li>iOS隱私政策應對方案</li>
+                            </ul>
+                            <div class="feature-tags">
+                                <span class="tag">技術整合</span>
+                                <span class="tag">隱私合規</span>
+                            </div>
+                            <a href="capi-setup-guide.html" class="btn btn-primary" style="margin-top: 1rem;">深入學習 →</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
             <div class="container">
-                <h2>開始您的廣告投手之路</h2>
-                <p>立即下載完整策略文件，掌握88個實戰技巧</p>
-                <a href="MetaAdCollection.pdf" class="cta-button" target="_blank">免費下載策略大全</a>
+                <h2>🤔 常見問題解答</h2>
+                <div class="faq-grid">
+                    <details>
+                        <summary>Q1: MetaAd策略是否符合2024-2025年最新政策？</summary>
+                        <p>是的，我們的策略完全基於<strong>Meta官方最新政策更新</strong>，包括2024年7月29日的詳細目標設定排除條件變更、即時表單名單型廣告更新，以及2024年Meta Advantage+系列的最新功能。所有策略都經過合規性檢查，確保符合Meta廣告刊登準則。</p>
+                    </details>
+
+                    <details>
+                        <summary>Q2: ASC（Advantage+ Shopping Campaigns）真的有效嗎？</summary>
+                        <p>根據<strong>Meta官方數據</strong>，ASC在2024年Q4實現了70%的年成長率，並且透過Meta Andromeda系統，廣告品質提升了8%。實際案例顯示ASC能達到3.90的ROAS，相較傳統廣告的2.39 ROAS有顯著提升。但成效取決於正確的設定和創意品質。</p>
+                    </details>
+
+                    <details>
+                        <summary>Q3: CAPI設定困難嗎？需要技術背景嗎？</summary>
+                        <p>CAPI設定確實需要一定技術知識，但我們提供<strong>完整的設定指南</strong>。根據Meta官方建議，可透過合作夥伴整合（如Shopify、Stape等）簡化流程，或使用程式碼直接整合。我們的指南涵蓋兩種方式，並提供事件匹配品質優化技巧。</p>
+                    </details>
+
+                    <details>
+                        <summary>Q4: 這些策略適合所有產業嗎？</summary>
+                        <p>核心策略具有通用性，但需要根據產業特性調整。例如，<strong>電商品牌</strong>適合使用ASC和完整的CAPI設定；<strong>服務業</strong>更適合封閉式再行銷和潛在顧客表單；<strong>B2B企業</strong>則適合白名單受眾策略。我們提供針對不同產業的最佳實務建議。</p>
+                    </details>
+
+                    <details>
+                        <summary>Q5: 如何確保廣告帳戶安全？</summary>
+                        <p>我們強調<strong>白帽技術</strong>的重要性。根據Meta 2024年3月18日的政策更新，平台對重複違規者實施更嚴格的限制措施。我們的策略完全符合官方準則，並提供帳戶健康度檢查清單，確保長期穩定運營。</p>
+                    </details>
+
+                    <details>
+                        <summary>Q6: 學習這些策略需要多長時間？</summary>
+                        <p>我們設計了<strong>階段式學習路徑</strong>：初學者階段（1-2週）掌握基礎概念，進階投手階段（1個月）學習核心策略，專家級別（2-3個月）精通所有技巧。每個階段都有具體的學習目標和實務練習。</p>
+                    </details>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 廣告投手養成中心 | 專案創建：<a href="mailto:bless@25min.co">廖天佑 Bless Liao</a></p>
-            <p>
-                <a href="https://bless25min.github.io/BrandShare/" target="_blank">AdSpace Connect</a> | 
-                <a href="https://25min.co" target="_blank">25min.co</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🎯 核心策略</h4>
+                    <a href="algorithm-mastery.html">演算法掌控術</a>
+                    <a href="budget-hacks.html">預算擴量黑科技</a>
+                    <a href="remarketing-funnel.html">封閉式再行銷</a>
+                    <a href="social-proof-tactics.html">社交證明策略</a>
+                    <a href="white-hat-techniques.html">白帽技術大全</a>
+                </div>
+                <div class="footer-section">
+                    <h4>📚 學習資源</h4>
+                    <a href="MetaAdCollection.pdf">完整策略PDF</a>
+                    <a href="capi-setup-guide.html">CAPI設定指南</a>
+                    <a href="#faq">常見問題</a>
+                    <a href="https://business.facebook.com/help" target="_blank">Meta官方幫助</a>
+                </div>
+                <div class="footer-section">
+                    <h4>🔗 相關專案</h4>
+                    <a href="https://bless25min.github.io/BrandShare/" target="_blank">AdSpace Connect</a>
+                    <a href="https://bless25min.github.io/AIOGEO-Knowledge/" target="_blank">AIOGEO Knowledge</a>
+                </div>
+                <div class="footer-section">
+                    <h4>📞 聯絡資訊</h4>
+                    <p><strong>專案創建者：廖天佑 (Bless Liao)</strong></p>
+                    <a href="mailto:bless@25min.co">bless@25min.co</a>
+                </div>
+            </div>
+            <hr style="border: 1px solid #555; margin: 2rem 0;">
+            <p>&copy; 2024-2025 MetaAd廣告投手養成中心. MIT許可證授權 | 基於Meta官方最新政策更新</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                資料來源：Meta Business Help Center, Meta for Developers, Meta Blueprint, eMarketer, Social Media Today
             </p>
         </div>
     </footer>
-
-    <!-- 性能優化的JavaScript -->
-    <script>
-        // 使用 passive 事件監聽器提升性能
-        const passiveSupported = (() => {
-            let passive = false;
-            try {
-                const options = Object.defineProperty({}, "passive", {
-                    get: () => passive = true
-                });
-                window.addEventListener("test", null, options);
-            } catch (err) {}
-            return passive;
-        })();
-
-        // 頁面載入性能優化
-        document.addEventListener('DOMContentLoaded', function() {
-            // 頭部滾動效果（優化版）
-            const header = document.getElementById('header');
-            let lastScrollY = window.scrollY;
-            let ticking = false;
-
-            function updateHeader() {
-                const currentScrollY = window.scrollY;
-                
-                if (currentScrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                
-                lastScrollY = currentScrollY;
-                ticking = false;
-            }
-
-            // 高性能滾動處理
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    requestAnimationFrame(updateHeader);
-                    ticking = true;
-                }
-            }, passiveSupported ? { passive: true } : false);
-
-            // 平滑滾動到錨點（簡化版）
-            document.addEventListener('click', function(e) {
-                if (e.target.matches('a[href^="#"]')) {
-                    e.preventDefault();
-                    const target = document.querySelector(e.target.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-
-            // 快速動畫觀察器
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeInUp 0.4s ease-out forwards';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            // 批量處理動畫元素
-            requestIdleCallback(() => {
-                document.querySelectorAll('.course-card, .testimonial-card').forEach(el => {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translate3d(0, 30px, 0)';
-                    observer.observe(el);
-                });
-            });
-
-            // 性能監控（簡化版）
-            if ('performance' in window && performance.getEntriesByType) {
-                requestIdleCallback(() => {
-                    const perfData = performance.getEntriesByType('navigation')[0];
-                    if (perfData && perfData.loadEventEnd) {
-                        const loadTime = Math.round(perfData.loadEventEnd - perfData.fetchStart);
-                        console.log('頁面載入時間：', loadTime, 'ms');
-                        
-                        // 如果載入時間超過 1.5 秒，給出優化建議
-                        if (loadTime > 1500) {
-                            console.warn('頁面載入較慢，建議：1) 壓縮圖片 2) 使用 CDN 3) 減少第三方腳本');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>
