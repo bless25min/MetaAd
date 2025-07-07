@@ -450,7 +450,7 @@
             text-align: center;
         }
 
-        /* 技術表格 */
+        /* 技術表格 - 修復後的樣式 */
         .tech-table {
             width: 100%;
             border-collapse: collapse;
@@ -459,6 +459,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: table; /* 確保顯示為表格 */
         }
 
         .tech-table th,
@@ -466,6 +467,7 @@
             padding: 1rem;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
         }
 
         .tech-table th {
@@ -474,8 +476,24 @@
             font-weight: bold;
         }
 
-        .tech-table tr:hover {
+        .tech-table tr:nth-child(even) {
             background: var(--bg-light);
+        }
+
+        .tech-table tr:hover {
+            background: rgba(24, 119, 242, 0.1);
+        }
+
+        .tech-table td strong {
+            color: var(--primary-color);
+        }
+
+        /* 表格容器 */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         /* 響應式設計 */
@@ -499,6 +517,15 @@
             .container {
                 padding: 0 15px;
             }
+
+            .tech-table {
+                font-size: 0.9rem;
+            }
+
+            .tech-table th,
+            .tech-table td {
+                padding: 0.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -508,6 +535,10 @@
             
             .stat-number {
                 font-size: 2rem;
+            }
+
+            .tech-table {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -725,37 +756,39 @@
                     <li><strong>預算配置：</strong>初期設定充足預算供演算法學習</li>
                 </ul>
 
-                <table class="tech-table">
-                    <thead>
-                        <tr>
-                            <th>ASC設定項目</th>
-                            <th>建議配置</th>
-                            <th>預期效果</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>日預算</td>
-                            <td>平均訂單價值 × 10</td>
-                            <td>充足學習數據</td>
-                        </tr>
-                        <tr>
-                            <td>目標受眾</td>
-                            <td>廣泛受眾 + 排除已購買</td>
-                            <td>最大觸及潛力</td>
-                        </tr>
-                        <tr>
-                            <td>創意數量</td>
-                            <td>5-10組圖片 + 3-5支影片</td>
-                            <td>避免廣告疲勞</td>
-                        </tr>
-                        <tr>
-                            <td>學習期</td>
-                            <td>7-14天不調整</td>
-                            <td>演算法穩定學習</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>ASC設定項目</th>
+                                <th>建議配置</th>
+                                <th>預期效果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>日預算</strong></td>
+                                <td>平均訂單價值 × 10</td>
+                                <td>充足學習數據</td>
+                            </tr>
+                            <tr>
+                                <td><strong>目標受眾</strong></td>
+                                <td>廣泛受眾 + 排除已購買</td>
+                                <td>最大觸及潛力</td>
+                            </tr>
+                            <tr>
+                                <td><strong>創意數量</strong></td>
+                                <td>5-10組圖片 + 3-5支影片</td>
+                                <td>避免廣告疲勞</td>
+                            </tr>
+                            <tr>
+                                <td><strong>學習期</strong></td>
+                                <td>7-14天不調整</td>
+                                <td>演算法穩定學習</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div class="data-highlight">
                     <div class="statistic">
@@ -780,42 +813,44 @@
                 </div>
 
                 <h4>🔄 CBO vs ABO 選擇指南</h4>
-                <table class="tech-table">
-                    <thead>
-                        <tr>
-                            <th>比較項目</th>
-                            <th>CBO (廣告系列預算優化)</th>
-                            <th>ABO (廣告組預算優化)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>適用場景</strong></td>
-                            <td>大規模穩定投放</td>
-                            <td>精細測試與控制</td>
-                        </tr>
-                        <tr>
-                            <td><strong>預算分配</strong></td>
-                            <td>演算法自動分配</td>
-                            <td>手動設定分配</td>
-                        </tr>
-                        <tr>
-                            <td><strong>學習速度</strong></td>
-                            <td>較快（集中預算）</td>
-                            <td>較慢（分散預算）</td>
-                        </tr>
-                        <tr>
-                            <td><strong>控制彈性</strong></td>
-                            <td>低（依賴演算法）</td>
-                            <td>高（完全手動控制）</td>
-                        </tr>
-                        <tr>
-                            <td><strong>成效穩定性</strong></td>
-                            <td>高（演算法優化）</td>
-                            <td>中（需手動調整）</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>比較項目</th>
+                                <th>CBO (廣告系列預算優化)</th>
+                                <th>ABO (廣告組預算優化)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>適用場景</strong></td>
+                                <td>大規模穩定投放</td>
+                                <td>精細測試與控制</td>
+                            </tr>
+                            <tr>
+                                <td><strong>預算分配</strong></td>
+                                <td>演算法自動分配</td>
+                                <td>手動設定分配</td>
+                            </tr>
+                            <tr>
+                                <td><strong>學習速度</strong></td>
+                                <td>較快（集中預算）</td>
+                                <td>較慢（分散預算）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>控制彈性</strong></td>
+                                <td>低（依賴演算法）</td>
+                                <td>高（完全手動控制）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成效穩定性</strong></td>
+                                <td>高（演算法優化）</td>
+                                <td>中（需手動調整）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h4>📈 階梯式擴量策略</h4>
                 <ul class="strategy-highlights">
@@ -977,42 +1012,44 @@
                 </ul>
                 
                 <p><strong>執行結果：</strong></p>
-                <table class="tech-table">
-                    <thead>
-                        <tr>
-                            <th>關鍵指標</th>
-                            <th>優化前</th>
-                            <th>優化後</th>
-                            <th>改善幅度</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>月預算規模</td>
-                            <td>$50,000</td>
-                            <td>$250,000</td>
-                            <td>+400%</td>
-                        </tr>
-                        <tr>
-                            <td>平均CPA</td>
-                            <td>$45</td>
-                            <td>$32</td>
-                            <td>-29%</td>
-                        </tr>
-                        <tr>
-                            <td>ROAS</td>
-                            <td>2.1</td>
-                            <td>4.2</td>
-                            <td>+100%</td>
-                        </tr>
-                        <tr>
-                            <td>學習期時間</td>
-                            <td>14天</td>
-                            <td>6天</td>
-                            <td>-57%</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>關鍵指標</th>
+                                <th>優化前</th>
+                                <th>優化後</th>
+                                <th>改善幅度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>月預算規模</strong></td>
+                                <td>$50,000</td>
+                                <td>$250,000</td>
+                                <td>+400%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>平均CPA</strong></td>
+                                <td>$45</td>
+                                <td>$32</td>
+                                <td>-29%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ROAS</strong></td>
+                                <td>2.1</td>
+                                <td>4.2</td>
+                                <td>+100%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>學習期時間</strong></td>
+                                <td>14天</td>
+                                <td>6天</td>
+                                <td>-57%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
                 <div class="case-source">
                     <a href="#detailed-case">📊 查看詳細案例分析報告</a>
