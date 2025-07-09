@@ -1,46 +1,61 @@
-name: 🔧 MetaAd 內部連結修復與部署
+#!/bin/bash
+
+echo "🔧 MetaAd 內部連結快速修復"
+echo "============================="
+echo ""
+
+# 步驟 1: 刪除舊的工作流程文件（如果存在）
+echo "🗑️  清理舊的工作流程文件..."
+rm -f .github/workflows/fix-and-deploy.yml
+
+# 步驟 2: 重新建立目錄
+echo "📁 重新建立目錄..."
+mkdir -p .github/workflows
+
+# 步驟 3: 建立正確的工作流程文件
+echo "⚙️  建立新的工作流程文件..."
+cat > .github/workflows/fix-and-deploy.yml << 'EOF'
+name: Fix MetaAd Internal Links
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 0'
 
 jobs:
   fix-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
-    - name: 📥 檢出代碼
+    - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: 🔍 修復內部連結
+    - name: Fix internal links
       run: |
-        echo "🔍 開始修復內部連結問題..."
+        echo "Fixing internal links..."
         
-        # 修復 algorithm-mastery.html
         if [ -f "algorithm-mastery.html" ]; then
-          echo "🔧 修復 algorithm-mastery.html..."
+          echo "Processing algorithm-mastery.html..."
           
-          # 檢查是否已經存在目標區塊
+          # 備份原文件
+          cp algorithm-mastery.html algorithm-mastery.html.backup
+          
+          # 檢查是否需要添加區塊
           if ! grep -q 'id="industry-data"' algorithm-mastery.html; then
-            echo "📝 新增 industry-data 區塊..."
+            echo "Adding industry-data section..."
             
-            # 建立 Python 修復腳本
-            cat > fix_algorithm.py << 'EOF'
+            # 創建修復腳本
+            cat > fix_links.py << 'PYTHON_EOF'
 import re
 
 # 讀取文件
 with open('algorithm-mastery.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
-# 準備要插入的內容
-industry_data_section = '''
-        <!-- 產業數據趨勢報告區塊 -->
+# 新增區塊內容
+new_sections = '''
         <section class="content-section" id="industry-data">
             <h2>📊 2024-2025年廣告趨勢與產業數據分析</h2>
-            
             <div class="data-insights">
                 <div class="insight-card">
                     <h3>🎯 Meta廣告投放趨勢</h3>
@@ -51,7 +66,6 @@ industry_data_section = '''
                         <li><strong>再行銷精準度提升：</strong>CAPI整合後轉換率平均提升35%</li>
                     </ul>
                 </div>
-                
                 <div class="insight-card">
                     <h3>📈 產業基準數據 (2024Q4)</h3>
                     <table class="benchmark-table">
@@ -88,10 +102,8 @@ industry_data_section = '''
             </div>
         </section>
 
-        <!-- 防詐技術整合方案區塊 -->
         <section class="content-section" id="fraud-detection">
             <h2>🛡️ 第三方防詐工具整合方案</h2>
-            
             <div class="fraud-detection-tools">
                 <div class="tool-card">
                     <h3>🔍 Anura 防詐系統整合</h3>
@@ -103,7 +115,6 @@ industry_data_section = '''
                             <li>行為模式異常分析</li>
                             <li>IP地址信譽評估</li>
                         </ul>
-                        
                         <h4>整合步驟：</h4>
                         <ol>
                             <li>在Anura平台建立帳戶並取得API金鑰</li>
@@ -113,7 +124,6 @@ industry_data_section = '''
                         </ol>
                     </div>
                 </div>
-                
                 <div class="tool-card">
                     <h3>📱 AppsFlyer 歸因分析</h3>
                     <div class="tool-features">
@@ -124,7 +134,6 @@ industry_data_section = '''
                             <li>深度連結追蹤</li>
                             <li>LTV預測分析</li>
                         </ul>
-                        
                         <h4>與Meta整合：</h4>
                         <ol>
                             <li>透過SDK收集應用內事件</li>
@@ -144,41 +153,18 @@ if insert_point == -1:
     insert_point = content.find('<footer>')
 
 if insert_point != -1:
-    # 插入新內容
-    new_content = content[:insert_point] + industry_data_section + content[insert_point:]
+    new_content = content[:insert_point] + new_sections + content[insert_point:]
     
-    # 寫回文件
     with open('algorithm-mastery.html', 'w', encoding='utf-8') as f:
         f.write(new_content)
     
-    print('✅ 已添加 industry-data 和 fraud-detection 區塊')
+    print('SUCCESS: Added sections')
 else:
-    print('❌ 無法找到插入點')
-EOF
-            
-            # 執行修復腳本
-            python3 fix_algorithm.py
-            
-            echo "✅ 已為 algorithm-mastery.html 添加錨點區塊"
-          else
-            echo "✅ algorithm-mastery.html 已包含所需區塊"
-          fi
-          
-          # 添加CSS樣式
-          if ! grep -q "data-insights" algorithm-mastery.html; then
-            echo "🎨 添加CSS樣式..."
-            
-            # 建立CSS添加腳本
-            cat > add_css.py << 'EOF'
-import re
+    print('ERROR: Could not find insertion point')
 
-# 讀取文件
-with open('algorithm-mastery.html', 'r', encoding='utf-8') as f:
-    content = f.read()
-
-# CSS樣式
-css_styles = '''
-        /* 新增區塊樣式 */
+# 添加CSS樣式
+if '</style>' in content and 'data-insights' not in content:
+    css_styles = '''
         .data-insights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -249,84 +235,79 @@ css_styles = '''
             }
         }
 '''
-
-# 在 </style> 之前插入CSS
-if '</style>' in content:
+    
+    with open('algorithm-mastery.html', 'r', encoding='utf-8') as f:
+        content = f.read()
+    
     content = content.replace('</style>', css_styles + '\n        </style>')
     
-    # 寫回文件
     with open('algorithm-mastery.html', 'w', encoding='utf-8') as f:
         f.write(content)
     
-    print('✅ 已添加CSS樣式')
-else:
-    print('❌ 找不到 </style> 標籤')
-EOF
+    print('SUCCESS: Added CSS styles')
+PYTHON_EOF
             
-            # 執行CSS添加腳本
-            python3 add_css.py
+            python3 fix_links.py
             
-            echo "✅ 已為 algorithm-mastery.html 添加CSS樣式"
+            echo "Section addition completed"
           else
-            echo "✅ algorithm-mastery.html 已包含所需CSS"
+            echo "Sections already exist"
           fi
         else
-          echo "❌ algorithm-mastery.html 文件不存在"
+          echo "algorithm-mastery.html not found"
         fi
-        
-        echo "🎉 修復完成！"
     
-    - name: 📊 生成修復報告
-      run: |
-        echo "📊 生成修復報告..."
-        
-        cat > LINK_FIX_REPORT.md << 'EOF'
-        # 🔧 MetaAd 專案內部連結修復報告
-        
-        ## 修復時間
-        修復時間: $(date '+%Y-%m-%d %H:%M:%S')
-        
-        ## 修復項目
-        
-        ### ✅ 已修復的頁面
-        
-        #### 1. algorithm-mastery.html
-        - ✅ 新增 `#industry-data` 區塊 - 2024-2025年廣告趨勢與產業數據分析
-        - ✅ 新增 `#fraud-detection` 區塊 - 第三方防詐工具整合方案
-        - ✅ 新增響應式CSS樣式
-        
-        ### 🔍 驗證結果
-        - ✅ 內部連結 `#industry-data` 可正常工作
-        - ✅ 內部連結 `#fraud-detection` 可正常工作
-        - ✅ 響應式設計正常
-        
-        ## 網站連結
-        - 🌐 網站地址: https://metaad.25min.co/
-        - 📊 測試連結: https://metaad.25min.co/algorithm-mastery.html#industry-data
-        - 🛡️ 測試連結: https://metaad.25min.co/algorithm-mastery.html#fraud-detection
-        
-        ---
-        
-        **修復完成！** 🎉
-        所有內部連結現在都能正常工作。
-        EOF
-        
-        echo "✅ 修復報告已生成"
-    
-    - name: 🚀 部署到 GitHub Pages
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
-        exclude_assets: '.github,*.py,*.md,LINK_FIX_REPORT.md'
+        exclude_assets: '.github,*.py,*.backup'
         
-    - name: 📢 完成通知
+    - name: Report completion
       run: |
-        echo "🎉 修復和部署完成！"
-        echo "✅ 網站已更新: https://metaad.25min.co/"
-        echo "✅ 內部連結已修復"
-        echo "📊 修復報告已生成"
-        echo ""
-        echo "🎯 請測試以下連結："
+        echo "Fix and deployment completed"
+        echo "Website: https://metaad.25min.co/"
+        echo "Test links:"
         echo "- https://metaad.25min.co/algorithm-mastery.html#industry-data"
         echo "- https://metaad.25min.co/algorithm-mastery.html#fraud-detection"
+EOF
+
+echo "✅ 工作流程文件已建立"
+echo ""
+
+# 步驟 4: 驗證文件
+echo "🔍 驗證 YAML 文件..."
+if [ -f ".github/workflows/fix-and-deploy.yml" ]; then
+    echo "✅ 文件存在"
+    echo "📏 文件大小: $(wc -c < .github/workflows/fix-and-deploy.yml) bytes"
+else
+    echo "❌ 文件建立失敗"
+    exit 1
+fi
+
+# 步驟 5: 提交變更
+echo "📝 提交變更..."
+git add .github/workflows/fix-and-deploy.yml
+git commit -m "🔧 修復 GitHub Action YAML 語法錯誤
+
+- 重新建立工作流程文件
+- 修正 YAML 格式問題
+- 簡化腳本結構
+- 確保語法正確性"
+
+echo "✅ 提交完成"
+echo ""
+
+# 步驟 6: 推送到 GitHub
+echo "🚀 推送到 GitHub..."
+git push origin main
+
+echo ""
+echo "🎉 修復完成！"
+echo "⏳ GitHub Actions 將在幾秒後開始執行..."
+echo "🔗 查看狀態: https://github.com/$(git config --get remote.origin.url | sed 's/.*github.com[:/]\([^/]*\/[^/]*\).*/\1/' | sed 's/\.git$//')/actions"
+echo ""
+echo "🎯 修復完成後請測試:"
+echo "- https://metaad.25min.co/algorithm-mastery.html#industry-data"
+echo "- https://metaad.25min.co/algorithm-mastery.html#fraud-detection"
