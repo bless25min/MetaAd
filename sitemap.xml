@@ -1,132 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- MetaAd專案主頁面 - 2025年7月7日權威資料統合升級完成 -->
+  <!-- MetaAd專案主頁面 - 自訂網域 meta.25min.co -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://bless25min.github.io/MetaAd/images/metaad-knowledge-map.png</image:loc>
-      <image:caption>MetaAd知識圖譜導航系統</image:caption>
-    </image:image>
   </url>
 
   <!-- 核心策略頁面 - 已完成權威資料整合升級 -->
   
-  <!-- 封閉式再行銷策略 - 5張專業圖表整合 -->
+  <!-- 封閉式再行銷策略 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/remarketing-funnel.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/remarketing-funnel.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bless25min.github.io/MetaAd/images/漏斗與線上線下跨域追蹤.png</image:loc>
-      <image:caption>完整跨域追蹤漏斗架構圖</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://bless25min.github.io/MetaAd/images/跨域追蹤流程與應用實例.jpg</image:loc>
-      <image:caption>UTM追蹤技術實際應用流程</image:caption>
-    </image:image>
   </url>
 
-  <!-- 預算擴量黑科技 - 2張專業圖表整合 -->
+  <!-- 預算擴量黑科技 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/budget-hacks.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/budget-hacks.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bless25min.github.io/MetaAd/images/透過大量廣告組合找到回應較好的廣告受眾屬性.png</image:loc>
-      <image:caption>大量廣告組合測試實戰流程</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://bless25min.github.io/MetaAd/images/透過指定新版行動裝置作業系統排除模擬器假帳號.png</image:loc>
-      <image:caption>設備篩選與假帳號過濾技術</image:caption>
-    </image:image>
   </url>
 
   <!-- 演算法掌控術 - Meta Andromeda AI系統技術分析 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/algorithm-mastery.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/algorithm-mastery.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 社交證明策略 - 1張用戶追蹤圖表整合 -->
+  <!-- 社交證明策略 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/social-proof-tactics.html</loc>
-    <lastmod>2025-07-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bless25min.github.io/MetaAd/images/透過插入跳轉追蹤的方式追查用戶來源屬性裝置分類頁面.png</image:loc>
-      <image:caption>用戶來源屬性追蹤與裝置分類</image:caption>
-    </image:image>
-  </url>
-
-  <!-- 白帽技巧大全 - 50個合規策略與Meta政策認證 -->
-  <url>
-    <loc>https://bless25min.github.io/MetaAd/white-hat-techniques.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/social-proof-tactics.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- CAPI設定指南 - Meta轉換API 2.0完整技術文檔 -->
+  <!-- 白帽技巧大全 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/capi-setup-guide.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/white-hat-techniques.html</loc>
+    <lastmod>2025-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CAPI設定指南 -->
+  <url>
+    <loc>https://meta.25min.co/capi-setup-guide.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- 實用工具頁面 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/tools/audience-calculator.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/tools/audience-calculator.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://bless25min.github.io/MetaAd/tools/budget-optimizer.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/tools/budget-optimizer.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://bless25min.github.io/MetaAd/tools/utm-builder.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/tools/utm-builder.html</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- 核心資源文件 -->
   <url>
-    <loc>https://bless25min.github.io/MetaAd/MetaAdCollection.pdf</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/MetaAdCollection.pdf</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://bless25min.github.io/MetaAd/AI搜尋摘要限制與對應策略.pdf</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/AI搜尋摘要限制與對應策略.pdf</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://bless25min.github.io/MetaAd/Geo%20Reference%20Guide.pdf</loc>
-    <lastmod>2025-07-07</lastmod>
+    <loc>https://meta.25min.co/Geo%20Reference%20Guide.pdf</loc>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -134,7 +106,7 @@
   <!-- BrandShare相關專案 -->
   <url>
     <loc>https://bless25min.github.io/BrandShare/</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
