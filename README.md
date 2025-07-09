@@ -73,31 +73,6 @@
 
 ---
 
-## 📁 專案結構
-
-```
-MetaAd/
-├── 📄 index.html                      # 🏠 主頁面 - 權威資料統合導航
-├── 📄 remarketing-funnel.html         # 🔄 封閉式再行銷策略 (5張圖表)
-├── 📄 budget-hacks.html              # 💰 預算擴量黑科技 (2張圖表)
-├── 📄 algorithm-mastery.html          # 🧠 演算法掌控術詳解
-├── 📄 social-proof-tactics.html      # 👥 社交證明策略 (1張圖表)
-├── 📄 white-hat-techniques.html      # ✅ 白帽技巧大全 (50個策略)
-├── 📄 capi-setup-guide.html          # 🔧 CAPI 2.0完整設定指南
-├── 🛠️ tools/                         # 實用工具頁面
-│   ├── audience-calculator.html      #   📊 受眾計算器
-│   ├── budget-optimizer.html         #   💡 預算優化器
-│   └── utm-builder.html             #   🔗 UTM建構器
-├── 🎨 images/                        # 8張專業圖表資源
-│   ├── 漏斗與線上線下跨域追蹤.png        #   完整跨域追蹤架構
-│   ├── 跨域追蹤流程與應用實例.jpg        #   UTM追蹤技術流程
-│   ├── Facebook廣告投放策略與漏斗.png    #   投放策略架構圖
-│   ├── 透過大量廣告組合找到回應較好的廣告受眾屬性.png  # 測試流程圖
-│   └── 其他專業流程圖...
-├── 📚 MetaAdCollection.pdf           # 88個策略完整文件集
-├── 🤖 AI搜尋摘要限制與對應策略.pdf    # GEO 優化完整指南
-└── 📋 Geo Reference Guide.pdf       # GEO技術參考手冊
-```
 
 ---
 
@@ -142,16 +117,6 @@ MetaAd/
 | **大量廣告組合測試策略** | budget-hacks.html | 1美元爆量法實戰流程 |
 | **設備篩選與假帳號過濾** | budget-hacks.html | 質量控管技術展示 |
 | **跳轉追蹤裝置分類** | social-proof-tactics.html | 用戶來源屬性分析 |
-
----
-
-## 🛠️ 實用工具
-
-| 🎯 工具名稱 | 📝 功能說明 | 🎪 適用場景 |
-|---|---|---|
-| **📊 受眾計算器** | 智能計算受眾規模與預算配置 | 受眾規劃與預算分配優化 |
-| **💡 預算優化器** | 科學化預算分配建議系統 | 多廣告組合預算管理 |
-| **🔗 UTM建構器** | 標準化追蹤參數生成工具 | 數據追蹤與效果分析 |
 
 ---
 
@@ -208,21 +173,11 @@ MetaAd/
 ## 🚀 快速開始
 
 ### 📖 立即開始學習
-- [🏠 進入主頁面](https://bless25min.github.io/MetaAd/) - 探索權威知識圖譜
-- [🧠 演算法掌控術](https://bless25min.github.io/MetaAd/algorithm-mastery.html) - Meta Andromeda AI系統
-- [🔄 封閉式再行銷](https://bless25min.github.io/MetaAd/remarketing-funnel.html) - CAPI 2.0追蹤技術
-- [💰 預算擴量黑科技](https://bless25min.github.io/MetaAd/budget-hacks.html) - 1美元爆量法
-- [👥 社交證明策略](https://bless25min.github.io/MetaAd/social-proof-tactics.html) - UGC優化技巧
-
-### 📚 下載核心資源
-- [📄 88個策略完整文件](https://bless25min.github.io/MetaAd/MetaAdCollection.pdf)
-- [🤖 GEO優化完整指南](https://bless25min.github.io/MetaAd/AI搜尋摘要限制與對應策略.pdf)
-- [📋 GEO技術參考手冊](https://bless25min.github.io/MetaAd/Geo%20Reference%20Guide.pdf)
-
-### 🛠️ 使用專業工具
-- [📊 受眾計算器](https://bless25min.github.io/MetaAd/tools/audience-calculator.html)
-- [💡 預算優化器](https://bless25min.github.io/MetaAd/tools/budget-optimizer.html)
-- [🔗 UTM建構器](https://bless25min.github.io/MetaAd/tools/utm-builder.html)
+- [🏠 進入主頁面](https://metaad.25min.co/) - 探索權威知識圖譜
+- [🧠 演算法掌控術](https://metaad.25min.co/MetaAd/algorithm-mastery.html) - Meta Andromeda AI系統
+- [🔄 封閉式再行銷](https://metaad.25min.co/MetaAd/remarketing-funnel.html) - CAPI 2.0追蹤技術
+- [💰 預算擴量黑科技](https://metaad.25min.co/MetaAd/budget-hacks.html) - 1美元爆量法
+- [👥 社交證明策略](https://metaad.25min.co/MetaAd/social-proof-tactics.html) - UGC優化技巧
 
 ---
 
@@ -253,9 +208,8 @@ MetaAd/
 ## 🌐 相關專案
 
 ### 🔗 專業平台生態系統
-- 🚀 **[BrandShare](https://bless25min.github.io/BrandShare/)** - 品牌廣告版位媒合平台
-- 🤖 **[AIOGEO Knowledge](https://bless25min.github.io/AIOGEO-Knowledge/)** - AI時代內容優化指南
-- 📊 **AdSpace Connect** - 廣告版位共享與交換平台
+- 🚀 **[BrandShare](https://brandshare.25min.co/)** - 品牌廣告版位媒合平台
+- 🤖 **[GEO Knowledge](https://geo.25min.co/)** - AI時代內容優化指南
 
 ---
 
@@ -294,16 +248,7 @@ MetaAd/
 
 ---
 
-## 📄 授權許可
-
-本專案採用 **MIT 許可證**，允許自由使用、修改和分發。
-
-**特別聲明**：所有權威資料來源均已獲得適當引用和授權，確保內容的合法性和可信度。
-
----
-
 ## 🌟 專案支持
-
 ### ⭐ 如果這個專案對您有幫助，請給我們一個 Star！
 
 ![GitHub stars](https://img.shields.io/github/stars/bless25min/metaad?style=social)
@@ -343,11 +288,7 @@ MetaAd/
 
 <div align="center">
 
-**[🏠 立即進入學習平台](https://bless25min.github.io/MetaAd/)**
-
-**[📚 下載完整策略指南](https://bless25min.github.io/MetaAd/MetaAdCollection.pdf)**
-
-**[🤖 獲取GEO優化指南](https://bless25min.github.io/MetaAd/AI搜尋摘要限制與對應策略.pdf)**
+**[🏠 立即進入學習平台](https://metaad.25min.co/)**
 
 ---
 
