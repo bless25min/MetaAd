@@ -13,4 +13,7 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+Disallow: /googlebec495246a3f61c5.html
+Disallow: /.github/
+
 Sitemap: https://metaad.25min.co/sitemap.xml
