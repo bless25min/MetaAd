@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-# 特別允許AI爬蟲
 User-agent: GPTBot
 Allow: /
 
@@ -14,5 +13,4 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# Sitemap位置
-Sitemap: https://bless25min.github.io/blessliao-profile/sitemap.xml
+Sitemap: https://metaad.25min.co/sitemap.xml
