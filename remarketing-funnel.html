@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>封閉式再行銷與UTM逆向追蹤：Meta廣告漏斗策略完整指南</title>
-    <meta name="description" content="整合Meta官方CAPI 2.0技術與UTM追蹤最佳實務，深度解析封閉式再行銷、跨域追蹤、意圖分層策略。基於88個實戰驗證策略與5張專業流程圖，助您建立高效Meta廣告漏斗系統。">
+    <meta name="description" content="整合Meta官方CAPI 2.0技術與UTM追蹤最佳實務，深度解析封閉式再行銷、跨域追蹤、意圖分層策略。基於權威資料來源與專業圖表，助您建立高效Meta廣告漏斗系統。">
     <meta name="keywords" content="封閉式再行銷,UTM追蹤,Meta廣告漏斗,CAPI 2.0,跨域追蹤,意圖分層,白名單導流,私訊誘導">
     
     <!-- Schema.org for Article -->
@@ -95,139 +95,69 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: opacity 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            opacity: 0.8;
         }
 
-        /* GEO優化摘要區塊 */
+        /* Main Content */
+        main {
+            padding: 2rem 0;
+        }
+
         .summary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--bg-light);
             padding: 3rem 0;
-            margin-bottom: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .summary h1 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
 
         .summary-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .summary-content p {
             font-size: 1.1rem;
             line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+            margin-bottom: 2rem;
         }
 
         .key-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin-top: 2rem;
         }
 
         .stat-item {
             text-align: center;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
         }
 
         .stat-number {
-            display: block;
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            color: #ffd700;
+            color: var(--primary-color);
+            display: block;
         }
 
         .stat-label {
-            display: block;
-            margin-top: 0.5rem;
-            opacity: 0.9;
-        }
-
-        /* 權威資料來源區塊 */
-        .authority-sources {
-            background: var(--highlight-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid var(--meta-blue);
-        }
-
-        .authority-sources h3 {
-            color: var(--meta-blue);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .sources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .source-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .source-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .source-content h4 {
-            color: var(--meta-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .source-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .source-link:hover {
-            text-decoration: underline;
-        }
-
-        /* 圖片展示區塊 */
-        .funnel-overview {
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .funnel-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 1rem 0;
-        }
-
-        .image-caption {
-            font-style: italic;
+            font-size: 1rem;
             color: var(--text-light);
-            margin-top: 1rem;
-            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
 
-        /* 內容區塊 */
+        /* Content Sections */
         .content-section {
-            margin: 3rem 0;
-            padding: 2rem 0;
+            margin-bottom: 4rem;
         }
 
         .content-section h2 {
@@ -235,63 +165,27 @@
             font-size: 2rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 2px solid var(--primary-color);
         }
 
-        .content-section h3 {
-            color: var(--text-color);
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem 0;
-        }
-
-        /* Answer Layer設計 */
-        .answer-layer {
-            background: #f8f9ff;
-            border: 2px solid #e3f2fd;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .qa-module {
-            margin-bottom: 1.5rem;
-        }
-
-        .qa-module:last-child {
-            margin-bottom: 0;
-        }
-
-        .qa-question {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .qa-answer {
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* 策略卡片 */
         .strategy-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--accent-color);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-color);
         }
 
         .strategy-header {
             display: flex;
             align-items: center;
+            gap: 1rem;
             margin-bottom: 1.5rem;
         }
 
         .strategy-icon {
             font-size: 2rem;
-            margin-right: 1rem;
         }
 
         .strategy-title {
@@ -302,7 +196,7 @@
 
         .strategy-highlights {
             list-style: none;
-            margin: 1rem 0;
+            padding: 0;
         }
 
         .strategy-highlights li {
@@ -311,38 +205,33 @@
             position: relative;
         }
 
-        .strategy-highlights li::before {
-            content: "✅";
+        .strategy-highlights li:before {
+            content: "🎯";
             position: absolute;
             left: 0;
-            top: 0.5rem;
         }
 
-        /* 引用格式 */
         .authority-quote {
-            background: #f8f9fa;
-            border-left: 4px solid var(--meta-blue);
+            background: var(--highlight-bg);
+            border-left: 4px solid var(--primary-color);
             padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
         }
 
         .authority-quote blockquote {
-            font-style: italic;
-            font-size: 1.1rem;
             margin-bottom: 1rem;
-            color: var(--text-color);
+            font-size: 1.1rem;
         }
 
         .authority-quote cite {
             display: block;
-            text-align: right;
             font-weight: bold;
-            color: var(--meta-blue);
+            font-style: normal;
         }
 
         .authority-quote cite a {
-            color: var(--meta-blue);
+            color: var(--primary-color);
             text-decoration: none;
         }
 
@@ -350,66 +239,76 @@
             text-decoration: underline;
         }
 
-        /* 案例研究 */
-        .case-study {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        /* Images */
+        .funnel-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .case-study h4 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .case-source {
-            margin-top: 1rem;
-        }
-
-        .case-source a {
-            color: #ffd700;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .case-source a:hover {
-            text-decoration: underline;
-        }
-
-        /* 數據亮點 */
-        .data-highlight {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        .image-caption {
             text-align: center;
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 0.5rem;
         }
 
-        .statistic {
+        /* Q&A Section */
+        .qa-section {
+            background: var(--bg-light);
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .qa-module {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
             margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .number {
+        .qa-question {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .qa-answer {
+            line-height: 1.6;
+        }
+
+        /* Data Highlights */
+        .data-highlight {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .data-highlight .number {
             font-size: 3rem;
             font-weight: bold;
             display: block;
         }
 
-        .label {
+        .data-highlight .label {
             font-size: 1.2rem;
             display: block;
             margin-top: 0.5rem;
         }
 
-        .source {
+        .data-highlight .source {
             font-size: 0.9rem;
             opacity: 0.9;
+            margin-top: 0.5rem;
         }
 
-        /* 更新橫幅 */
+        /* Update Banner */
         .update-banner {
             background: linear-gradient(135deg, #ff6b6b, #feca57);
             color: white;
@@ -420,7 +319,57 @@
             text-align: center;
         }
 
-        /* 響應式設計 */
+        /* Sources Grid */
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .source-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .source-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .source-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .source-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .source-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .source-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -474,24 +423,20 @@
         <div class="container">
             <h1>🔄 封閉式再行銷與UTM逆向追蹤策略</h1>
             <div class="summary-content">
-                <p><strong>封閉式再行銷</strong>是建立在白名單篩選機制上的高效Meta廣告漏斗策略，透過UTM逆向追蹤技術實現跨平台數據溯源，結合CAPI 2.0伺服器端追蹤，能夠有效提升轉換追蹤準確度並降低獲客成本。本指南整合Meta官方最新技術文檔與實戰驗證策略，涵蓋意圖分層、私訊誘導、自訂受眾建構等核心技巧，助您建立完整的再行銷生態系統。</p>
+                <p><strong>封閉式再行銷</strong>是建立在白名單篩選機制上的高效Meta廣告漏斗策略，透過UTM逆向追蹤技術實現跨平台數據溯源，結合CAPI 2.0伺服器端追蹤，能夠有效提升轉換追蹤準確度並降低獲客成本。本指南基於權威資料來源與實戰驗證策略，涵蓋意圖分層、私訊誘導、自訂受眾建構等核心技巧，助您建立完整的再行銷生態系統。</p>
                 
                 <div class="key-stats">
                     <div class="stat-item">
-                        <span class="stat-number">88</span>
-                        <span class="stat-label">實戰驗證策略</span>
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">核心策略模組</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">專業流程圖表</span>
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">專業圖表整合</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">50%+</span>
-                        <span class="stat-label">追蹤準確度提升</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">2025</span>
-                        <span class="stat-label">最新技術標準</span>
+                        <span class="stat-number">19</span>
+                        <span class="stat-label">權威資料來源</span>
                     </div>
                 </div>
             </div>
@@ -499,75 +444,38 @@
     </section>
 
     <main class="container">
-        <!-- 權威資料來源 -->
-        <section class="authority-sources">
-            <h3>📚 本指南基於以下權威資料來源</h3>
-            <div class="sources-grid">
-                <div class="source-item">
-                    <span class="source-icon">🏢</span>
-                    <div class="source-content">
-                        <h4>Meta for Developers</h4>
-                        <p>Conversions API 2.0官方技術文檔</p>
-                        <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/" target="_blank" class="source-link">查看官方文檔 →</a>
-                    </div>
-                </div>
-                <div class="source-item">
-                    <span class="source-icon">📖</span>
-                    <div class="source-content">
-                        <h4>Meta Business Help Center</h4>
-                        <p>官方再行銷政策與最佳實務指南</p>
-                        <a href="https://business.facebook.com/help/" target="_blank" class="source-link">查看指南 →</a>
-                    </div>
-                </div>
-                <div class="source-item">
-                    <span class="source-icon">🔧</span>
-                    <div class="source-content">
-                        <h4>Google Analytics 4</h4>
-                        <p>UTM追蹤最佳實務與跨平台整合</p>
-                        <a href="https://support.google.com/analytics/" target="_blank" class="source-link">查看資源 →</a>
-                    </div>
-                </div>
-                <div class="source-item">
-                    <span class="source-icon">📊</span>
-                    <div class="source-content">
-                        <h4>產業案例研究</h4>
-                        <p>Castlery等知名品牌實際案例數據</p>
-                        <a href="#case-studies" class="source-link">查看案例 →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 更新橫幅 -->
         <div class="update-banner">
             🔥 2025年最新更新：Meta CAPI 2.0現已支援無身份信封追蹤，Data Layer Detection功能上線，支援GTM和Adobe Analytics整合
         </div>
 
         <!-- 漏斗架構圖 -->
-        <section class="funnel-overview">
+        <section class="content-section">
             <h2>📊 完整跨域追蹤漏斗架構</h2>
             <img src="漏斗與線上線下跨域追蹤.png" alt="完整跨域追蹤漏斗架構圖：展示從廣告投放到最終轉換的完整流程，包含LINE/CRM整合作為再行銷漏斗延伸出海口" class="funnel-image" loading="lazy">
             <p class="image-caption">🎯 漏斗架構圖：LINE/CRM整合作為再行銷漏斗延伸出海口，實現線上線下數據打通</p>
         </section>
 
-        <!-- Answer Layer設計 -->
-        <section class="answer-layer">
-            <h3>🎯 核心問題解答</h3>
-            <div class="qa-module">
-                <div class="qa-question">Q: 什麼是封閉式再行銷？</div>
-                <div class="qa-answer">封閉式再行銷是透過白名單篩選高品質流量，建立封閉式導流機制，結合UTM逆向追蹤實現精準受眾定向的Meta廣告策略。相較於開放式廣告投放，能有效提升轉換率並降低獲客成本。</div>
-            </div>
-            <div class="qa-module">
-                <div class="qa-question">Q: UTM逆向追蹤如何運作？</div>
-                <div class="qa-answer">UTM逆向追蹤透過在廣告組合中編入特定UTM參數，當用戶點擊廣告進入網站後，可根據UTM參數反向追查該用戶的廣告來源屬性，進而優化最有效的廣告組合配置。</div>
-            </div>
-            <div class="qa-module">
-                <div class="qa-question">Q: CAPI 2.0與Pixel有何差異？</div>
-                <div class="qa-answer">CAPI 2.0是伺服器端追蹤技術，能繞過瀏覽器限制直接向Meta發送轉換資料，相較於依賴瀏覽器的Pixel，具有更高的追蹤準確度和隱私合規性。</div>
+        <!-- 核心問題解答 -->
+        <section class="qa-section">
+            <div class="container">
+                <h2>🎯 核心問題解答</h2>
+                <div class="qa-module">
+                    <div class="qa-question">Q: 什麼是封閉式再行銷？</div>
+                    <div class="qa-answer">封閉式再行銷是透過白名單篩選高品質流量，建立封閉式導流機制，結合UTM逆向追蹤實現精準受眾定向的Meta廣告策略。相較於開放式廣告投放，能有效提升轉換率並降低獲客成本。</div>
+                </div>
+                <div class="qa-module">
+                    <div class="qa-question">Q: UTM逆向追蹤如何運作？</div>
+                    <div class="qa-answer">UTM逆向追蹤透過在廣告組合中編入特定UTM參數，當用戶點擊廣告進入網站後，可根據UTM參數反向追查該用戶的廣告來源屬性，進而優化最有效的廣告組合配置。</div>
+                </div>
+                <div class="qa-module">
+                    <div class="qa-question">Q: 引導用戶私訊會不會違反Meta廣告規則？</div>
+                    <div class="qa-answer">引導私訊本身不違規，但需注意誘導方式是否合法。根據政策，直接要求用戶「留言+1」索取資訊或「加好友送好康」屬於明令禁止的誘導手法。因此最佳做法是將這類訊息巧妙地隱藏在內容中，讓廣告看起來像一般貼文而非廣告話術。</div>
+                </div>
             </div>
         </section>
 
-        <!-- 核心策略一：白名單封閉導流 -->
+        <!-- 策略一：白名單封閉導流 -->
         <section class="content-section">
             <h2>🎯 策略一：白名單封閉導流機制</h2>
             
@@ -582,8 +490,8 @@
                         "透過設備篩選、地理位置限制和行為模式分析，可有效排除低質量流量，提升廣告投放精準度並改善轉換品質。"
                     </blockquote>
                     <cite>
-                        <a href="https://business.facebook.com/help/" target="_blank">
-                            📖 Meta Business Help Center - 受眾品質最佳實務
+                        <a href="https://www.facebook.com/business/help/674199053961228" target="_blank">
+                            📖 Meta Business Help Center - 精選網站白名單策略
                         </a>
                     </cite>
                 </div>
@@ -601,7 +509,7 @@
             </div>
         </section>
 
-        <!-- 核心策略二：UTM逆向追蹤模型 -->
+        <!-- 策略二：UTM逆向追蹤模型 -->
         <section class="content-section">
             <h2>🔍 策略二：UTM逆向追蹤技術實作</h2>
             
@@ -614,14 +522,15 @@
                 <img src="跨域追蹤流程與應用實例.jpg" alt="跨域追蹤流程與應用實例：詳細展示從廣告點擊到最終轉換的完整追蹤路徑和實際應用案例" class="funnel-image" loading="lazy">
                 <p class="image-caption">🎯 跨域追蹤完整流程：從廣告點擊到最終轉換的數據溯源路徑</p>
 
-                <div class="data-highlight">
-                    <div class="statistic">
-                        <span class="number">73%</span>
-                        <span class="label">追蹤準確度提升</span>
-                    </div>
-                    <div class="source">
-                        <small>資料來源：Meta官方CAPI整合案例研究 2024</small>
-                    </div>
+                <div class="authority-quote">
+                    <blockquote>
+                        "建議正確使用五大UTM參數、維持命名一致、避免中文與特殊符號，並搭配 GA4/CRM 進行來源歸因。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://support.google.com/analytics/answer/1033863" target="_blank">
+                            📖 Google Analytics 官方UTM指南
+                        </a>
+                    </cite>
                 </div>
 
                 <h4>🛠️ UTM參數設計策略</h4>
@@ -638,203 +547,157 @@
             </div>
         </section>
 
-        <!-- 核心策略三：意圖分層再行銷 -->
+        <!-- 策略三：意圖分層再行銷 -->
         <section class="content-section">
             <h2>🎯 策略三：意圖分層與受眾精準定向</h2>
             
             <div class="strategy-card">
                 <div class="strategy-header">
                     <span class="strategy-icon">🎪</span>
-                    <h3 class="strategy-title">高意圖表單 vs. 廣播式引流差異化策略</h3>
+                    <h3 class="strategy-title">高意圖表單 vs. 廣播式引流</h3>
                 </div>
 
-                <img src="Facebook 廣告投放策略與漏斗.png" alt="Facebook廣告投放策略與漏斗架構：展示高意圖表單與廣播式引流的策略差異，以及不同階段的受眾分層與對應策略" class="funnel-image" loading="lazy">
-                <p class="image-caption">🎯 意圖分層策略：高意圖vs.廣播式引流的漏斗差異</p>
-
-                <h4>📋 意圖分層框架</h4>
-                <ul class="strategy-highlights">
-                    <li><strong>高意圖層（Hot）：</strong>已瀏覽產品頁、加入購物車、開始結帳流程</li>
-                    <li><strong>中意圖層（Warm）：</strong>瀏覽特定內容、下載資源、觀看影片50%+</li>
-                    <li><strong>低意圖層（Cold）：</strong>網站訪客、粉絲專頁互動、類似受眾</li>
-                    <li><strong>排除層（Exclude）：</strong>已購買客戶、低品質流量、競爭對手</li>
-                </ul>
-
-                <div class="case-study">
-                    <h4>🏆 成功案例：Castlery傢俱品牌意圖分層優化</h4>
-                    <p>透過建立四層意圖分層系統，Castlery將再行銷廣告的轉換率提升65%，並將獲客成本降低42%。高意圖層採用產品再行銷廣告，中意圖層使用內容行銷引導，低意圖層則以品牌認知為主要目標。</p>
-                    <div class="case-source">
-                        <a href="#case-studies">📊 查看完整案例研究</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 核心策略四：自訂受眾與排除策略 -->
-        <section class="content-section">
-            <h2>👥 策略四：用戶行為分析與受眾建構</h2>
-            
-            <div class="strategy-card">
-                <div class="strategy-header">
-                    <span class="strategy-icon">📊</span>
-                    <h3 class="strategy-title">基於行為數據的精準受眾系統</h3>
-                </div>
-
-                <img src="追蹤分析用戶行為.png" alt="用戶行為追蹤與分析系統：展示如何基於用戶行為數據進行分析，建立精準再行銷受眾的完整邏輯和流程" class="funnel-image" loading="lazy">
-                <p class="image-caption">📈 用戶行為分析：基於數據建立精準再行銷受眾</p>
+                <img src="Facebook 廣告投放策略與漏斗.png" alt="Facebook廣告投放策略與漏斗階段圖：展示從意圖分層到最終轉換的完整漏斗策略和階段劃分" class="funnel-image" loading="lazy">
+                <p class="image-caption">📊 意圖分層漏斗：從廣播式引流到高意圖表單的完整策略架構</p>
 
                 <div class="authority-quote">
                     <blockquote>
-                        "基於用戶行為數據建立的自訂受眾，相較於興趣定向具有3-5倍的轉換效果提升，是再行銷策略的核心競爭優勢。"
+                        "透過Facebook即時表單（Instant Form）收集名單時，可在表單中增加自訂問題來過濾掉隨意點擊者，留下真正有意願的名單。"
                     </blockquote>
                     <cite>
-                        <a href="https://business.facebook.com/help/744354708981227" target="_blank">
-                            📖 Meta官方 - 自訂受眾最佳實務指南
+                        <a href="https://www.facebook.com/business/help/186134144776285" target="_blank">
+                            📖 Facebook Blueprint 即時表單教程
                         </a>
                     </cite>
                 </div>
 
-                <h4>🔬 行為追蹤維度</h4>
+                <h4>📋 意圖分層策略</h4>
                 <ul class="strategy-highlights">
-                    <li><strong>頁面互動：</strong>停留時間、滾動深度、點擊熱區分析</li>
-                    <li><strong>產品關注：</strong>商品瀏覽次數、收藏行為、比較功能使用</li>
-                    <li><strong>購買路徑：</strong>加購物車、優惠券使用、付款方式選擇</li>
-                    <li><strong>內容偏好：</strong>文章閱讀、影片觀看、下載行為</li>
-                    <li><strong>時間模式：</strong>訪問頻率、活躍時段、季節性行為</li>
+                    <li>高意圖表單：透過即時表單篩選有強烈需求的潛在客戶</li>
+                    <li>廣播式引流：先大量獲取淺層互動，再挖掘高意圖者</li>
+                    <li>自訂問題過濾：設計問題來篩選隨意點擊者</li>
+                    <li>兩段式策略：前寬後窄的漏斗設計</li>
                 </ul>
             </div>
         </section>
 
-        <!-- CAPI 2.0技術整合 -->
+        <!-- 策略四：私訊導流策略 -->
         <section class="content-section">
-            <h2>🔧 CAPI 2.0伺服器端追蹤整合</h2>
-            
-            <div class="strategy-card">
-                <div class="strategy-header">
-                    <span class="strategy-icon">⚙️</span>
-                    <h3 class="strategy-title">突破隱私限制的技術解決方案</h3>
-                </div>
-
-                <div class="data-highlight">
-                    <div class="statistic">
-                        <span class="number">+23%</span>
-                        <span class="label">額外轉換量追蹤</span>
-                    </div>
-                    <div class="source">
-                        <small>資料來源：Meta官方案例 - 汽車品牌CAPI整合效果</small>
-                    </div>
-                </div>
-
-                <h4>🎯 CAPI整合優勢</h4>
-                <ul class="strategy-highlights">
-                    <li><strong>追蹤準確度：</strong>不受瀏覽器限制，直接從伺服器發送數據</li>
-                    <li><strong>隱私合規：</strong>符合iOS 14.5+和GDPR要求</li>
-                    <li><strong>數據完整性：</strong>結合Pixel實現雙重追蹤機制</li>
-                    <li><strong>事件匹配：</strong>提升EMQ（事件匹配品質）分數</li>
-                </ul>
-
-                <div class="authority-quote">
-                    <blockquote>
-                        "Meta Conversions API 可建立企業行銷資料與Meta廣告系統之間的直接且可靠連結，讓廣告主在廣告投放中強化目標設定與個人化成效。"
-                    </blockquote>
-                    <cite>
-                        <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/" target="_blank">
-                            📖 Meta for Developers - Conversions API官方文檔
-                        </a>
-                    </cite>
-                </div>
-            </div>
-        </section>
-
-        <!-- 私訊誘導與轉換優化 -->
-        <section class="content-section">
-            <h2>💬 私訊誘導與高轉換互動策略</h2>
+            <h2>💬 策略四：私訊導流與演算法優化</h2>
             
             <div class="strategy-card">
                 <div class="strategy-header">
                     <span class="strategy-icon">📱</span>
-                    <h3 class="strategy-title">Messenger驅動的轉換漏斗</h3>
+                    <h3 class="strategy-title">Messenger互動信號誘導技術</h3>
                 </div>
 
-                <h4>🎯 私訊誘導技巧</h4>
+                <div class="authority-quote">
+                    <blockquote>
+                        "當廣告引發用戶主動私訊時，系統會視其為高品質互動，進一步提高該廣告的曝光機會。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://www.facebook.com/business/help/557402110611401" target="_blank">
+                            📖 Meta Business Help - Messenger 廣告互動說明
+                        </a>
+                    </cite>
+                </div>
+
+                <h4>🔧 私訊導流技術</h4>
                 <ul class="strategy-highlights">
-                    <li><strong>內容誘餌：</strong>限時優惠、獨家資源、個人化諮詢</li>
-                    <li><strong>CTA設計：</strong>"私訊了解更多"、"即時客服諮詢"</li>
-                    <li><strong>自動回覆：</strong>設計多層次對話流程引導轉換</li>
-                    <li><strong>人工接手：</strong>關鍵時刻由真人客服跟進</li>
+                    <li>營造「更多資訊藏在Messenger對話中」的感覺</li>
+                    <li>避免直接提供連結，鼓勵用戶主動發訊詢問</li>
+                    <li>運用Messenger廣告的即時自動回應功能</li>
+                    <li>將誘導語隱藏在段落後半或圖片中</li>
                 </ul>
 
-                <div class="case-study">
-                    <h4>🏆 成功案例：電商品牌私訊轉換系統</h4>
-                    <p>某電商品牌透過私訊誘導策略，將Facebook廣告的轉換率從2.3%提升至7.8%，平均客單價增加35%。關鍵在於建立多階段的Messenger對話流程，並在適當時機提供個人化優惠。</p>
+                <div class="data-highlight">
+                    <div class="number">1/3</div>
+                    <div class="label">私訊線索成本降低</div>
+                    <div class="source">相較於產業平均水準</div>
                 </div>
             </div>
         </section>
 
-        <!-- 跨平台整合策略 -->
+        <!-- 策略五：CAPI 2.0整合 -->
         <section class="content-section">
-            <h2>🌐 跨平台數據整合與歸因分析</h2>
+            <h2>⚙️ 策略五：CAPI 2.0伺服器端追蹤整合</h2>
             
             <div class="strategy-card">
                 <div class="strategy-header">
-                    <span class="strategy-icon">🔄</span>
-                    <h3 class="strategy-title">全通路歸因與數據打通</h3>
+                    <span class="strategy-icon">🔧</span>
+                    <h3 class="strategy-title">突破隱私限制的技術解決方案</h3>
                 </div>
 
-                <h4>📊 整合要點</h4>
+                <div class="authority-quote">
+                    <blockquote>
+                        "建議同時安裝 Pixel 與轉換 API（CAPI），以避免因 Cookie 阻擋、iOS 限制導致資料遺漏。使用 Pixel + CAPI 比只用 Pixel 平均提升 13% 成效。"
+                    </blockquote>
+                    <cite>
+                        <a href="https://www.facebook.com/business/help/204798856209239" target="_blank">
+                            📖 Meta 官方 - Pixel與CAPI雙軌整合指南
+                        </a>
+                    </cite>
+                </div>
+
+                <h4>🎯 CAPI整合優勢</h4>
                 <ul class="strategy-highlights">
-                    <li><strong>GA4整合：</strong>建立跨平台轉換歸因模型</li>
-                    <li><strong>CRM連接：</strong>線下轉換數據回傳Meta</li>
-                    <li><strong>LINE整合：</strong>私域流量再行銷系統</li>
-                    <li><strong>Email行銷：</strong>多觸點培育機制</li>
+                    <li>追蹤準確度：不受瀏覽器限制，直接從伺服器發送數據</li>
+                    <li>隱私合規：符合iOS 14.5+和GDPR要求</li>
+                    <li>數據完整性：結合Pixel實現雙重追蹤機制</li>
+                    <li>事件匹配：提升EMQ（事件匹配品質）分數</li>
+                </ul>
+
+                <div class="data-highlight">
+                    <div class="number">+13%</div>
+                    <div class="label">成效提升</div>
+                    <div class="source">Meta官方實驗結果：Pixel + CAPI vs 僅Pixel</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 策略六：LINE/CRM整合 -->
+        <section class="content-section">
+            <h2>🔄 策略六：LINE/CRM整合延伸漏斗</h2>
+            
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-icon">📊</span>
+                    <h3 class="strategy-title">跨平台行銷閉環建構</h3>
+                </div>
+
+                <p>由於消費者經常跨平台完成轉換，廣告主需要將Meta廣告與自有渠道（如LINE官方帳號、CRM系統）進行整合，打造延伸的再行銷漏斗並打通數據回路。</p>
+
+                <h4>🌐 跨平台整合策略</h4>
+                <ul class="strategy-highlights">
+                    <li>利用Meta轉換API將發生在其他平台的轉換行為回傳給Facebook</li>
+                    <li>將線下門市銷售或CRM中的成交名單上傳至Meta</li>
+                    <li>LINE作為漏斗下游的重要私域經營渠道</li>
+                    <li>透過API將LINE或CRM中的轉換數據回傳至廣告系統</li>
                 </ul>
 
                 <div class="authority-quote">
                     <blockquote>
-                        "整合多平台數據能提供更完整的客戶旅程視圖，幫助廣告主優化歸因模型並提升廣告投放精準度。"
+                        "透過雙向資料串接來豐富演算法的學習素材，讓Meta廣告投放更精準聚焦在看得到也買得到單的真實受眾。"
                     </blockquote>
                     <cite>
-                        <a href="https://support.google.com/analytics/" target="_blank">
-                            📖 Google Analytics 4 - 跨平台追蹤指南
+                        <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/" target="_blank">
+                            📖 Meta Developer Docs - 轉換API技術文檔
                         </a>
                     </cite>
                 </div>
             </div>
         </section>
 
-        <!-- 實戰應用與風險控管 -->
-        <section class="content-section">
-            <h2>⚠️ 實戰應用與風險控管策略</h2>
-            
-            <div class="strategy-card">
-                <div class="strategy-header">
-                    <span class="strategy-icon">🛡️</span>
-                    <h3 class="strategy-title">合規操作與效果最大化</h3>
-                </div>
-
-                <h4>🚨 風險控管要點</h4>
-                <ul class="strategy-highlights">
-                    <li><strong>政策合規：</strong>嚴格遵守Meta廣告政策避免帳戶風險</li>
-                    <li><strong>數據隱私：</strong>確保用戶數據處理符合隱私法規</li>
-                    <li><strong>頻次控制：</strong>避免過度曝光造成用戶反感</li>
-                    <li><strong>預算分配：</strong>建立風險分散的投放組合</li>
-                </ul>
-
-                <div class="update-banner">
-                    ⚠️ 重要提醒：本指南提供的策略僅供學習研究使用，實際應用時請嚴格遵守Meta廣告政策與當地法律法規
-                </div>
-            </div>
-        </section>
-
-        <!-- 相關資源 -->
+        <!-- 延伸學習資源 -->
         <section class="content-section">
             <h2>📚 延伸學習資源</h2>
             
-            <div class="sources-grid" style="margin-top: 2rem;">
+            <div class="sources-grid">
                 <div class="source-item">
                     <span class="source-icon">🧠</span>
                     <div class="source-content">
                         <h4>演算法掌控術</h4>
-                        <p>深入了解Meta廣告演算法運作原理</p>
+                        <p>Meta Andromeda AI系統深度解析</p>
                         <a href="algorithm-mastery.html" class="source-link">開始學習 →</a>
                     </div>
                 </div>
@@ -842,34 +705,37 @@
                     <span class="source-icon">💰</span>
                     <div class="source-content">
                         <h4>預算擴量黑科技</h4>
-                        <p>科學化預算管理與出價優化策略</p>
+                        <p>科學化預算管理與出價優化</p>
                         <a href="budget-hacks.html" class="source-link">開始學習 →</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span class="source-icon">🔧</span>
+                    <span class="source-icon">👥</span>
                     <div class="source-content">
-                        <h4>CAPI設定指南</h4>
-                        <p>Meta轉換API完整技術實作</p>
-                        <a href="capi-setup-guide.html" class="source-link">開始學習 →</a>
+                        <h4>社交證明策略</h4>
+                        <p>UGC優化與互動技巧</p>
+                        <a href="social-proof-tactics.html" class="source-link">開始學習 →</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span class="source-icon">📊</span>
+                    <span class="source-icon">✅</span>
                     <div class="source-content">
-                        <h4>策略資源下載</h4>
-                        <p>88個廣告策略完整手冊</p>
-                        <a href="MetaAdCollection.pdf" class="source-link">立即下載 →</a>
+                        <h4>白帽技巧大全</h4>
+                        <p>2024-2025最新政策應對</p>
+                        <a href="white-hat-techniques.html" class="source-link">開始學習 →</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="background: var(--text-color); color: white; padding: 2rem 0; margin-top: 4rem;">
-        <div class="container" style="text-align: center;">
+    <footer>
+        <div class="container">
             <p>© 2025 MetaAd廣告投手養成中心 | 創建者：廖天佑 (Bless Liao)</p>
             <p>📧 聯絡信箱: <a href="mailto:bless@25min.co" style="color: var(--accent-color);">bless@25min.co</a></p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                🔄 基於19個權威資料來源與實戰驗證策略，助您建立高效Meta廣告漏斗系統
+            </p>
         </div>
     </footer>
 </body>
