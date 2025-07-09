@@ -161,7 +161,7 @@
             padding: 2rem;
             border-radius: 15px;
             margin: 2rem 0;
-            border-left: 5px solid var(--meta-blue);
+            border-left: 5px sol var(--meta-blue);
         }
 
         .authority-sources h3 {
@@ -170,9 +170,9 @@
             font-size: 1.3rem;
         }
 
-        .sources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .sources-gr {
+            display: gr;
+            gr-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
@@ -217,7 +217,7 @@
             font-size: 2rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 3px sol var(--accent-color);
         }
 
         .content-section h3 {
@@ -229,7 +229,7 @@
         /* Answer Layer設計 */
         .answer-layer {
             background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border: 2px solid #2196f3;
+            border: 2px sol #2196f3;
             border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
@@ -262,7 +262,7 @@
             padding: 2rem;
             margin: 2rem 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--accent-color);
+            border-left: 5px sol var(--accent-color);
         }
 
         .strategy-header {
@@ -304,7 +304,7 @@
         .ai-card {
             background: var(--ai-gradient);
             color: white;
-            border-left: 5px solid #ffd700;
+            border-left: 5px sol #ffd700;
         }
 
         .ai-card .strategy-title {
@@ -361,7 +361,7 @@
         /* 引用格式 */
         .authority-quote {
             background: #f8f9fa;
-            border-left: 4px solid var(--meta-blue);
+            border-left: 4px sol var(--meta-blue);
             padding: 1.5rem;
             margin: 2rem 0;
             border-radius: 0 10px 10px 0;
@@ -462,12 +462,12 @@
 
         /* 技術表格 */
         .tech-table {
-            width: 100%;
+            wth: 100%;
             border-collapse: collapse;
             margin: 2rem 0;
             background: white;
             border-radius: 10px;
-            overflow: hidden;
+            overflow: hden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
@@ -475,7 +475,7 @@
         .tech-table td {
             padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px sol var(--border-color);
         }
 
         .tech-table th {
@@ -495,7 +495,7 @@
             border-radius: 15px;
             margin: 2rem 0;
             text-align: center;
-            border: 2px solid #ff8a65;
+            border: 2px sol #ff8a65;
         }
 
         .formula {
@@ -515,7 +515,7 @@
         /* 互動式工具 */
         .interactive-tool {
             background: white;
-            border: 2px solid var(--primary-color);
+            border: 2px sol var(--primary-color);
             border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
@@ -533,9 +533,9 @@
         }
 
         .tool-input input {
-            width: 100%;
+            wth: 100%;
             padding: 0.8rem;
-            border: 2px solid var(--border-color);
+            border: 2px sol var(--border-color);
             border-radius: 5px;
             font-size: 1rem;
         }
@@ -555,7 +555,7 @@
         }
 
         /* 響應式設計 */
-        @media (max-width: 768px) {
+        @media (max-wth: 768px) {
             .nav-links {
                 display: none;
             }
@@ -565,11 +565,11 @@
             }
             
             .key-stats {
-                grid-template-columns: repeat(2, 1fr);
+                gr-template-columns: repeat(2, 1fr);
             }
             
-            .sources-grid {
-                grid-template-columns: 1fr;
+            .sources-gr {
+                gr-template-columns: 1fr;
             }
             
             .container {
@@ -577,9 +577,9 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-wth: 480px) {
             .key-stats {
-                grid-template-columns: 1fr;
+                gr-template-columns: 1fr;
             }
             
             .stat-number {
@@ -636,7 +636,7 @@
         <!-- 權威資料來源 -->
         <section class="authority-sources">
             <h3>📚 本指南基於以下權威資料來源</h3>
-            <div class="sources-grid">
+            <div class="sources-gr">
                 <div class="source-item">
                     <span class="source-icon">🤖</span>
                     <div class="source-content">
@@ -841,7 +841,7 @@
             <div class="interactive-tool">
                 <h3>💡 預估廣告競價得分</h3>
                 <div class="tool-input">
-                    <label for="bid-amount">出價金額 (USD)</label>
+                    <label for="b-amount">出價金額 (USD)</label>
                     <input type="number" id="bid-amount" placeholder="輸入您的出價金額" step="0.01">
                 </div>
                 <div class="tool-input">
@@ -880,7 +880,7 @@
         </section>
 
         <!-- 核心策略三：假帳號識別與防詐技術 -->
-        <section class="content-section">
+        <section class="content-section" id="fraud-detection">
             <h2>🛡️ 假帳號識別與受眾品質控管</h2>
             
             <div class="strategy-card">
@@ -1025,7 +1025,7 @@
         </section>
 
         <!-- 產業趨勢與未來展望 -->
-        <section class="content-section">
+        <section class="content-section" id="industry-data">
             <h2>📈 產業趨勢分析與演算法未來展望</h2>
             
             <div class="strategy-card">
