@@ -1,66 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <!-- 首頁 - 最高優先級 -->
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/index.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+<url>
+<loc>https://metaad.25min.co/</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
 
-    <!-- 演算法掌控術 - 核心技術頁面 -->
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/algorithm-mastery.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+<url>
+<loc>https://metaad.25min.co/index.html</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
 
-    <!-- 封閉式再行銷策略 - 核心技術頁面 -->
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/remarketing-funnel.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+<url>
+<loc>https://metaad.25min.co/algorithm-mastery.html</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
 
-    <!-- 預算擴量黑科技 - 核心技術頁面 -->
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/budget-hacks.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+<url>
+<loc>https://metaad.25min.co/remarketing-funnel.html</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
 
-    <!-- 社交證明策略 - 核心技術頁面 -->
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/social-proof-tactics.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
+<url>
+<loc>https://metaad.25min.co/budget-hacks.html</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
 
-    <!-- 白帽技巧大全 - 合規指南頁面 -->
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/white-hat-techniques.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+<url>
+<loc>https://metaad.25min.co/social-proof-tactics.html</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
 
-    <!-- 如果有額外的技術文檔頁面，可以在此添加 -->
-    <!-- CAPI設定指南 - 如果單獨成頁 -->
-    <!--
-    <url>
-        <loc>https://bless25min.github.io/MetaAd/capi-setup-guide.html</loc>
-        <lastmod>2025-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    -->
+<url>
+<loc>https://metaad.25min.co/white-hat-techniques.html</loc>
+<lastmod>2025-07-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
 
 </urlset>
