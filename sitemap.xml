@@ -1,114 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- MetaAd專案主頁面 - 自訂網域 meta.25min.co -->
+  <!-- 主頁面 -->
   <url>
-    <loc>https://meta.25min.co/</loc>
+    <loc>https://metaad.25min.co/</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- 核心策略頁面 - 已完成權威資料整合升級 -->
-  
-  <!-- 封閉式再行銷策略 -->
+  <!-- 核心策略頁面 -->
   <url>
-    <loc>https://meta.25min.co/remarketing-funnel.html</loc>
+    <loc>https://metaad.25min.co/algorithm-mastery.html</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 預算擴量黑科技 -->
   <url>
-    <loc>https://meta.25min.co/budget-hacks.html</loc>
+    <loc>https://metaad.25min.co/remarketing-funnel.html</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 演算法掌控術 - Meta Andromeda AI系統技術分析 -->
   <url>
-    <loc>https://meta.25min.co/algorithm-mastery.html</loc>
+    <loc>https://metaad.25min.co/budget-hacks.html</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 社交證明策略 -->
   <url>
-    <loc>https://meta.25min.co/social-proof-tactics.html</loc>
+    <loc>https://metaad.25min.co/social-proof-tactics.html</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 白帽技巧大全 -->
   <url>
-    <loc>https://meta.25min.co/white-hat-techniques.html</loc>
+    <loc>https://metaad.25min.co/white-hat-techniques.html</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- CAPI設定指南 -->
   <url>
-    <loc>https://meta.25min.co/capi-setup-guide.html</loc>
+    <loc>https://metaad.25min.co/capi-setup-guide.html</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 實用工具頁面 -->
-  <url>
-    <loc>https://meta.25min.co/tools/audience-calculator.html</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://meta.25min.co/tools/budget-optimizer.html</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://meta.25min.co/tools/utm-builder.html</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- 核心資源文件 -->
-  <url>
-    <loc>https://meta.25min.co/MetaAdCollection.pdf</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://meta.25min.co/AI搜尋摘要限制與對應策略.pdf</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://meta.25min.co/Geo%20Reference%20Guide.pdf</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- BrandShare相關專案 -->
-  <url>
-    <loc>https://bless25min.github.io/BrandShare/</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-</urlset>
