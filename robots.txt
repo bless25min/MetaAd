@@ -18,7 +18,7 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://metaad.25min.co/sitemap_index.xml
+Sitemap: https://metaad.25min.co/sitemap.txt
 
 # 爬取延遲設定
 Crawl-delay: 1
